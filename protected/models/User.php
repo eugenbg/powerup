@@ -37,7 +37,6 @@ class User extends CActiveRecord
 		return array(
 			array('username, password, email', 'required'),
 			array('username, password, email', 'length', 'max'=>128),
-			array('profile', 'safe'),
 		);
 	}
 
@@ -86,4 +85,10 @@ class User extends CActiveRecord
 	{
 		return CPasswordHelper::hashPassword($password);
 	}
+
+    public function register()
+    {
+        $this->password = $this->hashPassword($this->password);
+        return $this->save();
+    }
 }
