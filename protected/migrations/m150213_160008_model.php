@@ -7,10 +7,10 @@ class m150213_160008_model extends CDbMigration
         $columns = array(
             'id' => 'INT(11) AUTO_INCREMENT PRIMARY KEY',
             'title' => 'VARCHAR(30)',
-            'series_id' => 'INT(6) REFERENCES series (id) ON DELETE SET NULL ON UPDATE CASCADE',
-            'sub_series_id' => 'INT(6) REFERENCES series (id) ON DELETE SET NULL ON UPDATE CASCADE',
-            'brand_id' => 'INT(6) REFERENCES brand (id) ON DELETE CASCADE ON UPDATE CASCADE',
-            'category_id' => 'INT(3) REFERENCES category (id) ON DELETE CASCADE ON UPDATE CASCADE'
+            'series_id' => 'INT(6)',
+            'subseries_id' => 'INT(6)',
+            'brand_id' => 'INT(6)',
+            'category_id' => 'INT(3)'
         );
         $options = 'ENGINE InnoDB';
         $this->createTable('model', $columns, $options);
