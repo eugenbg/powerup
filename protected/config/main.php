@@ -61,14 +61,24 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
+
 			),
 		),
 	),
+
+    'modules'=>array(
+        'gii'=>array(
+            'class'=>'system.gii.GiiModule',
+            'password'=>'111111',
+            // 'ipFilters'=>array(...a list of IPs...),
+            // 'newFileMode'=>0666,
+            // 'newDirMode'=>0777,
+        ),
+    ),
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']

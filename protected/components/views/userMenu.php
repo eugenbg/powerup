@@ -1,6 +1,8 @@
 <ul>
-	<li><?php echo CHtml::link('Create New Post',array('post/create')); ?></li>
-	<li><?php echo CHtml::link('Manage Posts',array('post/admin')); ?></li>
-	<li><?php echo CHtml::link('Approve Comments',array('comment/index')) . ' (' . Comment::model()->pendingCommentCount . ')'; ?></li>
+    <?php
+        $controller = Yii::app()->getController();
+        foreach ($controller->menu as $menuItem) :?>
+            <li><?php echo CHtml::link($menuItem['label'],$menuItem['url']); ?></li>
+    <?php endforeach;?>
 	<li><?php echo CHtml::link('Logout',array('site/logout')); ?></li>
 </ul>
