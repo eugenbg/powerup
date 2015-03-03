@@ -51,8 +51,9 @@ class BrandController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+        $model=Brand::model()->with('items','series')->findByPk($id);
+        $this->render('view',array(
+			'model'=>$model,
 		));
 	}
 

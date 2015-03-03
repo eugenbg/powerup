@@ -34,7 +34,7 @@ class Series extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, parent_series_id, brand_id', 'required'),
+			array('title, brand_id', 'required'),
 			array('parent_series_id, brand_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
 			// The following rule is used by search().
@@ -54,7 +54,6 @@ class Series extends CActiveRecord
 			'items' => array(self::HAS_MANY, 'Item', 'series_id'),
 			'items1' => array(self::HAS_MANY, 'Item', 'subseries_id'),
 			'brand' => array(self::BELONGS_TO, 'Brand', 'brand_id'),
-			'parentSeries' => array(self::BELONGS_TO, 'Series', 'parent_series_id'),
 			'series' => array(self::HAS_MANY, 'Series', 'parent_series_id'),
 		);
 	}

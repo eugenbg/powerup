@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -29,6 +29,13 @@
 		<?php echo $form->labelEx($model,'parent_series_id'); ?>
 		<?php echo $form->textField($model,'parent_series_id'); ?>
 		<?php echo $form->error($model,'parent_series_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'brand_id'); ?>
+        <?php $brands = Brand::model()->findAll();
+        echo $form->dropDownList($model, 'brand_id', CHtml::listData($brands, 'id', 'title')); ?>
+		<?php echo $form->error($model,'brand_id'); ?>
 	</div>
 
 	<div class="row buttons">

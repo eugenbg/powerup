@@ -51,8 +51,9 @@ class SeriesController extends Controller
 	 */
 	public function actionView($id)
 	{
+        $model=Series::model()->with('items')->findByPk($id);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 

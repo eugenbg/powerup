@@ -24,5 +24,17 @@ $this->menu=array(
 		'id',
 		'title',
 		'parent_series_id',
+		'brand_id',
 	),
 )); ?>
+
+<h1>Айтемы серии</h1>
+<ul>
+    <?php foreach ($model->items as $item):?>
+        <li>
+            <a href="<?php echo $this->createUrl('item/view',array('id'=>$item->id)); ?>">
+                <?php echo $item->title; ?>
+            </a>
+        </li>
+    <?php endforeach;?>
+</ul>

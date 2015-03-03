@@ -25,3 +25,25 @@ $this->menu=array(
 		'title',
 	),
 )); ?>
+
+<h1>Айтемы брэнда</h1>
+<ul>
+    <?php foreach ($model->items as $item):?>
+        <li>
+            <a href="<?php echo $this->createUrl('item/view',array('id'=>$item->id)); ?>">
+                <?php echo $item->title; ?>
+            </a>
+        </li>
+    <?php endforeach;?>
+</ul>
+
+<h1>Серии брэнда</h1>
+<ul>
+    <?php foreach ($model->series as $series):?>
+        <li>
+            <a href="<?php echo $this->createUrl('item/view',array('id'=>$series->id)); ?>">
+                <?php echo $series->title; ?>
+            </a>
+        </li>
+    <?php endforeach;?>
+</ul>

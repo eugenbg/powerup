@@ -9,6 +9,7 @@
  *
  * The followings are the available model relations:
  * @property Item[] $items
+ * @property Series[] $series
  */
 class Brand extends CActiveRecord
 {
@@ -28,7 +29,8 @@ class Brand extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>30),
+			array('title', 'required'),
+			array('title', 'length', 'max'=>80),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title', 'safe', 'on'=>'search'),
@@ -44,6 +46,7 @@ class Brand extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'items' => array(self::HAS_MANY, 'Item', 'brand_id'),
+			'series' => array(self::HAS_MANY, 'Series', 'brand_id'),
 		);
 	}
 

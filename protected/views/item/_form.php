@@ -36,9 +36,14 @@
     <div class="row">
         <?php echo $form->labelEx($model,'series_id'); ?>
         <?php if($model->brand_id > 0):?>
-            <?php $series = Series::model()->findAllByAttributes(array('brand_id', $model->brand_id));?>
+            <?php $series = Series::model()->findAllByAttributes(array('brand_id' => $model->brand_id));?>
             <?php if(count($series)): ?>
-                <?php echo $form->textField($model,'series_id'); ?>
+                <?php echo $form->dropDownList(
+                    $model,
+                    'series_id',
+                    CHtml::listData($series, 'id', 'title'),
+                    array('empty'=>'-- No series --')
+                ); ?>
                 <?php echo $form->error($model,'series_id'); ?>
             <?php else: ?>
                 У брэнда нету серий
