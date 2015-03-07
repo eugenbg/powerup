@@ -25,3 +25,10 @@ $this->menu=array(
 		'title',
 	),
 )); ?>
+
+<h1>Брэнды</h1>
+<?php foreach($model->brands as $brand): ?>
+    <a href="<?php echo $this->createUrl('custom', array('category'=>$model->id, 'brand'=>$brand['id'])); ?>">
+        <?php echo $brand['title']; ?>
+    </a>
+<?php endforeach; ?>

@@ -51,8 +51,9 @@ class CategoryController extends Controller
 	 */
 	public function actionView($id)
 	{
+        $model = Category::model()->findByPk($id)->loadBrands();
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 		));
 	}
 
