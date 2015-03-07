@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'category':
  * @property integer $id
  * @property string $title
+ * @property string $urlkey
  *
  * The followings are the available model relations:
  * @property Product[] $products
@@ -28,10 +29,11 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>30),
+			array('urlkey', 'required'),
+			array('title, urlkey', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, title, urlkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +57,7 @@ class Category extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
+			'urlkey' => 'Urlkey',
 		);
 	}
 
@@ -78,6 +81,7 @@ class Category extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('urlkey',$this->urlkey,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -32,12 +32,13 @@ class Product extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+            array('urlkey', 'required'),
 			array('category_id', 'numerical', 'integerOnly'=>true),
-			array('sku, title', 'length', 'max'=>30),
+			array('sku, title, urlkey', 'length', 'max'=>30),
 			array('price', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sku, title, price, category_id', 'safe', 'on'=>'search'),
+			array('id, sku, title, price, category_id, urlkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,7 +51,7 @@ class Product extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
-			'productModels' => array(self::HAS_MANY, 'ProductModel', 'product_id'),
+            'productItems' => array(self::HAS_MANY, 'ProductItem', 'product_id'),
 		);
 	}
 
@@ -91,6 +92,7 @@ class Product extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('price',$this->price,true);
 		$criteria->compare('category_id',$this->category_id);
+        $criteria->compare('urlkey',$this->urlkey,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

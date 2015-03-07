@@ -8,13 +8,12 @@
  * @property string $title
  * @property integer $parent_series_id
  * @property integer $brand_id
+ * @property string $urlkey
  *
  * The followings are the available model relations:
  * @property Item[] $items
  * @property Item[] $items1
  * @property Brand $brand
- * @property Series $parentSeries
- * @property Series[] $series
  */
 class Series extends CActiveRecord
 {
@@ -34,12 +33,13 @@ class Series extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, brand_id', 'required'),
+			array('title, parent_series_id, brand_id, urlkey', 'required'),
 			array('parent_series_id, brand_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
+			array('urlkey', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, parent_series_id, brand_id', 'safe', 'on'=>'search'),
+			array('id, title, parent_series_id, brand_id, urlkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +54,6 @@ class Series extends CActiveRecord
 			'items' => array(self::HAS_MANY, 'Item', 'series_id'),
 			'items1' => array(self::HAS_MANY, 'Item', 'subseries_id'),
 			'brand' => array(self::BELONGS_TO, 'Brand', 'brand_id'),
-			'series' => array(self::HAS_MANY, 'Series', 'parent_series_id'),
 		);
 	}
 
@@ -68,6 +67,7 @@ class Series extends CActiveRecord
 			'title' => 'Title',
 			'parent_series_id' => 'Parent Series',
 			'brand_id' => 'Brand',
+			'urlkey' => 'Urlkey',
 		);
 	}
 
@@ -93,6 +93,7 @@ class Series extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('parent_series_id',$this->parent_series_id);
 		$criteria->compare('brand_id',$this->brand_id);
+		$criteria->compare('urlkey',$this->urlkey,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

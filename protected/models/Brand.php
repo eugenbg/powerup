@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'brand':
  * @property integer $id
  * @property string $title
+ * @property string $urlkey
  *
  * The followings are the available model relations:
  * @property Item[] $items
@@ -29,11 +30,12 @@ class Brand extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
+			array('title, urlkey', 'required'),
 			array('title', 'length', 'max'=>80),
+			array('urlkey', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, title, urlkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class Brand extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
+			'urlkey' => 'Urlkey',
 		);
 	}
 
@@ -81,6 +84,7 @@ class Brand extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('urlkey',$this->urlkey,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

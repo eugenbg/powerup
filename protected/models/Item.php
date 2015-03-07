@@ -39,11 +39,12 @@ class Item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+            array('urlkey', 'required'),
 			array('series_id, subseries_id, brand_id', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>30),
+			array('title, urlkey', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, series_id, subseries_id, brand_id', 'safe', 'on'=>'search'),
+			array('id, title, series_id, subseries_id, brand_id, urlkey', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +74,7 @@ class Item extends CActiveRecord
 			'series_id' => 'Series',
 			'subseries_id' => 'Subseries',
 			'brand_id' => 'Brand',
+            'urlkey' => 'Urlkey',
 		);
 	}
 
@@ -99,6 +101,7 @@ class Item extends CActiveRecord
 		$criteria->compare('series_id',$this->series_id);
 		$criteria->compare('subseries_id',$this->subseries_id);
 		$criteria->compare('brand_id',$this->brand_id);
+        $criteria->compare('urlkey',$this->urlkey,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
