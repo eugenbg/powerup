@@ -28,10 +28,12 @@ $this->menu=array(
 
 <h1>Айтемы брэнда</h1>
 <ul>
-    <?php foreach ($model->items as $item):?>
+    <?php foreach ($model->getItemsList() as $item):?>
         <li>
-            <a href="<?php echo $this->createUrl('item/view',array('id'=>$item->id)); ?>">
-                <?php echo $item->title; ?>
+            <a href="<?php echo $this->createUrl('custom',array('item'=>$item['id'],
+                                                                'category'=>Yii::app()->params['category']->id,
+                                                                'brand'=>Yii::app()->params['brand']->id)); ?>">
+                <?php echo $item['title']; ?>
             </a>
         </li>
     <?php endforeach;?>
@@ -39,10 +41,12 @@ $this->menu=array(
 
 <h1>Серии брэнда</h1>
 <ul>
-    <?php foreach ($model->series as $series):?>
+    <?php foreach ($model->getSeriesList() as $series):?>
         <li>
-            <a href="<?php echo $this->createUrl('item/view',array('id'=>$series->id)); ?>">
-                <?php echo $series->title; ?>
+            <a href="<?php echo $this->createUrl('custom',array('series'=>$series['id'],
+                'category'=>Yii::app()->params['category']->id,
+                'brand'=>Yii::app()->params['brand']->id)); ?>">
+                <?php echo $series['title']; ?>
             </a>
         </li>
     <?php endforeach;?>

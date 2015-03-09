@@ -25,7 +25,13 @@
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
-	<div class="row buttons">
+    <div class="row">
+        <?php echo $form->labelEx($model,'urlkey'); ?>
+        <?php echo $form->textField($model,'urlkey',array('size'=>30,'maxlength'=>30)); ?>
+        <?php echo $form->error($model,'urlkey'); ?>
+    </div>
+
+    <div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 

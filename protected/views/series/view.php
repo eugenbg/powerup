@@ -30,10 +30,10 @@ $this->menu=array(
 
 <h1>Айтемы серии</h1>
 <ul>
-    <?php foreach ($model->items as $item):?>
+    <?php foreach ($model->getItemsList() as $item):?>
         <li>
-            <a href="<?php echo $this->createUrl('item/view',array('id'=>$item->id)); ?>">
-                <?php echo $item->title; ?>
+            <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id'])); ?>">
+                <?php echo $item['title']; ?>
             </a>
         </li>
     <?php endforeach;?>

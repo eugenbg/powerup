@@ -113,13 +113,21 @@ class ItemController extends Controller
         if(isset($_POST['Item']))
         {
             ProductItem::model()->deleteAll('item_id = :item_id', array(':item_id' => $model->id));
-            foreach ($_POST['Item']['productItemIds'] as $productId)
+            if(count($_POST['Item']['productItemIds']) && is_array($_POST['Item']['productItemIds']))
             {
-                $productItem = new ProductItem();
-                $productItem->item_id = $model->id;
-                $productItem->product_id = $productId;
-                $productItem->save();
+                foreach ($_POST['Item']['productItemIds'] as $productId)
+                {
+                    $productItem = new ProductItem();
+                    $productItem->item_id = $model->id;
+                    $productItem->product_id = $productId;
+                    $productItem->save();
+                }
             }
+            /* else
+            {
+                throw new CHttpException(500,'Item must have at least one product!');
+            } */
+
             $this->redirect(array('view', 'id' => $model->id));
         }
 

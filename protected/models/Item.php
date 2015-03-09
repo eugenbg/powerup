@@ -23,6 +23,9 @@ class Item extends CActiveRecord
      */
     public $productItemIds = array();
 
+    public $leadingProducts = array();
+    public $relatedProducts = array();
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -128,6 +131,45 @@ class Item extends CActiveRecord
         {
             foreach($this->productItems as $productItemRelation)
                 $this->productItemIds[]=$productItemRelation->product_id;
+        }
+    }
+
+    public function getLeadingProducts()
+    {
+        if(count($this->leadingProducts))
+        {
+            return $this->leadingProducts;
+        }
+        $this->spreadLeadingRelatedProducts();
+        return $this->leadingProducts;
+    }
+
+    public function getRelatedProducts()
+    {
+        if(count($this->relatedProducts))
+        {
+            return $this->relatedProducts;
+        }
+        $this->spreadLeadingRelatedProducts();
+        return $this->relatedProducts;
+    }
+
+    public function spreadLeadingRelatedProducts()
+    {
+        if(Yii::app()->params['category']) // if we are on frontend
+        {
+            foreach($this->productItems as $productItem)
+            {
+                $product = $productItem->product;
+                if($product->category_id == Yii::app()->params['category']->id)
+                {
+                    $this->leadingProducts[] = $product;
+                }
+                else
+                {
+                    $this->relatedProducts[] = $product;
+                }
+            }
         }
     }
 }

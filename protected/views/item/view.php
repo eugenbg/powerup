@@ -32,9 +32,15 @@ $this->menu=array(
 
 <!-- simple list of products for now. To-do: build this list depending on category in the route -->
 
-<h1>Products</h1>
-<?php foreach($model->productItems as $productItem):
-    $product = $productItem->product?>
+<h1>Продукты текущей категории</h1>
+<?php foreach($model->getLeadingProducts() as $product):?>
+    <h2><?php echo $product->title; ?></h2>
+    <p>sku: <?php echo $product->sku; ?></p>
+    <p>price: <?php echo $product->price; ?></p>
+<?php endforeach; ?>
+
+<h1>Продукты других категорий</h1>
+<?php foreach($model->getRelatedProducts() as $product):?>
     <h2><?php echo $product->title; ?></h2>
     <p>sku: <?php echo $product->sku; ?></p>
     <p>price: <?php echo $product->price; ?></p>
