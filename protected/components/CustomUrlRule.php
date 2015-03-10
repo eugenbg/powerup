@@ -242,7 +242,10 @@ class CustomUrlRule extends CBaseUrlRule
     {
         $category_id  = isset($params['category'])? $params['category'] : Yii::app()->params['category']->id;
         $brand_id = isset($params['brand'])? $params['brand'] : Yii::app()->params['brand']->id;
-        $series_id = isset($params['series'])? $params['series'] : Yii::app()->params['series']->id;
+        if(isset($params['series']) || Yii::app()->params['series'])
+        {
+            $series_id = isset($params['series'])? $params['series'] : Yii::app()->params['series']->id;
+        }
         if(isset($params['subseries']) || Yii::app()->params['subseries'])
         {
             $subseries_id = isset($params['subseries'])? $params['subseries'] : Yii::app()->params['subseries']->id;

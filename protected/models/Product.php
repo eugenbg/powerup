@@ -14,7 +14,7 @@
  * @property Category $category
  * @property ProductModel[] $productModels
  */
-class Product extends CActiveRecord
+class Product extends CActiveRecord implements IECartPosition
 {
 	/**
 	 * @return string the associated database table name
@@ -115,5 +115,19 @@ class Product extends CActiveRecord
         $criteria = new CDbCriteria;
         $criteria->select = 't.id, t.sku';
         return Product::model()->findAll($criteria);
+    }
+
+    /*
+     * for compatibility with shopping cart
+     */
+    public function getId(){
+        return 'Product'.$this->id;
+    }
+
+    /*
+     * for compatibility with shopping cart
+     */
+    public function getPrice(){
+        return $this->price;
     }
 }

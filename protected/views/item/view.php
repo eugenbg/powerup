@@ -37,6 +37,11 @@ $this->menu=array(
     <h2><?php echo $product->title; ?></h2>
     <p>sku: <?php echo $product->sku; ?></p>
     <p>price: <?php echo $product->price; ?></p>
+    <p>
+        <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id)); ?>">
+            Добавить в корзину
+        </a>
+    </p>
 <?php endforeach; ?>
 
 <h1>Продукты других категорий</h1>
@@ -44,4 +49,9 @@ $this->menu=array(
     <h2><?php echo $product->title; ?></h2>
     <p>sku: <?php echo $product->sku; ?></p>
     <p>price: <?php echo $product->price; ?></p>
+    <p>
+        <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id)); ?>">
+            Добавить в корзину
+        </a>
+    </p>
 <?php endforeach; ?>

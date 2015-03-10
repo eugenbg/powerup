@@ -30,9 +30,7 @@ $this->menu=array(
 <ul>
     <?php foreach ($model->getItemsList() as $item):?>
         <li>
-            <a href="<?php echo $this->createUrl('custom',array('item'=>$item['id'],
-                                                                'category'=>Yii::app()->params['category']->id,
-                                                                'brand'=>Yii::app()->params['brand']->id)); ?>">
+            <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id']) )?>">
                 <?php echo $item['title']; ?>
             </a>
         </li>

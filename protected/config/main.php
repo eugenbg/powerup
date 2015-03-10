@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.components.shoppingCart.*'
 	),
 
 	'defaultController'=>'post',
@@ -73,7 +74,11 @@ return array(
 
 			),
 		),
-	),
+        'shoppingCart' =>
+            array(
+                'class' => 'application.components.shoppingCart.EShoppingCart',
+            ),
+	),//components end
 
     'modules'=>array(
         'gii'=>array(
