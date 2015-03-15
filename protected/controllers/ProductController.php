@@ -6,7 +6,7 @@ class ProductController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/product';
 
 	/**
 	 * @return array action filters
@@ -63,16 +63,18 @@ class ProductController extends Controller
 	public function actionCreate()
 	{
 		$model=new Product;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Product']))
-		{
-			$model->attributes=$_POST['Product'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+        if(isset($_POST['Product']))
+        {
+            $model->attributes=$_POST['Product'];
+            if ($model->save()) {
+                Image::saveImages($model);
+            }
+            $this->redirect(array('view','id'=>$model->id));
+        }
+
 
 		$this->render('create',array(
 			'model'=>$model,
