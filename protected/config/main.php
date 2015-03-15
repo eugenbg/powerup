@@ -27,12 +27,6 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-/*		'db'=>array(
-			'connectionString' => 'sqlite:protected/data/blog.db',
-			'tablePrefix' => 'tbl_',
-		),*/
-		// uncomment the following to use a MySQL database
-
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=batareiki',
 			'emulatePrepare' => true,
@@ -74,10 +68,13 @@ return array(
 
 			),
 		),
-        'shoppingCart' =>
-            array(
+        'shoppingCart' =>array(
                 'class' => 'application.components.shoppingCart.EShoppingCart',
             ),
+        'ThumbsGen' => array(
+            'class' => 'application.components.ThumbsGen',
+        ),
+
 	),//components end
 
     'modules'=>array(

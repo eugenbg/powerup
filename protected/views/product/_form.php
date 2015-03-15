@@ -8,10 +8,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'product-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -48,6 +45,16 @@
         <?php echo $form->labelEx($model,'urlkey'); ?>
         <?php echo $form->textField($model,'urlkey',array('size'=>30,'maxlength'=>30)); ?>
         <?php echo $form->error($model,'urlkey'); ?>
+    </div>
+
+    <div class="row">
+        <?php $this->widget('CMultiFileUpload', array(
+            'name' => 'images',
+            'accept' => 'jpeg|jpg|gif|png', // useful for verifying files
+            'duplicate' => 'Duplicate file!', // useful, i think
+            'denied' => 'Invalid file type', // useful, i think
+            'max' => 5
+        )); ?>
     </div>
 
     <div class="row buttons">

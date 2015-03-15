@@ -3602,3 +3602,1571 @@ Stack trace:
 REQUEST_URI=/cart/checkout
 HTTP_REFERER=http://batareiki.by/cart/index
 ---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap.min.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/bootstrap.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap.min.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/preload.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/preload.css')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/preload.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/animate.min.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/animate.min...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/animate.min.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/bootstrap-switch.min.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/bootstrap-s...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/bootstrap-switch.min.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/yamm.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/yamm.css')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/yamm.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/font-awesome.min.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/font-awesom...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/font-awesome.min.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/jquery.bxslider.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/jquery.bxsl...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/jquery.bxslider.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/lightbox.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/lightbox.cs...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/lightbox.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/syntaxhighlighter/shCore.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/syntaxhighl...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/syntaxhighlighter/shCore.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/style-blue.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/style-blue....')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/style-blue.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/slidebars.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/slidebars.c...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/slidebars.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.j...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/buttons.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/buttons.css')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/buttons.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/bootstrap.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/bootstrap.mi...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/bootstrap.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/width-full.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/width-full....')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/width-full.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/bootstrap-switch.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/bootstrap-sw...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/bootstrap-switch.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.cookie.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.cooki...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.cookie.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/wow.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/wow.min.js')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/wow.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.bxslider.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.bxsli...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.bxslider.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/slidebars.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/slidebars.js')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/slidebars.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/buttons.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/buttons.js')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/buttons.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/styleswitcher.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/styleswitche...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/styleswitcher.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/holder.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/holder.js')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/holder.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/syntaxhighlighter/shCore.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/syntaxhighli...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/syntaxhighlighter/shCore.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.mixitup.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.mixit...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.mixitup.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/syntaxhighlighter/shBrushXml.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/syntaxhighli...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/syntaxhighlighter/shBrushXml.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/app.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/app.js')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/app.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/circles.min.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/circles.min....')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/circles.min.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/syntaxhighlighter/shBrushJScript.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/syntaxhighli...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/syntaxhighlighter/shBrushJScript.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_product1.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_prod...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_product1.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_product2.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_prod...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_product2.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_product3.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_prod...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_product3.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_product4.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_prod...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_product4.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/e-commerce_product.js".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/e-commerce_p...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/e-commerce_product.js
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_product5.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_prod...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_product5.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img4.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img4...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img4.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img2.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img2...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img2.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img1.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img1...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img1.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img3.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img3...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img3.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img5.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img5...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img5.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/e_img03.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/e_img0...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/e_img03.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/m2.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/m2.jpg')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/m2.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/m11.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/m11.jp...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/m11.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/wf1.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/wf1.jp...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/wf1.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/wf2.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/wf2.jp...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/wf2.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/wf3.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/wf3.jp...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/wf3.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/m4.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/m4.jpg')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/m4.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/demo/wf4.jpg".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/demo/wf4.jp...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/demo/wf4.jpg
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:07:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/favicon.png".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('img/favicon.png')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/favicon.png
+---
+2015/03/15 13:08:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/fontawesome-webfont.woff".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/fontaweso...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/fontawesome-webfont.woff?v=4.2.0
+HTTP_REFERER=http://batareiki.by/css/font-awesome.min.css
+---
+2015/03/15 13:08:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/fontawesome-webfont.ttf".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/fontaweso...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/fontawesome-webfont.ttf?v=4.2.0
+HTTP_REFERER=http://batareiki.by/css/font-awesome.min.css
+---
+2015/03/15 13:11:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/style-green6.css".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/style-green...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/style-green6.css
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:11:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/bx_loader.gif".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/bx_l...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/bx_loader.gif
+HTTP_REFERER=http://batareiki.by/css/jquery.bxslider.css
+---
+2015/03/15 13:11:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/controls.png".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('css/images/cont...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/images/controls.png
+HTTP_REFERER=http://batareiki.by/css/jquery.bxslider.css
+---
+2015/03/15 13:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:18:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:19:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/wf3.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/m4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/m2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/wf2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/m11.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/wf1.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/js/syntaxhighlighter/shCore.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/js/syntaxhighlighter/shBrushXml.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/js/syntaxhighlighter/shBrushJScript.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/canon/img/demo/wf4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon/a35
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m11.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf1.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf3.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shCore.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shBrushXml.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shBrushJScript.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:21:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf3.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf1.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m2.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m11.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/m4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shCore.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shBrushXml.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/js/syntaxhighlighter/shBrushJScript.js
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:22:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Wrong url.' in Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php:196
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(175): CustomUrlRule->addGetParams(Array)
+#1 Z:\home\batareiki.by\www\protected\components\CustomUrlRule.php(41): CustomUrlRule->findInstancesFromPath(Array)
+#2 Z:\home\batareiki.by\framework\web\CUrlManager.php(370): CustomUrlRule->parseUrl(Object(CUrlManager), Object(CHttpRequest), 'mobile-batterie...', 'mobile-batterie...')
+#3 Z:\home\batareiki.by\framework\web\CWebApplication.php(140): CUrlManager->parseUrl(Object(CHttpRequest))
+#4 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#6 {main}
+REQUEST_URI=/mobile-batteries/img/demo/wf4.jpg
+HTTP_REFERER=http://batareiki.by/mobile-batteries/canon
+---
+2015/03/15 13:54:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/cart/index
+---
+2015/03/15 13:56:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/cart/index
+---
+2015/03/15 21:24:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/index
+---
+2015/03/15 21:24:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/login
+---
+2015/03/15 21:24:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/login
+---
+2015/03/15 21:24:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/site/login
+---
+2015/03/15 21:24:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/
+---
+2015/03/15 21:24:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/index
+---
+2015/03/15 21:33:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product1.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product4.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img1.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img2.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product2.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img3.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product5.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product3.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img5.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img4.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img1.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product2.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product4.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img2.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product3.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product5.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_product1.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img3.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img4.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:33:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in Z:\home\batareiki.by\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(270): CController->missingAction('img')
+#1 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('img')
+#2 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/img/dem...')
+#3 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/product/img/demo/e_img5.jpg
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:34:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:35:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:35:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/view?id=1
+---
+2015/03/15 21:43:51 [error] [php] Object of class CMultiFileUpload could not be converted to string (Z:\home\batareiki.by\www\protected\views\product\_form.php:56)
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(869): ProductController->renderFile()
+#1 Z:\home\batareiki.by\www\protected\views\product\create.php(18): ProductController->renderPartial()
+#2 Z:\home\batareiki.by\framework\web\CBaseController.php(126): require()
+#3 Z:\home\batareiki.by\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#4 Z:\home\batareiki.by\framework\web\CController.php(869): ProductController->renderFile()
+#5 Z:\home\batareiki.by\framework\web\CController.php(782): ProductController->renderPartial()
+#6 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(79): ProductController->render()
+#7 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#8 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#10 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#13 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#15 Z:\home\batareiki.by\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#16 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): ProductController->run()
+#17 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 Z:\home\batareiki.by\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/product/create
+2015/03/15 21:44:04 [error] [php] Object of class CMultiFileUpload could not be converted to string (Z:\home\batareiki.by\www\protected\views\product\_form.php:56)
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(869): ProductController->renderFile()
+#1 Z:\home\batareiki.by\www\protected\views\product\create.php(18): ProductController->renderPartial()
+#2 Z:\home\batareiki.by\framework\web\CBaseController.php(126): require()
+#3 Z:\home\batareiki.by\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#4 Z:\home\batareiki.by\framework\web\CController.php(869): ProductController->renderFile()
+#5 Z:\home\batareiki.by\framework\web\CController.php(782): ProductController->renderPartial()
+#6 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(79): ProductController->render()
+#7 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#8 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#10 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#13 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#15 Z:\home\batareiki.by\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#16 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): ProductController->run()
+#17 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 Z:\home\batareiki.by\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/product/create
+2015/03/15 21:47:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery.min.map".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('js/jquery.min.m...')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/jquery.min.map
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 22:02:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in Z:\home\batareiki.by\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2015/03/15 22:06:58 [error] [exception.CException] exception 'CException' with message 'Property "Product.name" is not defined.' in Z:\home\batareiki.by\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\batareiki.by\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(71): CActiveRecord->__get('name')
+#2 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#3 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#13 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/product/create
+---
+2015/03/15 22:07:33 [error] [php] mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory (Z:\home\batareiki.by\www\protected\controllers\ProductController.php:72)
+Stack trace:
+#0 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#2 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 Z:\home\batareiki.by\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#8 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): ProductController->run()
+#9 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 Z:\home\batareiki.by\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/product/create
+2015/03/15 22:08:10 [error] [exception.CException] exception 'CException' with message 'Property "Image.filename" is not defined.' in Z:\home\batareiki.by\framework\base\CComponent.php:173
+Stack trace:
+#0 Z:\home\batareiki.by\framework\db\ar\CActiveRecord.php(161): CComponent->__set('filename', 'brand-tooltip.j...')
+#1 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(88): CActiveRecord->__set('filename', 'brand-tooltip.j...')
+#2 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#3 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#13 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 22:08:44 [error] [exception.CException] exception 'CException' with message 'Property "Image.entity" is not defined.' in Z:\home\batareiki.by\framework\base\CComponent.php:173
+Stack trace:
+#0 Z:\home\batareiki.by\framework\db\ar\CActiveRecord.php(161): CComponent->__set('entity', 'product')
+#1 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(89): CActiveRecord->__set('entity', 'product')
+#2 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#3 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#13 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 22:51:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\batareiki.by\www\protected\controllers\ProductController.php:158
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(55): ProductController->loadModel('')
+#1 [internal function]: ProductController->actionView('')
+#2 Z:\home\batareiki.by\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('view')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/view')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/view?id=
+---
+2015/03/15 22:51:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\batareiki.by\www\protected\controllers\ProductController.php:158
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(55): ProductController->loadModel('')
+#1 [internal function]: ProductController->actionView('')
+#2 Z:\home\batareiki.by\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('view')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/view')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/view?id=
+---
+2015/03/15 23:13:11 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.ThumbsGen.ThumbsGen" is invalid. Make sure it points to an existing PHP file and the file is readable.' in Z:\home\batareiki.by\framework\YiiBase.php:323
+Stack trace:
+#0 Z:\home\batareiki.by\framework\YiiBase.php(196): YiiBase::import('application.ext...', true)
+#1 Z:\home\batareiki.by\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 Z:\home\batareiki.by\framework\base\CModule.php(103): CModule->getComponent('ThumbsGen')
+#3 Z:\home\batareiki.by\www\protected\models\Image.php(151): CModule->__get('ThumbsGen')
+#4 Z:\home\batareiki.by\www\protected\models\Image.php(128): Image::makeThumbnail(Object(Image))
+#5 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#6 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#7 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#14 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#16 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#17 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:13:54 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.ThumbsGen" is invalid. Make sure it points to an existing PHP file and the file is readable.' in Z:\home\batareiki.by\framework\YiiBase.php:323
+Stack trace:
+#0 Z:\home\batareiki.by\framework\YiiBase.php(196): YiiBase::import('application.ext...', true)
+#1 Z:\home\batareiki.by\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 Z:\home\batareiki.by\framework\base\CModule.php(103): CModule->getComponent('ThumbsGen')
+#3 Z:\home\batareiki.by\www\protected\models\Image.php(151): CModule->__get('ThumbsGen')
+#4 Z:\home\batareiki.by\www\protected\models\Image.php(128): Image::makeThumbnail(Object(Image))
+#5 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#6 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#7 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#14 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#16 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#17 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:14:25 [error] [exception.CException] exception 'CException' with message 'file printer-category is not readable!' in Z:\home\batareiki.by\www\protected\components\ThumbsGen.php:118
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(159): ThumbsGen->createThumbnails()
+#1 Z:\home\batareiki.by\www\protected\models\Image.php(128): Image::makeThumbnail(Object(Image))
+#2 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:14:49 [error] [exception.CException] exception 'CException' with message 'file printer-category is not readable!' in Z:\home\batareiki.by\www\protected\components\ThumbsGen.php:118
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(160): ThumbsGen->createThumbnails()
+#1 Z:\home\batareiki.by\www\protected\models\Image.php(129): Image::makeThumbnail(Object(Image))
+#2 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:16:45 [error] [exception.CException] exception 'CException' with message 'file brand-tooltip is not readable!' in Z:\home\batareiki.by\www\protected\components\ThumbsGen.php:118
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(160): ThumbsGen->createThumbnails()
+#1 Z:\home\batareiki.by\www\protected\models\Image.php(129): Image::makeThumbnail(Object(Image))
+#2 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:17:53 [error] [exception.CException] exception 'CException' with message 'file brand-tooltip is not readable!' in Z:\home\batareiki.by\www\protected\components\ThumbsGen.php:118
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(160): ThumbsGen->createThumbnails()
+#1 Z:\home\batareiki.by\www\protected\models\Image.php(129): Image::makeThumbnail(Object(Image))
+#2 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:18:55 [error] [exception.CException] exception 'CException' with message 'file brand-tooltip is not readable!' in Z:\home\batareiki.by\www\protected\components\ThumbsGen.php:118
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(160): ThumbsGen->createThumbnails()
+#1 Z:\home\batareiki.by\www\protected\models\Image.php(129): Image::makeThumbnail(Object(Image))
+#2 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): Image::saveImages(Object(Product))
+#3 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#4 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 Z:\home\batareiki.by\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#11 Z:\home\batareiki.by\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): CController->run('create')
+#13 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController('product/create')
+#14 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 Z:\home\batareiki.by\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/product/create
+HTTP_REFERER=http://batareiki.by/product/create
+---
+2015/03/15 23:18:59 [error] [php] mkdir() [<a href='function.mkdir'>function.mkdir</a>]: Invalid argument (Z:\home\batareiki.by\www\protected\models\Image.php:166)
+Stack trace:
+#0 Z:\home\batareiki.by\www\protected\models\Image.php(129): makeThumbnail()
+#1 Z:\home\batareiki.by\www\protected\controllers\ProductController.php(73): saveImages()
+#2 Z:\home\batareiki.by\framework\web\actions\CInlineAction.php(49): ProductController->actionCreate()
+#3 Z:\home\batareiki.by\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#5 Z:\home\batareiki.by\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\batareiki.by\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 Z:\home\batareiki.by\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#8 Z:\home\batareiki.by\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 Z:\home\batareiki.by\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\batareiki.by\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#11 Z:\home\batareiki.by\framework\web\CWebApplication.php(282): ProductController->run()
+#12 Z:\home\batareiki.by\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 Z:\home\batareiki.by\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 Z:\home\batareiki.by\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/product/create
