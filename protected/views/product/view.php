@@ -17,7 +17,6 @@ $this->menu=array(
 ?>
 
 <div class="col-md-4">
-
     <ul class="bxslider">
         <li><img src="/img/demo/e_product1.jpg"></li>
         <li><img src="/img/demo/e_product2.jpg"></li>
@@ -52,5 +51,5 @@ $this->menu=array(
 </div>
 <div class="col-md-3">
     <div class="e-price">$ <span><?php echo (int)$model->price; ?></span>.00</div>
-    <a href="#" class="btn btn-ar btn-block btn-success"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
+    <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $model->id)); ?>" class="btn btn-ar btn-block btn-success"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
 </div>
