@@ -5,3 +5,25 @@
 .ec-box-footer {
     background: none;
 }
+
+.letter {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+ul.brand-list {
+
+}
+
+.brand-list li.item {
+    float: left;
+    width: 24%;
+    list-style: none;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .brand-list li.item {
+        width: 49%;
+    }
+}

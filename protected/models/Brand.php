@@ -13,6 +13,9 @@
  */
 class Brand extends CActiveRecord
 {
+    public $itemsList = array();
+    public $seriesList = array();
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -103,6 +106,9 @@ class Brand extends CActiveRecord
      */
     public function getSeriesList()
     {
+        if(count($this->seriesList))
+            return $this->seriesList;
+
         $sql =
 'SELECT s.* FROM series s
 JOIN item i ON i.series_id = s.id
@@ -118,11 +124,16 @@ GROUP BY s.id
             array(':category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
         );
 
+        $this->seriesList = $rows;
+
         return $rows;
     }
 
     public function getItemsList()
     {
+        if(count($this->itemsList))
+            return $this->itemsList;
+
         $sql =
 'SELECT i.* FROM item i
 JOIN product_item pi ON pi.item_id = i.id
@@ -137,7 +148,35 @@ GROUP BY i.id
             array(':category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
         );
 
+        $this->itemsList = $rows;
+
         return $rows;
+    }
+
+    public function getItemsAbcList()
+    {
+        return $this->_getAbcList('Items');
+    }
+
+    public function getSeriesAbcList()
+    {
+        return $this->_getAbcList('Series');
+    }
+
+    private function _getAbcList($entity)
+    {
+        $methodName = 'get'.$entity.'List';
+        $items = call_user_func(array($this, $methodName));
+        $abcList = array();
+        foreach ($items as $item)
+        {
+            $letter = mb_strtoupper(substr($item['title'], 0, 1));
+            $abcList[$letter][] = $item;
+        }
+
+        ksort($abcList);
+
+        return $abcList;
     }
 
 }
