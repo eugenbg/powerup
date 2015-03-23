@@ -98,8 +98,24 @@ class Category extends CActiveRecord
 		return parent::model($className);
 	}
 
-    public function loadBrands()
+    public function getBrandsAbcList()
     {
+        $abcList = array();
+        foreach ($this->getBrandsList() as $item)
+        {
+            $letter = mb_strtoupper(substr($item['title'], 0, 1));
+            $abcList[$letter][] = $item;
+        }
+
+        ksort($abcList);
+
+        return $abcList;
+    }
+
+    public function getBrandsList()
+    {
+        if(count($this->brands))
+            return $this->brands;
 
 $sql =
 'SELECT b.* FROM brand b
@@ -116,6 +132,6 @@ GROUP BY b.id
         {
             $this->brands = $rows;
         }
-        return $this;
+        return $this->brands;
     }
 }

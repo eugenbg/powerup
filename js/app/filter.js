@@ -1,4 +1,4 @@
-var brandFilter =
+var Filter =
 {
     initialize: function(config)
     {
@@ -27,7 +27,7 @@ var brandFilter =
         {
             $('.search-large.filter .remove').show()
             $('.brand-list li').each( this.filterByString.bind(this) )
-            $('.row:not(.search-holder)').each( function(index, element){
+            $('.row.panel:not(.search-holder)').each( function(index, element){
                 var descendants = $(element).find('.brand-list li')
                 var hasActiveChildren = false
                 $(descendants).each(function(index, li){

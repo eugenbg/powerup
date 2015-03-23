@@ -6,7 +6,7 @@ class CategoryController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+    public $layout='//layouts/product';
 
 	/**
 	 * @return array action filters
@@ -51,7 +51,7 @@ class CategoryController extends Controller
 	 */
 	public function actionView($id)
 	{
-        $model = Category::model()->findByPk($id)->loadBrands();
+        $model = Category::model()->findByPk($id);
 		$this->render('view',array(
 			'model'=>$model,
 		));

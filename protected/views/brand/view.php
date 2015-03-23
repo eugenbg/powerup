@@ -2,11 +2,6 @@
 /* @var $this BrandController */
 /* @var $model Brand */
 
-$this->breadcrumbs=array(
-	'Brands'=>array('index'),
-	$model->title,
-);
-
 $this->menu=array(
 	array('label'=>'List Brand', 'url'=>array('index')),
 	array('label'=>'Create Brand', 'url'=>array('create')),
@@ -15,7 +10,6 @@ $this->menu=array(
 	array('label'=>'Manage Brand', 'url'=>array('admin')),
 );
 
-Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js');
 ?>
 
 
@@ -62,7 +56,7 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/f
         <ul class="brand-list col-md-11 col-xs-10">
             <?php foreach ($items as $item):?>
                 <li class="item">
-                    <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id']) )?>">
+                    <a href="<?php echo $this->createUrl('custom/series',array('series'=>$item['id']) )?>">
                         <?php echo $item['title']; ?>
                     </a>
                 </li>
@@ -71,6 +65,7 @@ Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/f
     </div>
 <?php endforeach;?>
 
+<?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js'); ?>
 <script type="text/javascript">
-    brandFilter.initialize({inputSelector : '#brand-search'})
+    Filter.initialize({inputSelector : '#brand-search'})
 </script>
