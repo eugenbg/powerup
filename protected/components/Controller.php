@@ -24,6 +24,82 @@ class Controller extends CController
     public function __construct($id,$module=null)
     {
         Yii::app()->clientScript->registerCoreScript('jquery');
+        $this->addBreadCrumbs();
         parent::__construct($id,$module);
     }
+
+    public function addBreadCrumbs()
+    {
+        $this->breadcrumbs = array();
+        if(is_object(Yii::app()->params['category']))
+        {
+            if(is_object(Yii::app()->params['brand']))
+            {
+                $this->breadcrumbs[Yii::app()->params['category']->title] =
+                    $this->createUrl('custom/category', array('category' => Yii::app()->params['category']->id));
+            }
+            else
+            {
+                $this->breadcrumbs[] = Yii::app()->params['category']->title;
+            }
+        }
+
+        if(is_object(Yii::app()->params['brand']))
+        {
+            if(is_object(Yii::app()->params['series']) || is_object(Yii::app()->params['item']))
+            {
+                $this->breadcrumbs[Yii::app()->params['brand']->title] =
+                    $this->createUrl('custom/brand', array('brand' => Yii::app()->params['brand']->id));
+            }
+            else
+            {
+                $this->breadcrumbs[] = Yii::app()->params['brand']->title;
+            }
+        }
+
+        if(is_object(Yii::app()->params['series']))
+        {
+            if(is_object(Yii::app()->params['subseries']) || is_object(Yii::app()->params['item']))
+            {
+                $this->breadcrumbs[Yii::app()->params['series']->title] =
+                    $this->createUrl('custom/series', array('series' => Yii::app()->params['series']->id));
+            }
+            else
+            {
+                $this->breadcrumbs[] = Yii::app()->params['series']->title;
+            }
+        }
+
+        if(is_object(Yii::app()->params['subseries']))
+        {
+            if(is_object(Yii::app()->params['item']))
+            {
+                $this->breadcrumbs[Yii::app()->params['subseries']->title] =
+                    $this->createUrl('custom/subseries', array('subseries' => Yii::app()->params['subseries']->id));
+            }
+            else
+            {
+                $this->breadcrumbs[] = Yii::app()->params['subseries']->title;
+            }
+        }
+
+        if(is_object(Yii::app()->params['item']))
+        {
+            if(is_object(Yii::app()->params['product']))
+            {
+                $this->breadcrumbs[Yii::app()->params['item']->title] =
+                    $this->createUrl('custom/item', array('item' => Yii::app()->params['item']->id));
+            }
+            else
+            {
+                $this->breadcrumbs[] = Yii::app()->params['item']->title;
+            }
+        }
+
+        if(is_object(Yii::app()->params['product']))
+        {
+            $this->breadcrumbs[Yii::app()->params['product']->title] = '';
+        }
+    }
+
 }

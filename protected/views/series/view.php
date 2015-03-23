@@ -2,11 +2,6 @@
 /* @var $this SeriesController */
 /* @var $model Series */
 
-$this->breadcrumbs=array(
-	'Series'=>array('index'),
-	$model->title,
-);
-
 $this->menu=array(
 	array('label'=>'List Series', 'url'=>array('index')),
 	array('label'=>'Create Series', 'url'=>array('create')),

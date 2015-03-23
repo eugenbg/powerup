@@ -2,11 +2,6 @@
 /* @var $this ItemController */
 /* @var $model Item */
 
-$this->breadcrumbs=array(
-	'Items'=>array('index'),
-	$model->title,
-);
-
 $this->menu=array(
 	array('label'=>'List Item', 'url'=>array('index')),
 	array('label'=>'Create Item', 'url'=>array('create')),

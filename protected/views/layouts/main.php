@@ -320,6 +320,7 @@
 
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'tagName' => 'ol',
+            'homeLink' => '<a href="'.Yii::app()->getBaseUrl(true).'">Главная</a>',
             'htmlOptions' => array('class' => 'breadcrumb pull-right'),
             'links'=>$this->breadcrumbs,
         )); ?><!-- breadcrumbs -->
