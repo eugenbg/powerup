@@ -54,6 +54,13 @@ jQuery(document).ready(function () {
         });
     });
 
+    $(document).ajaxSend(function(){
+        $('#overlay').fadeIn()
+    })
+    $(document).ajaxStop(function(){
+        $('#overlay').fadeOut()
+    })
+
 });
 
 // WOW Activate

@@ -1,0 +1,96 @@
+#shopping-cart-icon {
+    margin-right: 5px;
+}
+
+.top-nav .dropdown a i {
+    font-size: 2em;
+}
+
+.mini-cart {
+    margin-right: 5px;
+    background: #eee;
+    width: 300px;
+    position: absolute;
+    top: 45px;
+    right: -5px;
+    z-index: 9999;
+    display: none;
+}
+
+.mini-cart-list {
+    margin: 0;
+    padding: 0;
+}
+
+.mini-cart-list li.cart-item {
+    background: #fff url(../img/no_photo_40x30.png) no-repeat 2px 8px;
+    padding-left: 45px;
+    padding-bottom: 3px;
+}
+
+.mini-cart-list li.cart-item .model-title {
+    display: block;
+    font-size: 0.8em;
+}
+
+.mini-cart-list li.cart-item .price, .mini-cart-list li.cart-item .qty {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #5ebe1e;
+    font-weight: bold;
+}
+
+.mini-cart-list li.cart-item .qty {
+    padding-left: 2px;
+}
+
+.mini-cart-list li.cart-item span {
+    line-height: 0.9em;
+}
+
+.mini-cart-holder {
+    background-color: #f1f1f1;
+    margin: 0;
+    display: inline-block;
+    padding: 7px 10px;
+    border: solid 1px #e3e6e8;
+    border-top: 0;
+    cursor: pointer;
+}
+
+.mini-cart-holder .fa {
+    font-size: 2em;
+}
+
+.mini-cart-holder .popover {
+    top: 2px;
+    display: block;
+    position: absolute;
+    font-size: 0.83em;
+    left: -139px;
+}
+
+.mini-cart-holder .popover .arrow {
+    top: 46%;
+}
+
+.mini-cart .totals {
+    font-size: 0.8em;
+    padding-right: 7px;
+}
+
+.mini-cart .totals span.price {
+    font-weight: bold;
+}
+
+.mini-cart .totals .btn .fa {
+    font-size: 1.2em;
+}
+
+.mini-cart .totals .btn {
+    font-size: 1em;
+}
+
+.mini-cart .totals {
+    line-height: 2.4em;
+}

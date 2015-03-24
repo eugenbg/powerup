@@ -14,7 +14,6 @@
     <meta name="description" content="">
 
     <!-- CSS -->
-    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/preload.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/yamm.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/bootstrap-switch.min.css" rel="stylesheet" media="screen">
@@ -23,11 +22,12 @@
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/slidebars.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/lightbox.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/jquery.bxslider.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/syntaxhighlighter/shCore.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/style-green4.css" rel="stylesheet" media="screen" title="default">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/width-full.css" rel="stylesheet" media="screen" title="default">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/buttons.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/custom.css" rel="stylesheet" media="screen">
+    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/cart.css" rel="stylesheet" media="screen">
+    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/overlay.css" rel="stylesheet" media="screen">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,7 +37,8 @@
 </head>
 
 <body>
-
+<div id="overlay">
+</div>
 <div id="sb-site">
 <div class="boxed">
 
@@ -49,54 +50,7 @@
             <p class="animated fadeInRight">Clean and elegant theme</p>
         </div>
         <nav class="top-nav">
-
-            <div class="dropdown animated fadeInDown animation-delay-11">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</a>
-
-                <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
-                    <form role="form">
-                        <h4>Login Form</h4>
-
-                        <div class="form-group">
-                            <div class="input-group login-input">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <br>
-
-                            <div class="input-group login-input">
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="checkbox pull-left">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-ar btn-primary pull-right">Login</button>
-                            <div class="clearfix"></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- dropdown -->
-
-            <div class="dropdown animated fadeInDown animation-delay-13">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
-
-                <div class="dropdown-menu dropdown-menu-right dropdown-search-box animated fadeInUp">
-                    <form role="form">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-ar btn-primary" type="button">Go!</button>
-                            </span>
-                        </div>
-                        <!-- /input-group -->
-                    </form>
-                </div>
-            </div>
-            <!-- dropdown -->
+                <?php $this->widget('miniCartWidget', array() ) ?>
         </nav>
     </div>
     <!-- container -->
@@ -434,6 +388,9 @@
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/jquery.mixitup.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/app.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/e-commerce_product.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/app/base.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/app/cart.js"></script>
+
 
 </body>
 

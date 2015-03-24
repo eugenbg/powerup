@@ -24,9 +24,15 @@ class CartController extends Controller
     {
         $id = Yii::app()->request->getParam('product_id');
         $product = Product::model()->findByPk($id);
+        $product->item = Item::model()->findByPk(Yii::app()->request->getParam('item_id'));
         Yii::app()->shoppingCart->put($product);
-        $this->redirect('index');
-        Yii::app()->end();
+        $response = array();
+        $response['status'] = 'success';
+        $response['cart'] = $this->widget('miniCartWidget', array(), true);
+        $response['button'] = $this->renderPartial('order-button', array(), true);
+        header('Content-type: application/json');
+        echo CJSON::encode($response);
+        die();
     }
 
     public function actionUpdate()

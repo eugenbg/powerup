@@ -53,7 +53,10 @@ $this->pageTitle = "Аккумуляторы для ". $model->title;
         </div>
         <div class="col-md-3">
             <div class="e-price">$ <span><?php echo (int)$product->price; ?></span>.00</div>
-            <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id)); ?>" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> Добавить в корзину</a>
+            <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id, 'item_id' => $model->id)); ?>"
+               class="add-to-cart btn btn-ar btn-success btn-sm pull-right">
+                <i class="fa fa-shopping-cart"></i> Добавить в корзину
+            </a>
         </div>
     </div>
 <?php endforeach; ?>

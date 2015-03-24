@@ -18,6 +18,7 @@ class Product extends CActiveRecord implements IECartPosition
 {
 
     public $qty;
+    public $item; //used when product is a cart item
 
 	/**
 	 * @return string the associated database table name
@@ -136,5 +137,14 @@ class Product extends CActiveRecord implements IECartPosition
      */
     public function getPrice(){
         return $this->price;
+    }
+
+    public function getDynamicTitle()
+    {
+        if($this->item)
+        {
+            return sprintf('Аккумулятор для %s [%s]', $this->item->title, $this->title);
+        }
+        return 'Аккумлятор ' . $this->title;
     }
 }
