@@ -20,6 +20,16 @@ class CartController extends Controller
         $this->render('index', array('cartItems'=>$cartItems));
     }
 
+    public function actionDelete()
+    {
+        $cartItemKey = Yii::app()->request->getParam('key');
+        Yii::app()->shoppingCart->remove($cartItemKey);
+        $response = array();
+        $response['status'] = 'success';
+        $response['fullCart'] = $this->widget('fullCartWidget', array(), true);
+        $this->jsonResponse($response);
+    }
+
     public function actionAdd()
     {
         $id = Yii::app()->request->getParam('product_id');
@@ -30,24 +40,47 @@ class CartController extends Controller
         $response['status'] = 'success';
         $response['cart'] = $this->widget('miniCartWidget', array(), true);
         $response['button'] = $this->renderPartial('order-button', array(), true);
-        header('Content-type: application/json');
-        echo CJSON::encode($response);
-        die();
+        $this->jsonResponse($response);
     }
 
     public function actionUpdate()
     {
-        $redirect = Yii::app()->request->getParam('redirect');
-        if(!count($this->getCartItems()))
-            die('палехче, нету данных в вашем запросе!');
-        foreach ($this->getCartItems() as $cartKey => $model) {
-            $product = Yii::app()->shoppingCart->itemAt($cartKey);
-            Yii::app()->shoppingCart->update($product,$model->qty);
+        $response = array();
+        $response['status'] = 'success';
+
+        if($delivery = Yii::app()->request->getParam('delivery'))
+        {
+            if($delivery != Yii::app()->shoppingCart->getDeliveryMethodId())
+            {
+                Yii::app()->shoppingCart->setDeliveryMethod($delivery);
+                $response['delivery'] = $this->renderPartial('_delivery', array(), true);
+                //if there's no alternative payment methods
+                $deliveryMethod = Yii::app()->shoppingCart->getDeliveryMethod();
+                if(count($deliveryMethod['allowed_payment_methods']) == 1)
+                    Yii::app()->shoppingCart->setPaymentMethod($deliveryMethod['allowed_payment_methods'][0]);
+                //render payment because delivery changed
+                $response['payment'] = $this->renderPartial('_payment', array(), true);
+                $deliveryChanged = false;
+            }
         }
-        if($redirect == 'checkout')
-            $this->redirect('checkout/index');
-        else
-            $this->redirect('index');
+        //will be used when there is more payment methods
+        if($payment = Yii::app()->request->getParam('payment') && !isset($deliveryChanged))
+        {
+            if($payment != Yii::app()->shoppingCart->getPaymentMethodId())
+            {
+                Yii::app()->shoppingCart->setPaymentMethod($payment);
+                $response['payment'] = $this->renderPartial('_payment', array(), true);
+            }
+        }
+        foreach ($this->getCartItems() as $cartKey => $model)
+        {
+                $product = Yii::app()->shoppingCart->itemAt($cartKey);
+                if($model->qty > 0)
+                    Yii::app()->shoppingCart->update($product,$model->qty);
+        }
+        $response['fullCart'] = $this->widget('fullCartWidget', array(), true); //move to _view
+        $response['cart'] = $this->widget('miniCartWidget', array(), true);
+        $this->jsonResponse($response);
     }
 
     public function actionValidate()
@@ -58,11 +91,11 @@ class CartController extends Controller
 
     protected function getCartItems()
     {
-        if(!count($this->cartItems) && isset($_POST['cart']))
+        if(!count($this->cartItems) && isset($_GET['cart']))
         {
             $cartItems = array();
-            foreach ($_POST['cart'] as $cartKey => $qty) {
-                $model = new CartItem();
+            foreach ($_GET['cart'] as $cartKey => $qty) {
+                $model = new CartItem(); //was made for validation, delete it now?
                 $model->qty = $qty;
                 $cartItems[$cartKey] = $model;
             }

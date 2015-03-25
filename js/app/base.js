@@ -9,6 +9,8 @@ BaseClass.prototype.update = function(data)
         {
             if(id != 'status')
             {
+                var a = $(this.map[id])
+                var b = data[id]
                 $(this.map[id]).replaceWith(data[id]);
                 updated.push(id);
             }

@@ -102,4 +102,11 @@ class Controller extends CController
         }
     }
 
+    public function jsonResponse($response)
+    {
+        header('Content-type: application/json');
+        echo CJSON::encode($response);
+        die();
+    }
+
 }

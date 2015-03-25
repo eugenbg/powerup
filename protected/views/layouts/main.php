@@ -380,7 +380,6 @@
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/wow.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/slidebars.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/holder.js"></script>

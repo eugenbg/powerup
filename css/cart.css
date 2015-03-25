@@ -94,3 +94,87 @@
 .mini-cart .totals {
     line-height: 2.4em;
 }
+
+
+/*
+    full cart
+*/
+
+.full-cart-holder td .glyphicon {
+    cursor: pointer;
+}
+
+.full-cart-holder .input-group {
+    width: 65px;
+}
+
+.full-cart-holder .input-group input {
+    width: 60px;
+}
+
+#refresh-cart {
+    margin-right: 20px;
+}
+
+.delivery-form {
+    display: none;
+}
+
+.delivery-form .input-group {
+    margin-bottom: 15px;
+    
+}
+
+
+.delivery-form .input-group-addon {
+    width: 150px;
+}
+
+
+
+
+.btn-order {
+    color: #3D3434;
+    background-color: #F7C913;
+    border-color: #A8A18D;
+}
+
+.btn-order:hover,
+.btn-order:focus,
+.btn-order:active,
+.btn-order.active,
+.open .dropdown-toggle.btn-order {
+    color: #3D3434;
+    background-color: #F6FCA9;
+    border-color: #A8A18D;
+}
+
+.btn-order:active,
+.btn-order.active,
+.open .dropdown-toggle.btn-order {
+    background-image: none;
+}
+
+.btn-order.disabled,
+.btn-order[disabled],
+fieldset[disabled] .btn-order,
+.btn-order.disabled:hover,
+.btn-order[disabled]:hover,
+fieldset[disabled] .btn-order:hover,
+.btn-order.disabled:focus,
+.btn-order[disabled]:focus,
+fieldset[disabled] .btn-order:focus,
+.btn-order.disabled:active,
+.btn-order[disabled]:active,
+fieldset[disabled] .btn-order:active,
+.btn-order.disabled.active,
+.btn-order[disabled].active,
+fieldset[disabled] .btn-order.active {
+    background-color: #F7C913;
+    border-color: #A8A18D;
+}
+
+.btn-order .badge {
+    color: #F7C913;
+    background-color: #3D3434;
+}

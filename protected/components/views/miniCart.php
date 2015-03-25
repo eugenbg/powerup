@@ -1,6 +1,6 @@
-<div class="mini-cart-holder">
+<div class="mini-cart-holder" data-delivery-price="<?php echo Yii::app()->shoppingCart->getDeliveryPrice(); ?>">
     <a class="dropdown-toggle" id="shopping-cart-icon">
-        <i class="fa fa-shopping-cart"></i>
+        КОРЗИНА <i class="fa fa-shopping-cart"></i>
     </a>
     <?php if(Yii::app()->shoppingCart->getItemsCount() > 0): ?>
         <div class="popover fade left in" style="">
@@ -33,7 +33,7 @@
             <span class="price">
                 <?php echo Yii::app()->shoppingCart->getCost()*10; ?> тыс.руб.
             </span>
-                    <a href="<?php echo Yii::app()->controller->createUrl('checkout/index'); ?>"
+                    <a href="<?php echo Yii::app()->controller->createUrl('cart/index'); ?>"
                        class="btn btn-ar btn-success btn-sm pull-right">
                         <i class="fa fa-shopping-cart"></i>
                         Оформить Заказ

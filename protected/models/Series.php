@@ -18,6 +18,9 @@
  */
 class Series extends CActiveRecord
 {
+
+    public $items;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -112,6 +115,9 @@ class Series extends CActiveRecord
 
     public function getItemsList()
     {
+        if(count($this->items))
+            return $this->items;
+
         $sql =
 'SELECT i.* FROM item i
 JOIN product_item pi ON pi.item_id = i.id
@@ -128,7 +134,23 @@ GROUP BY i.id
                 ':series_id' => $this->id )
         );
 
-        return $rows;
+        $this->items = $rows;
+        return $this->items;
     }
+
+    public function getItemsAbcList()
+    {
+        $abcList = array();
+        foreach ($this->getItemsList() as $item)
+        {
+            $letter = mb_strtoupper(substr($item['title'], 0, 1));
+            $abcList[$letter][] = $item;
+        }
+
+        ksort($abcList);
+
+        return $abcList;
+    }
+
 
 }

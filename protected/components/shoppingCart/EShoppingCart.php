@@ -26,6 +26,9 @@ class EShoppingCart extends CMap {
     protected $discountPrice = 0.0;
 
     public function init(){
+        //set payment default delivery method
+        if(!$this->getDeliveryMethod())
+            $this->setDeliveryMethod('minsk');
         $this->restoreFromSession();
     }
 
@@ -151,8 +154,54 @@ class EShoppingCart extends CMap {
         if($withDiscount)
             $price -= $this->discountPrice;
 
+        if(isset(Yii::app()->session['DeliveryPrice']) && Yii::app()->session['DeliveryPrice'] > 0)
+            $price += $this->getDeliveryPrice();
+
         return $price;
     }
+
+    public function getDeliveryPrice()
+    {
+        $delivery = $this->getDeliveryMethod();
+        return $delivery['price'];
+    }
+
+    public function setDeliveryMethod($deliveryMethod)
+    {
+        Yii::app()->session['deliveryMethod'] = $deliveryMethod;
+    }
+
+    public function getDeliveryMethod()
+    {
+        if(isset(Yii::app()->session['deliveryMethod']) && strlen(Yii::app()->session['deliveryMethod']))
+            return Yii::app()->params->deliveryMethods[Yii::app()->session['deliveryMethod']];
+        else
+            return false;
+    }
+
+    public function getDeliveryMethodId()
+    {
+        return Yii::app()->session['deliveryMethod'];
+    }
+
+    public function setPaymentMethod($paymentMethod)
+    {
+        Yii::app()->session['paymentMethod'] = $paymentMethod;
+    }
+
+    public function getPaymentMethod()
+    {
+        if(isset(Yii::app()->session['paymentMethod']))
+            return Yii::app()->params->paymentMethods[Yii::app()->session['paymentMethod']];
+        else
+            return false;
+    }
+
+    public function getPaymentMethodId()
+    {
+        return Yii::app()->session['paymentMethod'];
+    }
+
 
     /**
      * onRemovePosition event
@@ -211,6 +260,12 @@ class EShoppingCart extends CMap {
      */
     public function getPositions()
     {
+        $positions = array();
+        foreach ($this->toArray() as $position)
+        {
+            if($position instanceof Product)
+                $positions[] = $position;
+        }
         return $this->toArray();
     }
 
