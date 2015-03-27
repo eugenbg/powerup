@@ -2,7 +2,7 @@
 
 class CartController extends Controller
 {
-    public $layout='//layouts/column2';
+    public $layout='//layouts/product';
     private $cartItems = array();
 
     public function actionIndex()

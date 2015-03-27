@@ -154,8 +154,7 @@ class EShoppingCart extends CMap {
         if($withDiscount)
             $price -= $this->discountPrice;
 
-        if(isset(Yii::app()->session['DeliveryPrice']) && Yii::app()->session['DeliveryPrice'] > 0)
-            $price += $this->getDeliveryPrice();
+        $price += $this->getDeliveryPrice();
 
         return $price;
     }

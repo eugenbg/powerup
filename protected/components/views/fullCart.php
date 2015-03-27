@@ -52,7 +52,7 @@
                 </table>
             </div>
         </div>
-    <button type="button" id="submit-cart" class="btn btn-order btn-lg pull-right">Оформить заказ</button>
+    <button type="button" class="submit-cart btn btn-order btn-lg pull-right">Оформить заказ</button>
     <button type="button" id="refresh-cart" class="btn btn-success btn-lg pull-right">Обновить корзину</button>
 
 </div>

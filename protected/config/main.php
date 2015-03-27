@@ -16,7 +16,8 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-        'application.components.shoppingCart.*'
+        'application.components.shoppingCart.*',
+        'application.components.PHPMailer.*'
 	),
 
 	'defaultController'=>'post',
@@ -71,6 +72,9 @@ return array(
         'shoppingCart' =>array(
                 'class' => 'application.components.shoppingCart.EShoppingCart',
             ),
+        'YiiMailer' =>array(
+            'class' => 'application.components.YiiMailer',
+        ),
         'ThumbsGen' => array(
             'class' => 'application.components.ThumbsGen',
         ),

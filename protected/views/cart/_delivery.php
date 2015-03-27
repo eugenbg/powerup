@@ -18,7 +18,8 @@
                     <?php if($field['type'] = 'text'): ?>
                         <div class="input-group">
                             <div class="input-group-addon"><?php echo $field['label']; ?></div>
-                            <input type="text" class="form-control" name="<?php echo $key; ?>">
+                            <input type="text" class="form-control"
+                                   name="Delivery-<?php echo $id; ?>[<?php echo $key; ?>]">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>

@@ -2,7 +2,7 @@
 
 return array(
 	'title'=>'PowerUp.by - Зарядись',
-
+    'adminEmail' => 'olegperl@mail.ru',
     'deliveryMethods' => array(
         'minsk' => array(
             'id' => 'minsk',

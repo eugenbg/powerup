@@ -5,13 +5,12 @@
  *
  * The followings are the available columns in table 'customer':
  * @property integer $id
+ * @property string $fullname
  * @property string $firstname
  * @property string $lastname
  * @property string $email
- * @property integer $postcode
- * @property string $city
+ * @property string $phone
  * @property string $address_string
- * @property string $company
  * @property string $comment
  *
  * The followings are the available model relations:
@@ -35,14 +34,13 @@ class Customer extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('firstname, lastname, email, postcode, city, address_string', 'required'),
-			array('postcode', 'numerical', 'integerOnly'=>true),
-			array('firstname, lastname, city', 'length', 'max'=>30),
-			array('email, address_string, company', 'length', 'max'=>50),
+			//array('fullname, firstname, lastname, email, phone, address_string', 'required'),
+			array('fullname, email', 'length', 'max'=>50),
+			array('firstname, lastname, phone', 'length', 'max'=>30),
 			array('comment', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, firstname, lastname, email, postcode, city, address_string, company, comment', 'safe', 'on'=>'search'),
+			array('id, fullname, firstname, lastname, email, phone, address_string, comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,13 +63,12 @@ class Customer extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'fullname' => 'Fullname',
 			'firstname' => 'Firstname',
 			'lastname' => 'Lastname',
 			'email' => 'Email',
-			'postcode' => 'Postcode',
-			'city' => 'City',
+			'phone' => 'Phone',
 			'address_string' => 'Address String',
-			'company' => 'Company',
 			'comment' => 'Comment',
 		);
 	}
@@ -95,13 +92,12 @@ class Customer extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('fullname',$this->fullname,true);
 		$criteria->compare('firstname',$this->firstname,true);
 		$criteria->compare('lastname',$this->lastname,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('postcode',$this->postcode);
-		$criteria->compare('city',$this->city,true);
+		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('address_string',$this->address_string,true);
-		$criteria->compare('company',$this->company,true);
 		$criteria->compare('comment',$this->comment,true);
 
 		return new CActiveDataProvider($this, array(

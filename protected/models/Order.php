@@ -1,26 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "category".
+ * This is the model class for table "order".
  *
- * The followings are the available columns in table 'category':
+ * The followings are the available columns in table 'order':
  * @property integer $id
- * @property string $title
+ * @property integer $customer_id
+ * @property string $total_price
+ * @property integer $status
+ * @property string $delivery
+ * @property string $address
+ * @property string $payment
  *
  * The followings are the available model relations:
- * @property Product[] $products
+ * @property Customer $customer
+ * @property OrderItem[] $orderItems
  */
-class Category extends CActiveRecord
+class Order extends CActiveRecord
 {
-
-    public $brands;
-
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'product_category';
+		return 'order';
 	}
 
 	/**
@@ -31,10 +34,12 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>30),
+			array('customer_id', 'numerical', 'integerOnly'=>true),
+			array('total_price', 'length', 'max'=>4),
+			array('payment', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, customer_id, total_price, status, delivery, address, payment, comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,7 +51,8 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'products' => array(self::HAS_MANY, 'Product', 'category_id'),
+			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
+			'orderItems' => array(self::HAS_MANY, 'OrderItem', 'order_id'),
 		);
 	}
 
@@ -57,7 +63,13 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'customer_id' => 'Customer',
+			'total_price' => 'Total Price',
+			'status' => 'Status',
+			'delivery' => 'Delivery',
+			'address' => 'Address',
+			'payment' => 'Payment',
+            'comment' => 'Comment'
 		);
 	}
 
@@ -80,7 +92,12 @@ class Category extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('customer_id',$this->customer_id);
+		$criteria->compare('total_price',$this->total_price,true);
+		$criteria->compare('status',$this->status);
+		$criteria->compare('delivery',$this->delivery,true);
+		$criteria->compare('address',$this->address,true);
+		$criteria->compare('payment',$this->payment,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -91,47 +108,10 @@ class Category extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Category the static model class
+	 * @return Order the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
-    public function getBrandsAbcList()
-    {
-        $abcList = array();
-        foreach ($this->getBrandsList() as $item)
-        {
-            $letter = mb_strtoupper(substr($item['title'], 0, 1));
-            $abcList[$letter][] = $item;
-        }
-
-        ksort($abcList);
-
-        return $abcList;
-    }
-
-    public function getBrandsList()
-    {
-        if(count($this->brands))
-            return $this->brands;
-
-$sql =
-'SELECT b.* FROM brand b
-JOIN item i ON i.brand_id = b.id
-JOIN product_item pi ON pi.item_id = item_id
-JOIN product p on p.id = pi.product_id
-JOIN category c on c.id = p.category_id
-WHERE c.id = :category_id
-GROUP BY b.id
-';
-
-        $rows = Yii::app()->db->createCommand($sql)->queryAll(true, array(':category_id' => $this->id));
-        if(count($rows))
-        {
-            $this->brands = $rows;
-        }
-        return $this->brands;
-    }
 }

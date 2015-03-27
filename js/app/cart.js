@@ -39,6 +39,11 @@ cart.init = function()
         })
 
         $('[data-toggle="tooltip"]').tooltip()
+
+        $(document).on('click', '.submit-cart', function(){
+            me.submitOrder();
+        })
+
     }
 
 cart.addToCart = function(event)
@@ -82,17 +87,23 @@ cart.refreshCart = function()
     )
 }
 
-cart.onDeliveryPaymentChange = function()
+cart.submitOrder = function ()
 {
+    $('#cart-form').submit()
+
+/*
     $.ajax(
-        '/cart/update',
+        '/checkout/validateOrder',
         {
-            data: {deliveryPrice : $('input[name=delivery]:checked').data('price')},
+            data: $('#cart-form').serialize(),
             success: function(data){
-                this.update(data)
+                if(data.status = 'success')
+                {
+                }
             }.bind(this)
         }
     )
+*/
 }
 
 jQuery(document).ready(function () {

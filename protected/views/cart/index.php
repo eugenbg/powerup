@@ -1,4 +1,4 @@
-<form id="cart-form">
+<form id="cart-form" action="/checkout/order" method="POST">
     <?php $this->widget('fullCartWidget', array()); ?>
     <div class="clearfix"></div>
     <hr class="dashed">
@@ -11,5 +11,5 @@
         </div>
     </div>
     <hr class="dashed">
-    <button type="button" id="submit-cart" class="btn btn-order btn-lg pull-right">Оформить заказ</button>
+    <button type="button" class="submit-cart btn btn-order btn-lg pull-right">Оформить заказ</button>
 </form>

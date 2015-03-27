@@ -130,7 +130,9 @@
     width: 150px;
 }
 
-
+.delivery-form .input-group {
+    width: 100%;
+}
 
 
 .btn-order {
