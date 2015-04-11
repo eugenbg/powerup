@@ -136,14 +136,14 @@ class Product extends CActiveRecord implements IECartPosition
      * for compatibility with shopping cart
      */
     public function getPrice(){
-        return $this->price;
+        return Helper::convertToBLR($this->price);
     }
 
     public function getDynamicTitle()
     {
         if($this->item)
         {
-            return sprintf('Аккумулятор для %s [%s]', $this->item->title, $this->title);
+            return sprintf('Аккумулятор для %s %s', $this->item->brand->title ,$this->item->title);
         }
         return 'Аккумлятор ' . $this->title;
     }

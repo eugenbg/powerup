@@ -1,25 +1,23 @@
 <?php
+
 /**
- * This is the model class for table "category".
+ * This is the model class for table "item_category".
  *
- * The followings are the available columns in table 'category':
+ * The followings are the available columns in table 'item_category':
  * @property integer $id
  * @property string $title
  *
  * The followings are the available model relations:
- * @property Product[] $products
+ * @property ItemItemCategory[] $itemItemCategories
  */
-class Category extends CActiveRecord
+class ItemCategory extends CActiveRecord
 {
-
-    public $brands;
-
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'product_category';
+		return 'item_category';
 	}
 
 	/**
@@ -30,7 +28,8 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'length', 'max'=>30),
+			array('title', 'required'),
+			array('title', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title', 'safe', 'on'=>'search'),
@@ -45,7 +44,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'products' => array(self::HAS_MANY, 'Product', 'category_id'),
+			'itemItemCategories' => array(self::HAS_MANY, 'ItemItemCategory', 'item_category_id'),
 		);
 	}
 
@@ -90,11 +89,10 @@ class Category extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Category the static model class
+	 * @return ItemCategory the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
 }

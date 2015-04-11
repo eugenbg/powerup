@@ -8,13 +8,13 @@
     <?php foreach ($orderItems as $orderItem): ?>
         <li>
             <?php echo $orderItem->title; ?>, <?php echo $orderItem->qty; ?>шт.,
-            цена: <?php echo $orderItem->price*10 .'тыс.руб.'; ?><?php echo $orderItem->qty > 1 ? ', всего:' . $orderItem->row_total*10 .'тыс.руб.' : ''; ?>
+            цена: <?php echo $orderItem->getFormattedPrice(); ?><?php echo $orderItem->qty > 1 ? ', всего:' . $orderItem->row_total .'тыс.руб.' : ''; ?>
         </li>
     <?php endforeach; ?>
 </ul>
 <p>
-    Стоимость доставки <?php echo Yii::app()->shoppingCart->getDeliveryPrice()*10 .'тыс.руб.'; ?><br>
-    Всего к оплате <?php echo $order->total_price*10 .'тыс.руб.'; ?>
+    Стоимость доставки <?php echo Yii::app()->shoppingCart->getFormattedDeliveryPrice(); ?><br>
+    Всего к оплате <?php echo $order->getFormattedTotalPrice(); ?>
 </p>
 <p>
     Адрес доставки: <?php echo implode(',',json_decode($order->address, true)); ?>

@@ -14,6 +14,7 @@
 class Brand extends CActiveRecord
 {
     public $itemsList = array();
+    public $partList = array();
     public $seriesList = array();
 
 	/**
@@ -109,19 +110,23 @@ class Brand extends CActiveRecord
         if(count($this->seriesList))
             return $this->seriesList;
 
-        $sql =
-'SELECT s.* FROM series s
-JOIN item i ON i.series_id = s.id
+        $sql=
+<<<EOF
+SELECT s.* FROM brand b
+JOIN item i ON i.brand_id = b.id
+JOIN series s ON i.series_id = s.id
+JOIN item_item_category iic ON iic.item_id = i.id
+JOIN frontend_category_item_category fcic ON fcic.item_category_id = iic.item_category_id
 JOIN product_item pi ON pi.item_id = i.id
-JOIN product p on p.id = pi.product_id
-JOIN category c on c.id = p.category_id
-JOIN brand b on b.id = i.brand_id
-WHERE s.brand_id = :brand_id AND p.category_id = :category_id
+JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
+JOIN product p ON pi.product_id = p.id
+JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
+WHERE fc.id = :frontend_category_id AND b.id = :brand_id
 GROUP BY s.id
-';
+EOF;
 
         $rows = Yii::app()->db->createCommand($sql)->queryAll(true,
-            array(':category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
+            array(':frontend_category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
         );
 
         $this->seriesList = $rows;
@@ -133,24 +138,59 @@ GROUP BY s.id
     {
         if(count($this->itemsList))
             return $this->itemsList;
-
         $sql =
-'SELECT i.* FROM item i
+<<<EOF
+SELECT
+i.*,
+    (CASE
+        WHEN i.series_id > 0 AND i.subseries_id > 0 THEN CONCAT(s.title, ' ', ss.title, ' ', i.title)
+        WHEN i.series_id > 0 THEN CONCAT(s.title, ' ', i.title)
+        ELSE i.title
+    END) AS formatted_title
+FROM brand b
+JOIN item i ON i.brand_id = b.id
+JOIN item_item_category iic ON iic.item_id = i.id
+JOIN frontend_category_item_category fcic ON fcic.item_category_id = iic.item_category_id
 JOIN product_item pi ON pi.item_id = i.id
-JOIN product p on p.id = pi.product_id
-JOIN category c on c.id = p.category_id
-JOIN brand b on b.id = i.brand_id
-WHERE i.brand_id = :brand_id AND p.category_id = :category_id AND i.series_id IS NULL
+JOIN product p ON pi.product_id = p.id
+JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
+JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
+LEFT JOIN series s ON i.series_id = s.id
+LEFT JOIN series ss ON i.subseries_id = ss.id
+WHERE fc.id = :frontend_category_id AND b.id = :brand_id
 GROUP BY i.id
-';
+EOF;
 
         $rows = Yii::app()->db->createCommand($sql)->queryAll(true,
-            array(':category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
+            array(':frontend_category_id' => Yii::app()->params['category']->id, ':brand_id' => $this->id)
         );
 
-        $this->itemsList = $rows;
+        foreach ($rows as $row)
+        {
+            if($row['type'] == Item::TYPE_PART)
+            {
+                $this->partList[] = $row;
+            }
+            elseif ($row['type'] == Item::TYPE_MODEL)
+            {
+                $this->itemsList[] = $row;
+            }
+        }
 
         return $rows;
+    }
+
+    public function getPartsList()
+    {
+        if(count($this->partList))
+        {
+            return $this->partList;
+        }
+        else
+        {
+            $this->getItemsList();
+            return $this->partList;
+        }
     }
 
     public function getItemsAbcList()
@@ -163,6 +203,11 @@ GROUP BY i.id
         return $this->_getAbcList('Series');
     }
 
+    public function getPartsAbcList()
+    {
+        return $this->_getAbcList('Parts');
+    }
+
     private function _getAbcList($entity)
     {
         $methodName = 'get'.$entity.'List';
@@ -170,7 +215,14 @@ GROUP BY i.id
         $abcList = array();
         foreach ($items as $item)
         {
-            $letter = mb_strtoupper(substr($item['title'], 0, 1));
+            if($entity == 'Items' || $entity == 'Parts')
+            {
+                $letter = mb_strtoupper(substr($item['formatted_title'], 0, 1));
+            }
+            else
+            {
+                $letter = mb_strtoupper(substr($item['title'], 0, 1));
+            }
             $abcList[$letter][] = $item;
         }
 

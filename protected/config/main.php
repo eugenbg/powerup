@@ -20,7 +20,7 @@ return array(
         'application.components.PHPMailer.*'
 	),
 
-	'defaultController'=>'post',
+	'defaultController'=>'site',
 
 	// application components
 	'components'=>array(

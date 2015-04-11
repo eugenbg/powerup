@@ -3,6 +3,7 @@
 return array(
 	'title'=>'PowerUp.by - Зарядись',
     'adminEmail' => 'olegperl@mail.ru',
+    'usd-blr' => 14500,
     'deliveryMethods' => array(
         'minsk' => array(
             'id' => 'minsk',
@@ -49,7 +50,7 @@ return array(
             'id' => 'express_post',
             'title' => 'Экспресс-почтой по Беларуси',
             'info' => 'Стоимость доставки 80тыс.руб. Обычно занимает 1 день',
-            'price' => 5,
+            'price' => 80, //указывается в тыс.руб
             'allowed_payment_methods'=> array('post'),
             'fields' => array (
                 'firstName' => array('type'=>'text', 'label'=>'Имя'),
@@ -62,7 +63,6 @@ return array(
             )
         )
     ),
-
     'paymentMethods' => array(
         'cash' => array(
             'id' => 'cash',

@@ -114,4 +114,9 @@ class Order extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function getFormattedTotalPrice()
+    {
+        return $this->total_price . ' ' . Helper::getCurrencyPostfix();
+    }
 }

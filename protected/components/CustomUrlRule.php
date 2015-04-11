@@ -106,7 +106,7 @@ class CustomUrlRule extends CBaseUrlRule
     {
         if(isset($params[0]))
         {
-            $this->category =  Category::model()->findByAttributes(array('urlkey'=>$params[0]));
+            $this->category =  FrontendCategory::model()->findByAttributes(array('urlkey'=>$params[0]));
             if($this->category)
             {
                 unset($params[0]);
@@ -147,7 +147,7 @@ class CustomUrlRule extends CBaseUrlRule
                         {
                             unset($params[3]);
                         }
-                        if(isset($params[4]) && ($this->subSeries || $this->product) )
+                        if(isset($params[4]) && ($this->subseries || $this->product) )
                         {
                             if($this->subseries)
                             {
@@ -202,14 +202,14 @@ class CustomUrlRule extends CBaseUrlRule
 
     public function createCategoryUrl($manager,$route,$params,$ampersand)
     {
-        return Category::model()->findByPk($params['category'],array('select'=>'urlkey'))->urlkey;
+        return FrontendCategory::model()->findByPk($params['category'],array('select'=>'urlkey'))->urlkey;
     }
 
     public function createBrandUrl($manager,$route,$params,$ampersand)
     {
         $urlKeys = array();
         $category_id  = isset($params['category'])? $params['category'] : Yii::app()->params['category']->id;
-        $urlKeys[] =  Category::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Brand::model()->findByPk($params['brand'], array('select'=>'urlkey'))->urlkey;
         return $this->generateUrl($urlKeys, $this->getAdditionalParams($params));
     }
@@ -219,7 +219,7 @@ class CustomUrlRule extends CBaseUrlRule
         $urlKeys = array();
         $category_id  = isset($params['category'])? $params['category'] : Yii::app()->params['category']->id;
         $brand_id = isset($params['brand'])? $params['brand'] : Yii::app()->params['brand']->id;
-        $urlKeys[] =  Category::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Series::model()->findByPk($params['series'], array('select'=>'urlkey'))->urlkey;
         return $this->generateUrl($urlKeys, $this->getAdditionalParams($params));
@@ -231,7 +231,7 @@ class CustomUrlRule extends CBaseUrlRule
         $category_id  = isset($params['category'])? $params['category'] : Yii::app()->params['category']->id;
         $brand_id = isset($params['brand'])? $params['brand'] : Yii::app()->params['brand']->id;
         $series_id = isset($params['series'])? $params['series'] : Yii::app()->params['series']->id;
-        $urlKeys[] =  Category::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Series::model()->findByPk($series_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Series::model()->findByPk($params['subseries'], array('select'=>'urlkey'))->urlkey;
@@ -250,13 +250,13 @@ class CustomUrlRule extends CBaseUrlRule
         {
             $subseries_id = isset($params['subseries'])? $params['subseries'] : Yii::app()->params['subseries']->id;
         }
-        $urlKeys[] =  Category::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
-        if(!empty($series_id))
+        if(!empty($series_id) && $series_id > 0)
         {
             $urlKeys[] =  Series::model()->findByPk($series_id, array('select'=>'urlkey'))->urlkey;
         }
-        if(isset($subseries_id) && $subseries_id)
+        if(isset($subseries_id) && $subseries_id > 0)
         {
             $urlKeys[] =  Series::model()->findByPk($subseries_id, array('select'=>'urlkey'))->urlkey;
         }
@@ -278,7 +278,7 @@ class CustomUrlRule extends CBaseUrlRule
         }
         $item_id = isset($params['item'])? $params['item'] : Yii::app()->params['item']->id;
 
-        $urlKeys[] =  Category::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
         $urlKeys[] =  Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
         if(isset($series_id) && $series_id)
         {

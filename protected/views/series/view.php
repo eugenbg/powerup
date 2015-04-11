@@ -38,13 +38,31 @@ $this->menu=array(
             <?php foreach ($items as $item):?>
                 <li class="item">
                     <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id']) )?>">
-                        <?php echo $item['title']; ?>
+                        <?php echo $item['formatted_title']; ?>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ul>
     </div>
 <?php endforeach;?>
+
+<?php if(!$model->isSubseries()): ?>
+<h1>Подсерии серии <?php echo $model->title; ?></h1>
+    <?php foreach ($model->getSubseriesAbcList() as $letter => $subseries):?>
+        <div class="row panel">
+            <div class="letter col-md-1 col-xs-2"><?php echo $letter; ?></div>
+            <ul class="brand-list col-md-11 col-xs-10">
+                <?php foreach ($subseries as $subserie):?>
+                    <li class="item">
+                        <a href="<?php echo $this->createUrl('custom/subseries',array('subseries'=>$subserie['id']) )?>">
+                            <?php echo $subserie['title']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endforeach;?>
+<?php endif; ?>
 
 <?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js'); ?>
 <script type="text/javascript">

@@ -1,5 +1,12 @@
 #shopping-cart-icon {
     margin-right: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#shopping-cart-icon span{
+    font-size: 1.4em;
+    padding-left: 8px;
 }
 
 .top-nav .dropdown a i {
@@ -9,7 +16,7 @@
 .mini-cart {
     margin-right: 5px;
     background: #eee;
-    width: 300px;
+    width: 400px;
     position: absolute;
     top: 45px;
     right: -5px;
@@ -31,6 +38,7 @@
 .mini-cart-list li.cart-item .model-title {
     display: block;
     font-size: 0.8em;
+    width: 320px;
 }
 
 .mini-cart-list li.cart-item .price, .mini-cart-list li.cart-item .qty {
@@ -38,6 +46,11 @@
     font-size: 0.8em;
     color: #5ebe1e;
     font-weight: bold;
+}
+
+.mini-cart-x {
+    color: #000;
+    font-size: 0.7em;
 }
 
 .mini-cart-list li.cart-item .qty {
@@ -95,6 +108,9 @@
     line-height: 2.4em;
 }
 
+.mini-cart .list-group-item.totals {
+    text-align: center;
+}
 
 /*
     full cart

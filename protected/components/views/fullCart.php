@@ -6,7 +6,7 @@
                     <tr>
                         <th width="60%">Товар</th>
                         <th>Цена</th>
-                        <th>Кол-во</th>
+                        <th>Количество</th>
                         <th>Всего</th>
                         <th></th>
                     </tr>
@@ -16,7 +16,8 @@
                                 <?php echo $cartItem->getDynamicTitle(); ?>
                             </td>
                             <td>
-                                <?php echo (int)$cartItem->price*10; ?> т.р.
+                                <?php echo $cartItem->getPrice(); ?>
+                                <?php echo Helper::getCurrencyPostfix(); ?>
                             </td>
                             <td>
                                 <div class="input-group">
@@ -25,7 +26,8 @@
                                 </div>
                             </td>
                             <td>
-                                <?php echo (int)$cartItem->getSumPrice()*10; ?> т.р.
+                                <?php echo $cartItem->getSumPrice(); ?>
+                                <?php echo Helper::getCurrencyPostfix(); ?>
                             </td>
                             <td>
                         <span class="glyphicon glyphicon-remove delete-from-cart"
@@ -38,7 +40,10 @@
                             <td></td>
                             <td></td>
                             <td>Доставка</td>
-                            <td><?php echo Yii::app()->shoppingCart->getDeliveryPrice()*10; ?> тыс.руб.</td>
+                            <td>
+                                <?php echo Yii::app()->shoppingCart->getDeliveryPrice(); ?>
+                                <?php echo Helper::getCurrencyPostfix(); ?>
+                            </td>
                             <td></td>
                         </tr>
                     <?php endif; ?>
@@ -46,7 +51,7 @@
                         <th></th>
                         <th></th>
                         <th>Всего</th>
-                        <th><?php echo Yii::app()->shoppingCart->getCost()*10; ?> тыс.руб.</th>
+                        <th><?php echo Yii::app()->shoppingCart->getBlrTotalCost(); ?></th>
                         <th></th>
                     </tr>
                 </table>

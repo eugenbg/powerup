@@ -13,7 +13,7 @@ class CheckoutController extends Controller
         {
             $orderItem = new OrderItem();
             $orderItem->status = 'processing';
-            $orderItem->price = $cartItem->price;
+            $orderItem->price = $cartItem->getPrice();
             $orderItem->qty = $cartItem->getQuantity();
             $orderItem->row_total = $cartItem->getSumPrice();
             $orderItem->product_id = $cartItem->id;
@@ -56,6 +56,8 @@ class CheckoutController extends Controller
         $this->_sendCustomerEmail($order, $orderItems, $customer);
         $this->_sendAdminEmail($order, $orderItems, $customer);
 
+        Yii::app()->shoppingCart->clear();
+
         $this->render('success', array('order' => $order));
     }
 
@@ -71,7 +73,7 @@ class CheckoutController extends Controller
         if ($mail->send()) {
             Yii::app()->user->setFlash('contact','Вам на email отправлено подверждение заказа.');
         } else {
-            Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+            Yii::app()->user->setFlash('error','Ошибка при отсылке письма: '.$mail->getError());
         }
     }
 

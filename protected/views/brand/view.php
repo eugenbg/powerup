@@ -33,15 +33,19 @@ $this->menu=array(
     <div class="col-md-4"></div>
 </div>
 
-<h1>Модели устройств</h1>
-<?php foreach ($model->getItemsAbcList() as $letter => $items):?>
+<h1>Модели вашего устройства</h1>
+
+<?php
+foreach ($model->getItemsAbcList() as $letter => $items):?>
     <div class="row panel">
         <div class="letter col-md-1 col-xs-2"><?php echo $letter; ?></div>
         <ul class="brand-list col-md-11 col-xs-10">
             <?php foreach ($items as $item):?>
                 <li class="item">
-                    <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id']) )?>">
-                        <?php echo $item['title']; ?>
+                    <a href="<?php echo $this->createUrl('custom/item',
+                        array('item'=>$item['id'], 'series'=>$item['series_id'], 'subseries' => $item['subseries_id'])
+                    )?>">
+                        <?php echo $item['formatted_title']; ?>
                     </a>
                 </li>
         <?php endforeach; ?>
@@ -49,22 +53,41 @@ $this->menu=array(
     </div>
 <?php endforeach;?>
 
-<h1>Серии устройств</h1>
-<?php foreach ($model->getSeriesAbcList() as $letter => $items):?>
-    <div class="row panel">
-        <div class="letter col-md-1 col-xs-2"><?php echo $letter; ?></div>
-        <ul class="brand-list col-md-11 col-xs-10">
-            <?php foreach ($items as $item):?>
-                <li class="item">
-                    <a href="<?php echo $this->createUrl('custom/series',array('series'=>$item['id']) )?>">
-                        <?php echo $item['title']; ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endforeach;?>
+<?php if(count($model->getPartsAbcList())): ?>
+<h1>Модели аккумулятора</h1>
+    <?php foreach ($model->getPartsAbcList() as $letter => $items):?>
+        <div class="row panel">
+            <div class="letter col-md-1 col-xs-2"><?php echo $letter; ?></div>
+            <ul class="brand-list col-md-11 col-xs-10">
+                <?php foreach ($items as $item):?>
+                    <li class="item">
+                        <a href="<?php echo $this->createUrl('custom/item',array('item'=>$item['id']) )?>">
+                            <?php echo $item['title']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endforeach;?>
+<?php endif; ?>
 
+<?php if(count($model->getSeriesAbcList())): ?>
+    <h1>Серии устройств</h1>
+    <?php foreach ($model->getSeriesAbcList() as $letter => $items):?>
+        <div class="row panel">
+            <div class="letter col-md-1 col-xs-2"><?php echo $letter; ?></div>
+            <ul class="brand-list col-md-11 col-xs-10">
+                <?php foreach ($items as $item):?>
+                    <li class="item">
+                        <a href="<?php echo $this->createUrl('custom/series',array('series'=>$item['id']) )?>">
+                            <?php echo $item['title']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endforeach;?>
+<?php endif; ?>
 <?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js'); ?>
 <script type="text/javascript">
     Filter.initialize({inputSelector : '#brand-search'})

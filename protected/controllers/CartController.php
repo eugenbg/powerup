@@ -8,8 +8,10 @@ class CartController extends Controller
     public function actionIndex()
     {
         $cartItems = array();
+        $empty = true;
         foreach (Yii::app()->shoppingCart->getPositions() as $cartKey => $cartItem)
         {
+            $empty = false;
             $model = new CartItem();
             $model->qty = $cartItem->getQuantity();
             $model->id = $cartItem->id;
@@ -17,7 +19,7 @@ class CartController extends Controller
             $model->cartKey = $cartKey;
             $cartItems[] = $model;
         }
-        $this->render('index', array('cartItems'=>$cartItems));
+        $this->render('index', array('cartItems'=>$cartItems, 'empty' => $empty));
     }
 
     public function actionDelete()
@@ -26,6 +28,7 @@ class CartController extends Controller
         Yii::app()->shoppingCart->remove($cartItemKey);
         $response = array();
         $response['status'] = 'success';
+        $response['cart'] = $this->widget('miniCartWidget', array(), true);
         $response['fullCart'] = $this->widget('fullCartWidget', array(), true);
         $this->jsonResponse($response);
     }

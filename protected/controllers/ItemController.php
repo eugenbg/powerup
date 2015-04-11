@@ -51,8 +51,10 @@ class ItemController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+        $model=Item::model()->with('brand', 'series', 'subseries')->findByPk($id);
+
+        $this->render('view',array(
+			'model'=>$model,
 		));
 	}
 

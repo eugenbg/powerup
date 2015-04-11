@@ -18,6 +18,10 @@
  */
 class Item extends CActiveRecord
 {
+
+    const TYPE_MODEL = 3;
+    const TYPE_PART = 4;
+
     /*
      * to store id's of product-item relations (needed for from->checkboxlist to mark checked values)
      */
@@ -47,7 +51,7 @@ class Item extends CActiveRecord
 			array('title, urlkey', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, series_id, subseries_id, brand_id, urlkey', 'safe', 'on'=>'search'),
+			array('id, title, series_id, subseries_id, brand_id, urlkey, search_data, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +67,7 @@ class Item extends CActiveRecord
 			'series' => array(self::BELONGS_TO, 'Series', 'series_id'),
 			'subseries' => array(self::BELONGS_TO, 'Series', 'subseries_id'),
 			'productItems' => array(self::HAS_MANY, 'ProductItem', 'item_id'),
+            'itemItemCategories' => array(self::HAS_MANY, 'ItemItemCategory', 'item_id'),
 		);
 	}
 
@@ -160,16 +165,30 @@ class Item extends CActiveRecord
         {
             foreach($this->productItems as $productItem)
             {
-                $product = $productItem->product;
-                if($product->category_id == Yii::app()->params['category']->id)
+                if($product = $productItem->product)
                 {
-                    $this->leadingProducts[] = $product;
-                }
-                else
-                {
-                    $this->relatedProducts[] = $product;
+                    if($product && $product->category_id == Yii::app()->params['category']->product_category_id)
+                    {
+                        $this->leadingProducts[] = $product;
+                    }
+                    else
+                    {
+                        $this->relatedProducts[] = $product;
+                    }
                 }
             }
         }
+    }
+
+    public function getFullTitle()
+    {
+        $itemCategory = $this->itemItemCategories[0]->itemCategory;
+        $itemCategoryTitle = json_decode($itemCategory->title_wordforms);
+        return "Аккумуляторы для ".
+        $itemCategoryTitle->single->r .
+        " " . $this->brand->title .
+        ($this->series ? " " . $this->series->title : '') .
+        ($this->subseries ? " " . $this->subseries->title : '') .
+        " " . $this->title;
     }
 }

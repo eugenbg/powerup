@@ -159,10 +159,28 @@ class EShoppingCart extends CMap {
         return $price;
     }
 
+    public function getBlrTotalCost()
+    {
+        $price = 0;
+        foreach ($this as $position)
+        {
+            $price += $position->getSumPrice();
+        }
+
+        $price += $this->getDeliveryPrice();
+
+        return $price . ' ' . Helper::getCurrencyPostfix();
+    }
+
     public function getDeliveryPrice()
     {
         $delivery = $this->getDeliveryMethod();
         return $delivery['price'];
+    }
+
+    public function getFormattedDeliveryPrice()
+    {
+        return $this->getDeliveryPrice() . ' ' . Helper::getCurrencyPostfix();
     }
 
     public function setDeliveryMethod($deliveryMethod)
