@@ -120,23 +120,37 @@ class CustomUrlRule extends CBaseUrlRule
                 }
                 if(isset($params[2]) && $this->brand)
                 {
-                    //it could be series or item
-                    $this->series = Series::model()->findByAttributes(array('urlkey'=>$params[2]));
+
+                    $seriesId = BrandSeries::getChildSeriesIdByUrlkeyAndParent($this->brand, $params[2]);
+                    if($seriesId)
+                        $this->series = Series::model()->findByPk($seriesId);
                     if(!$this->series) {
                         $this->item = Item::model()->findByAttributes(array('urlkey' => $params[2]));
+                        if($this->item && $this->item->series_id > 0)
+                        {
+                            throw new CHttpException(404,'Неверный адрес странички');
+                        }
                     }
+
                     if($this->series || $this->item)
                     {
                         unset($params[2]);
                     }
+
                     if(isset($params[3]) && ($this->series || $this->item) )
                     {
                         if($this->series)
                         {
-                            $this->subseries =  Series::model()->findByAttributes(array('urlkey'=>$params[3]));
+                            $subSeriesId = SeriesSubseries::getSubSeriesIdByUrlkeyAndParent($this->series, $params[3]);
+                            if($subSeriesId)
+                                $this->subseries =  Series::model()->findByPk($subSeriesId);
                             if(!$this->subseries)
                             {
                                 $this->item = Item::model()->findByAttributes(array('urlkey' => $params[3]));
+                                if($this->item && $this->item->subseries_id > 0)
+                                {
+                                    throw new CHttpException(404,'Неверный адрес странички');
+                                }
                             }
                         }
                         elseif($this->item)
