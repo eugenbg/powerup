@@ -4,33 +4,110 @@ class SitemapController extends Controller
 {
 	public function actionGenerate()
 	{
-		$this->render('generate');
-	}
+        $time = explode(" ",microtime());
+        $time = $time[1];
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
+        $pages = $this->getAllPages();
+        $sitemap = new SitemapGenerator("http://batareiki.by/");
 
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
+        // sitemap file name
+        $sitemap->sitemapFileName = "sitemap.xml";
+
+        // robots file name
+        $sitemap->robotsFileName = "robots.txt";
+
+        foreach ($pages as $url)
+        {
+            $sitemap->addUrl($url);
+        }
+
+
+        try {
+            // create sitemap
+            $sitemap->createSitemap();
+            // write sitemap as file
+            $sitemap->writeSitemap();
+            // update robots.txt file
+            $sitemap->updateRobots();
+        }
+        catch (Exception $e) {
+            echo $e->getTraceAsString();
+        }
+
+        echo "Memory peak usage: ".number_format(memory_get_peak_usage()/(1024*1024),2)."MB";
+        $time2 = explode(" ",microtime());
+        $time2 = $time2[1];
+        echo "<br>Execution time: ".number_format($time2-$time)."s";
+
+    }
+
+    private function getAllPages()
+    {
+        $pages = array();
+        $frontendCategories = FrontendCategory::model()->findAll();
+        foreach ($frontendCategories as $frontendCategory)
+        {
+            $pages[] = $this->createAbsoluteUrl('custom/category', array('category' => $frontendCategory->id));
+        }
+        foreach ($frontendCategories as $frontendCategory) {
+            Yii::app()->params['category'] = $frontendCategory;
+            $brands = $frontendCategory->getBrandsList();
+            foreach ($brands as $brand)
+            {
+                $pages[] = $this->createAbsoluteUrl('custom/brand',
+                    array('category' => $frontendCategory->id, 'brand' => $brand['id'])
+                );
+                $brandModel = Brand::model()->findByPk($brand['id']);
+                Yii::app()->params['brand'] = $brandModel;
+                $series = $brandModel->getSeriesList();
+                foreach ($series as $serie)
+                {
+                    $pages[] = $this->createAbsoluteUrl('custom/series',
+                        array(
+                            'category' => $frontendCategory->id,
+                            'brand' => $brand['id'],
+                            'series' => $serie['id']
+                        )
+                    );
+                    $seriesModel = Series::model()->findByPk($serie['id']);
+                    Yii::app()->params['series'] = $seriesModel;
+                    $subSeries = $seriesModel->getSubseriesList();
+                    foreach($subSeries as $subSerie)
+                    {
+                        $pages[] = $this->createAbsoluteUrl('custom/subseries',
+                            array(
+                                'category' => $frontendCategory->id,
+                                'brand' => $brand['id'],
+                                'series' => $serie['id'],
+                                'subseries' => $subSerie['id']
+                            )
+                        );
+                    }
+                }
+                unset(Yii::app()->params['series']);
+                $items = array_merge($brandModel->getItemsList(), $brandModel->getPartsList());
+                foreach($items as $item)
+                {
+                    $pages[] = $this->createAbsoluteUrl('custom/item',
+                        array(
+                            'category' => $frontendCategory->id,
+                            'brand' => $brand['id'],
+                            'series' => $item['series_id'],
+                            'subseries' => $item['subseries_id'],
+                            'item' => $item['id'],
+                        )
+                    );
+                }
+            }
+        }
+        $staticPages = Page::model()->findAll();
+        foreach($staticPages as $page)
+        {
+            $pages[] = Yii::app()->getBaseUrl(true) . '/' . $page->urlkey;
+        }
+        //echo '<pre>';
+        //print_r($pages);
+        return $pages;
+    }
+
 }

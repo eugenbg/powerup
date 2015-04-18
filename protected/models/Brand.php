@@ -167,10 +167,6 @@ EOF;
 
         foreach ($rows as $row)
         {
-            if(strpos($row['search_data'], 'bp511') !== false)
-            {
-                $a=0;
-            }
             if($row['type'] == Item::TYPE_PART)
             {
                 $this->partList[] = $row;
