@@ -208,8 +208,13 @@ class EShoppingCart extends CMap {
 
     public function getPaymentMethod()
     {
-        if(isset(Yii::app()->session['paymentMethod']))
-            return Yii::app()->params->paymentMethods[Yii::app()->session['paymentMethod']];
+        $a = Yii::app()->params['paymentMethods'];
+        $b = Yii::app()->session['paymentMethod'];
+        if(isset(Yii::app()->session['paymentMethod']) &&
+            isset(Yii::app()->params['paymentMethods'][Yii::app()->session['paymentMethod']]))
+        {
+            return Yii::app()->params['paymentMethods'][Yii::app()->session['paymentMethod']];
+        }
         else
             return false;
     }
