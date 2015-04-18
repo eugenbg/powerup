@@ -181,7 +181,7 @@ class SitemapGenerator {
                               </sitemapindex>';
         foreach(array_chunk($this->urls,$this->maxURLsPerSitemap) as $sitemap) {
             $xml = new SimpleXMLElement($sitemapHeader);
-            foreach($sitemap as $url) {
+            foreach($sitemap as $url) { 
                 $row = $xml->addChild('url');
                 $row->addChild('loc',htmlspecialchars($url['loc'],ENT_QUOTES,'UTF-8'));
                 if (isset($url['lastmod'])) $row->addChild('lastmod', $url['lastmod']);
