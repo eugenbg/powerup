@@ -41,7 +41,7 @@ class CustomUrlRule extends CBaseUrlRule
             $this->findInstancesFromPath($params);
             if(!$this->category)
             {
-                return false;
+                return $this->parsePageUrl($params);
             }
             $this->setInstancesGlobal();
             return $this->renderRoute();
@@ -120,13 +120,13 @@ class CustomUrlRule extends CBaseUrlRule
                 }
                 if(isset($params[2]) && $this->brand)
                 {
-
                     $seriesId = BrandSeries::getChildSeriesIdByUrlkeyAndParent($this->brand, $params[2]);
                     if($seriesId)
                         $this->series = Series::model()->findByPk($seriesId);
                     if(!$this->series) {
                         $this->item = Item::model()->findByAttributes(array('urlkey' => $params[2]));
-                        if($this->item && $this->item->series_id > 0)
+                        if($this->item && $this->item->series_id > 0 || !$this->item)
+                        //if param does not result in item or series throw 404
                         {
                             throw new CHttpException(404,'Неверный адрес странички');
                         }
@@ -184,11 +184,10 @@ class CustomUrlRule extends CBaseUrlRule
                 } // params[2]
             } // params[1]
 
-            if(count($params) && $this->category) //else just use default yii routing
+/*            if(count($params) && $this->category)
             {
                 $this->addGetParams($params);
-            }
-
+            }*/
         } // params[0]
     }
 
@@ -264,17 +263,32 @@ class CustomUrlRule extends CBaseUrlRule
         {
             $subseries_id = isset($params['subseries'])? $params['subseries'] : Yii::app()->params['subseries']->id;
         }
-        $urlKeys[] =  FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
-        $urlKeys[] =  Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] = !empty(Yii::app()->params['category']) && Yii::app()->params['category']->id == $category_id ?
+            Yii::app()->params['category']->urlkey :
+            FrontendCategory::model()->findByPk($category_id, array('select'=>'urlkey'))->urlkey;
+        $urlKeys[] = !empty(Yii::app()->params['brand']) && Yii::app()->params['brand']->id == $brand_id ?
+            Yii::app()->params['brand']->urlkey:
+            Brand::model()->findByPk($brand_id, array('select'=>'urlkey'))->urlkey;
         if(!empty($series_id) && $series_id > 0)
         {
-            $urlKeys[] =  Series::model()->findByPk($series_id, array('select'=>'urlkey'))->urlkey;
+            $urlKeys[] = !empty(Yii::app()->params['series']) && Yii::app()->params['series']->id == $series_id ?
+                Yii::app()->params['series']->urlkey:
+                Series::model()->findByPk($series_id, array('select'=>'urlkey'))->urlkey;
         }
         if(isset($subseries_id) && $subseries_id > 0)
         {
-            $urlKeys[] =  Series::model()->findByPk($subseries_id, array('select'=>'urlkey'))->urlkey;
+            $urlKeys[] = !empty(Yii::app()->params['subseries']) && Yii::app()->params['subseries']->id == $subseries_id ?
+                Yii::app()->params['subseries']->urlkey:
+                Series::model()->findByPk($subseries_id, array('select'=>'urlkey'))->urlkey;
         }
-        $urlKeys[] = Item::model()->findByPk($params['item'], array('select'=>'urlkey'))->urlkey;
+        if(isset($params['item_urlkey']) && strlen($params['item_urlkey']) > 0)
+        {
+            $urlKeys[] = $params['item_urlkey'];
+        }
+        else
+        {
+            $urlKeys[] = Item::model()->findByPk($params['item'], array('select'=>'urlkey'))->urlkey;
+        }
         return $this->generateUrl($urlKeys, $this->getAdditionalParams($params));
     }
 
@@ -311,10 +325,15 @@ class CustomUrlRule extends CBaseUrlRule
     {
         unset($params['category']);
         unset($params['brand']);
+        unset($params['brand_urlkey']);
         unset($params['series']);
+        unset($params['series_urlkey']);
         unset($params['subseries']);
+        unset($params['subseries_urlkey']);
         unset($params['item']);
+        unset($params['item_urlkey']);
         unset($params['product']);
+        unset($params['product_urlkey']);
         return $params;
     }
 
@@ -326,6 +345,24 @@ class CustomUrlRule extends CBaseUrlRule
             $url .= '/' . implode('/',$additionalParams);
         }
         return $url;
+    }
+
+    private function parsePageUrl($params)
+    {
+        if(count($params) > 1)
+        {
+            return false;
+        }
+
+        $page = Page::model()->findByAttributes(array('urlkey' => $params[0]));
+        if($page)
+        {
+            return 'page/view/id/'.$page->id;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

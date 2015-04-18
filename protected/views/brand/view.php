@@ -2,16 +2,9 @@
 /* @var $this BrandController */
 /* @var $model Brand */
 
-$this->menu=array(
-	array('label'=>'List Brand', 'url'=>array('index')),
-	array('label'=>'Create Brand', 'url'=>array('create')),
-	array('label'=>'Update Brand', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Brand', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Brand', 'url'=>array('admin')),
-);
-
-?>
-
+$this->pageTitle = 'Аккумуляторы для ' .
+    Yii::app()->params['category']->getItemCategoryTitle('r', 'plural') .
+    ' ' . $model->title; ?>
 
 
 <div class="row search-holder" style="margin-bottom: 30px;">
@@ -33,7 +26,7 @@ $this->menu=array(
     <div class="col-md-4"></div>
 </div>
 
-<h1>Модели вашего устройства</h1>
+<h1>Выберите модель вашего устройства</h1>
 
 <?php
 foreach ($model->getItemsAbcList() as $letter => $items):?>
@@ -43,7 +36,7 @@ foreach ($model->getItemsAbcList() as $letter => $items):?>
             <?php foreach ($items as $item):?>
                 <li class="item">
                     <a href="<?php echo $this->createUrl('custom/item',
-                        array('item'=>$item['id'], 'series'=>$item['series_id'], 'subseries' => $item['subseries_id'])
+                        array('item'=>$item['id'], 'series'=>$item['series_id'], 'subseries' => $item['subseries_id'], 'item_urlkey' => $item['urlkey'])
                     )?>">
                         <?php echo $item['formatted_title']; ?>
                     </a>
@@ -88,6 +81,16 @@ foreach ($model->getItemsAbcList() as $letter => $items):?>
         </div>
     <?php endforeach;?>
 <?php endif; ?>
+
+<p>
+    Выбирайте модель вашей <?php echo Yii::app()->params['category']->getItemCategoryTitle('r'); ?> <?php echo $model->title; ?>, либо модель нужного аккумулятора - если она Вам известна. На следующей странице вы сможете оформить заказ.
+</p>
+
+<p>
+    Гарантия на наши аккумуляторы - 12 месяцев. Есть возможность вернуть деньги в течение 30 дней после покупки.
+</p>
+
+
 <?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js'); ?>
 <script type="text/javascript">
     Filter.initialize({inputSelector : '#brand-search'})

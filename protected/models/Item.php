@@ -191,4 +191,27 @@ class Item extends CActiveRecord
         ($this->subseries ? " " . $this->subseries->title : '') .
         " " . $this->title;
     }
+
+    public function getItemCategoryTitle($case, $n = 'single') //падеж, число
+    {
+        $itemCategory = $this->itemItemCategories[0]->itemCategory;
+        $itemCategoryTitle = json_decode($itemCategory->title_wordforms);
+        return $itemCategoryTitle->{$n}->{$case};
+    }
+
+    public function getItemTitle()
+    {
+        $title = $this->brand->title;
+        if($this->series)
+        {
+            $title .= ' ' . $this->series->title;
+        }
+        if($this->subseries)
+        {
+            $title .= ' ' . $this->subseries->title;
+        }
+        $title .= ' ' . $this->title;
+
+        return $title;
+    }
 }

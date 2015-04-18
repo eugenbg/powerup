@@ -2,15 +2,15 @@
 /* @var $this SeriesController */
 /* @var $model Series */
 
-$this->menu=array(
-	array('label'=>'List Series', 'url'=>array('index')),
-	array('label'=>'Create Series', 'url'=>array('create')),
-	array('label'=>'Update Series', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Series', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Series', 'url'=>array('admin')),
-);
-?>
+$seriesTitle = Yii::app()->params['series']->title;
+$subseriesTitle = !empty(Yii::app()->params['subseries']) ?
+    ' ' . Yii::app()->params['subseries']->title : '';
 
+
+$this->pageTitle = 'Аккумуляторы для ' .
+    Yii::app()->params['category']->getItemCategoryTitle('r', 'plural') .
+    ' ' . Yii::app()->params['brand']->title .
+    ' ' . $seriesTitle . $subseriesTitle; ?>
 <div class="row search-holder" style="margin-bottom: 30px;">
     <div class="col-md-8">
         <div class="panel panel-default">
@@ -46,7 +46,7 @@ $this->menu=array(
     </div>
 <?php endforeach;?>
 
-<?php if(!$model->isSubseries()): ?>
+<?php if(!$model->isSubseries() && count($model->getSubseriesAbcList())): ?>
 <h1>Подсерии серии <?php echo $model->title; ?></h1>
     <?php foreach ($model->getSubseriesAbcList() as $letter => $subseries):?>
         <div class="row panel">
@@ -63,6 +63,19 @@ $this->menu=array(
         </div>
     <?php endforeach;?>
 <?php endif; ?>
+
+<?php $seriesTitle = Yii::app()->params['series']->title; ?>
+<?php $subseriesTitle = !empty(Yii::app()->params['subseries']) ?
+    ' ' . Yii::app()->params['subseries']->title : ''; ?>
+
+<p>
+    Выбирайте модель вашей <?php echo Yii::app()->params['category']->getItemCategoryTitle('r'); ?> <?php echo Yii::app()->params['brand']->title; ?> <?php echo $seriesTitle . $subseriesTitle; ?>, либо модель нужного аккумулятора - если она Вам известна. На следующей странице вы сможете оформить заказ.
+</p>
+
+<p>
+    Гарантия на наши аккумуляторы - 12 месяцев. Есть возможность вернуть деньги в течение 30 дней после покупки.
+</p>
+
 
 <?php Yii::app()->getClientScript()->registerScriptFile(Yii::app()->baseUrl.'/js/app/filter.js'); ?>
 <script type="text/javascript">

@@ -124,11 +124,11 @@ class Series extends CActiveRecord
 
         if($this->isSubseries())
         {
-            $where = "WHERE fc.id = :frontend_category_id AND ss.id = :series_id";
+            $where = "WHERE fc.id = :frontend_category_id AND ss.id = :this_id AND s.id = :series_id";
         }
         else
         {
-            $where = "WHERE fc.id = :frontend_category_id AND s.id = :series_id";
+            $where = "WHERE fc.id = :frontend_category_id AND s.id = :this_id";
         }
         $sql =
 <<<EOF
@@ -153,11 +153,24 @@ $where
 GROUP BY i.id
 EOF;
 
-        $rows = Yii::app()->db->createCommand($sql)->queryAll(true,
-            array(
+        if($this->isSubseries())
+        {
+            $params = array(
                 ':frontend_category_id' => Yii::app()->params['category']->id,
-                ':series_id' => $this->id )
-        );
+                ':this_id' => $this->id,
+                ':series_id' => Yii::app()->params['series']->id
+            );
+        }
+        else
+        {
+            $params = array(
+                ':frontend_category_id' => Yii::app()->params['category']->id,
+                ':this_id' => $this->id,
+            );
+        }
+
+
+        $rows = Yii::app()->db->createCommand($sql)->queryAll(true,$params);
 
         foreach ($rows as $row)
         {

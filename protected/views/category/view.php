@@ -2,13 +2,9 @@
 /* @var $this CategoryController */
 /* @var $model Category */
 
-$this->menu=array(
-	array('label'=>'List Category', 'url'=>array('index')),
-	array('label'=>'Create Category', 'url'=>array('create')),
-	array('label'=>'Update Category', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Category', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Category', 'url'=>array('admin')),
-);
+$this->pageTitle = 'Аккумуляторы для ' .
+    Yii::app()->params['category']->getItemCategoryTitle('r', 'plural');
+
 ?>
 
 <div class="row search-holder" style="margin-bottom: 30px;">
@@ -51,3 +47,12 @@ $this->menu=array(
 <script type="text/javascript">
     Filter.initialize({inputSelector : '#brand-search'})
 </script>
+
+<p>
+    Ищете аккумулятор для <?php echo Yii::app()->params['category']->getItemCategoryTitle('r'); ?>?
+    Сначала выберите брэнд, на следующей странице выберите точную модель.
+</p>
+
+<p>
+    Мы даем гарантию на весь товар - 12 месяцев. <br/>Покупатель может вернуть назад деньги в течение 30 дней, если товар не устраивает.
+</p>

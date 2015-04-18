@@ -39,3 +39,24 @@ ul.brand-list {
     position: relative;
     padding: 5px 0 0 10px;
 }
+
+.header-full-title {
+    background-image: url("../img/logo_header.png");
+    padding-left: 130px;
+}
+
+.header-full-title h1 span {
+    margin-left: 10px;
+}
+
+.header-full-title h1 {
+    font-family: 'Noto Sans', sans-serif;;
+}
+
+.bx-wrapper {
+    margin-bottom: 0;
+}
+
+.product-note {
+    font-size: 0.85em;
+}

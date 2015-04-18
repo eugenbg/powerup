@@ -60,6 +60,7 @@ class Product extends CActiveRecord implements IECartPosition
 		return array(
 			'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
             'productItems' => array(self::HAS_MANY, 'ProductItem', 'product_id'),
+            'productAttributes' => array(self::HAS_ONE, 'ProductAttributes', 'id'),
 		);
 	}
 

@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Yii Blog Demo',
+	'name'=>'Powerup.by - магазин аккумуляторов',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -49,8 +49,6 @@ return array(
                     'class' => 'application.components.CustomUrlRule',
                     'connectionID' => 'db',
                 ),
-				'post/<id:\d+>/<title:.*?>'=>'post/view',
-				'posts/<tag:.*?>'=>'post/index',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),

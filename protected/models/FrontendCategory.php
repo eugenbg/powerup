@@ -144,5 +144,12 @@ EOF;
         return $this->brands;
     }
 
+    public function getItemCategoryTitle($case, $n = 'single') //падеж, число
+    {
+        $itemCategory = $this->frontendCategoryItemCategories[0]->itemCategory;
+        $itemCategoryTitle = json_decode($itemCategory->title_wordforms);
+        return $itemCategoryTitle->{$n}->{$case};
+    }
+
 
 }

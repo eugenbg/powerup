@@ -3,11 +3,10 @@
 /* @var $model Item */
 
 $this->pageTitle = $model->getFullTitle();
-
 ?>
 
 <?php foreach($model->getLeadingProducts() as $product):?>
-    <h2 class="section-title no-margin-top"><?php echo $product->title; ?></h2>
+    <h2 class="section-title no-margin-top"><?php echo $product->title; ?> - подходит для <?php echo $model->getItemTitle(); ?></h2>
     <div class="row" style="margin-bottom: 40px;">
         <div class="col-md-4">
             <ul class="bxslider">
@@ -19,18 +18,17 @@ $this->pageTitle = $model->getFullTitle();
             </div>
         </div>
         <div class="col-md-5">
-            <h3 class="no-margin-top">Description</h3>
-            <p>
-                description
+            <h3 class="no-margin-top">Заметка</h3>
+            <p class="product-note">
+                Повсеместная практика у не брэндовых производителей аккумуляторов для <?php echo $model->getItemCategoryTitle('r', 'plural'); ?> - указывать бОльшую/рекламную мощность на упаковке батарей. Поэтому в некоторых магазинах вы можете увидеть гораздо бОльшую мощность. Мы указываем <b>реальную</b> мощность аккумулятора, не рекламную.
             </p>
             <?php $this->widget('zii.widgets.CDetailView', array(
-                'data'=>$product,
+                'data'=>$product->productAttributes,
                 'attributes'=>array(
-                    'id',
-                    'sku',
-                    'title',
-                    'price',
-                    'category_id',
+                    'bb_battery_chemistry',
+                    'bb_battery_voltage',
+                    'bb_dimensions',
+                    'bb_battery_capacity_mah',
                 ),
             )); ?>
         </div>
@@ -48,6 +46,17 @@ $this->pageTitle = $model->getFullTitle();
         </div>
     </div>
 <?php endforeach; ?>
+
+    <p>
+        Выше перечислены все аккумуляторы, которые подойдут к вашей <?php echo $model->getItemCategoryTitle('d'); ?> <?php echo $model->getItemTitle(); ?>.
+    </p>
+    <p>
+        Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(); ?> и предоставляем гарантию на аккумулятор длительностью 12 месяцев. Если возникнут неисправности - мы просто заменим аккумулятор на новый. Либо мы можем вернуть деньги в течение 30 дней после покупки.
+    </p>
+    <p>
+        Надеемся Вам понравиться покупать в нашем магазине :)
+    </p>
+
 
 <!--<h2 class="right-line">Другие товары для <?php /*echo $model->title; */?></h2>
 <?php /*foreach($model->getRelatedProducts() as $product):*/?>

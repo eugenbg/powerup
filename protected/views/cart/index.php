@@ -1,3 +1,7 @@
+<?php
+$this->pageTitle = "Корзина";
+?>
+
 <form id="cart-form" action="/checkout/order" method="POST">
     <?php if($empty): ?>
     <p>
