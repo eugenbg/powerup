@@ -29,10 +29,10 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=batareiki',
+			'connectionString' => 'mysql:host=localhost;dbname=meugenb_powerup',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'meugenb_powerup',
+			'password' => 'H37shajGhejk3',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
@@ -87,7 +87,6 @@ return array(
             // 'newFileMode'=>0666,
             // 'newDirMode'=>0777,
         ),
-        'admin',
     ),
 
 	// application-level parameters that can be accessed
