@@ -36,17 +36,16 @@ class Product extends CActiveRecord implements IECartPosition
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-            array('urlkey', 'required'),
 			array('category_id, qty', 'numerical', 'integerOnly'=>true),
             array('qty','numerical',
                 'integerOnly'=>true,
                 'min'=>1,
                 'tooSmall'=>'You must order at least 1 piece'),
 			array('sku, title, urlkey', 'length', 'max'=>30),
-			array('price', 'length', 'max'=>4),
+			array('price, market_price', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sku, title, price, category_id, urlkey', 'safe', 'on'=>'search'),
+			array('id, sku, title, price, category_id, urlkey, market_price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,6 +101,7 @@ class Product extends CActiveRecord implements IECartPosition
 		$criteria->compare('price',$this->price,true);
 		$criteria->compare('category_id',$this->category_id);
         $criteria->compare('urlkey',$this->urlkey,true);
+        $criteria->compare('market_price',$this->market_price,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -147,5 +147,13 @@ class Product extends CActiveRecord implements IECartPosition
             return sprintf('Аккумулятор для %s %s', $this->item->brand->title ,$this->item->title);
         }
         return 'Аккумлятор ' . $this->title;
+    }
+
+    /*
+     * TO-DO: move to abstract model
+     */
+    public function getImages()
+    {
+        return Image::model()->findAllByAttributes(array('entity_type' => get_class($this), 'entity_id' => $this->id));
     }
 }

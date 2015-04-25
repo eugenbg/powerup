@@ -1,0 +1,19 @@
+.content-header>.breadcrumb {
+    position: relative;
+    float: none;
+    top:0;
+    right:0;
+}
+
+.pics {
+    margin: 10px 5px;
+}
+
+.pics .pic {
+    float: left;
+    margin-right: 15px;
+}
+
+.pics .pic img {
+    border: 1px solid #c3c3c3;
+}

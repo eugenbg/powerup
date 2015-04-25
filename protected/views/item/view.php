@@ -9,6 +9,7 @@ $this->pageTitle = $model->getFullTitle();
     <h2 class="section-title no-margin-top"><?php echo $product->title; ?> - подходит для <?php echo $model->getItemTitle(); ?></h2>
     <div class="row" style="margin-bottom: 40px;">
         <div class="col-md-4">
+            <?php if(!count($product->getImages())): ?>
             <ul class="bxslider">
                 <li><img src="/img/no_photo.png"></li>
             </ul>
@@ -16,6 +17,23 @@ $this->pageTitle = $model->getFullTitle();
             <div id="bx-pager">
                 <a data-slide-index="0" href=""><img src="/img/no_photo_40x30.png"></a>
             </div>
+            <?php else: ?>
+                <ul class="bxslider">
+                    <?php foreach($product->getImages() as $image): ?>
+                    <li><img src="<?php echo $image->file; ?>"></li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <div id="bx-pager">
+                    <?php
+                    $i = 0;
+                    foreach($product->getImages() as $image): ?>
+                        <a data-slide-index="<?php echo $i; ?>" href=""><img src="<?php echo $image->thumbnail_file; ?>"></a>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+
+                </div>
+            <?php endif; ?>
         </div>
         <div class="col-md-5">
             <h3 class="no-margin-top">Заметка</h3>

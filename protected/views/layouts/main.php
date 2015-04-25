@@ -103,7 +103,6 @@
 <header class="main-header">
     <div class="container">
         <h1 class="page-title"><?php echo CHtml::encode($this->pageTitle); ?></h1>
-
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
             'tagName' => 'ol',
             'homeLink' => '<a href="'.Yii::app()->getBaseUrl(true).'">Главная</a>',

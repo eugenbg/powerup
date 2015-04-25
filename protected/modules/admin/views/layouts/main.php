@@ -28,6 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <link href="/admintheme/custom.css" rel="stylesheet" type="text/css" />
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -258,15 +259,39 @@ desired effect
             <small>Optional description</small>
         </h1>
 
+        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+            'tagName' => 'ol',
+            'homeLink' => '<li><a href="'.Yii::app()->getBaseUrl(true).'"><i class="fa fa-dashboard"></i> Главная</a>',
+            'htmlOptions' => array('class' => 'breadcrumb'),
+            'links'=>$this->breadcrumbs,
+            'activeLinkTemplate' => '<li><a href="{url}">{label}</a></li>',
+            'separator' => ''
+        )); ?><!-- breadcrumbs -->
 
-        <ol class="breadcrumb">
+<!--        <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
             <li class="active">Here</li>
-        </ol>
+        </ol>-->
     </section>
 
     <!-- Main content -->
     <section class="content">
+
+        <?php if(Yii::app()->user->hasFlash('error')): ?>
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i> Ошибка!</h4>
+                <?php echo Yii::app()->user->getFlash('error'); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if(Yii::app()->user->hasFlash('success')): ?>
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>	<i class="icon fa fa-check"></i> Ура!</h4>
+                <?php echo Yii::app()->user->getFlash('success'); ?>
+            </div>
+        <?php endif; ?>
 
         <!-- Your Page Content Here -->
         <div class="row">

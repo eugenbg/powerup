@@ -132,6 +132,7 @@ class Image extends CActiveRecord
                     $returnImages[] = $image;
                 } else {
                     Yii::app()->user->setFlash('error', "image $image could not be saved!");
+                    return false;
                 }
             }
         }
