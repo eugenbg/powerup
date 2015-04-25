@@ -4,8 +4,10 @@
 $this->breadcrumbs=array(
 	$this->module->id,
 );
+
+$this->pageTitle = 'Админка - начало..'
+
 ?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
 
 <p>
 This is the view content for action "<?php echo $this->action->id; ?>".
