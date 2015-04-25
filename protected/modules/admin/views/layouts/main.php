@@ -236,7 +236,7 @@ desired effect
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="#"><span>Link</span></a><</li>
-            <li><a href="#"><span>Another Link</span></a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('admin/product/index'); ?>"><span>Продукты</span></a></li>
             <li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -258,7 +258,6 @@ desired effect
             <small>Optional description</small>
         </h1>
 
-        <?php echo $content; ?>
 
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -270,6 +269,11 @@ desired effect
     <section class="content">
 
         <!-- Your Page Content Here -->
+        <div class="row">
+            <div class="col-lg-12">
+                <?php echo $content; ?>
+            </div>
+        </div>
 
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
@@ -289,7 +293,8 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.3 -->
-<script src="/admintheme/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+<!--<script src="/admintheme/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+-->
 <!-- Bootstrap 3.3.2 JS -->
 <script src="/admintheme/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- AdminLTE App -->
