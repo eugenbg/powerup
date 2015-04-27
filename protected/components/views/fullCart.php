@@ -1,3 +1,13 @@
+<?php if(!count($cartItems)): ?>
+<div class="full-cart-holder">
+    <div class="panel panel-default">
+        <div class="panel-heading">Корзина</div>
+        <div class="panel-body">
+            Ваша корзина пуста, наполните её :)
+        </div>
+    </div>
+</div>
+<?php else: ?>
 <div class="full-cart-holder">
         <div class="panel panel-default">
             <div class="panel-heading">Корзина</div>
@@ -61,3 +71,4 @@
     <button type="button" id="refresh-cart" class="btn btn-success btn-lg pull-right">Обновить корзину</button>
 
 </div>
+<?php endif; ?>
