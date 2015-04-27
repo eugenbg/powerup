@@ -120,15 +120,24 @@ class Image extends CActiveRecord
         if (isset($images) && count($images) > 0) {
             // go through each uploaded image
             foreach ($images as $image => $pic) {
-                if ($pic->saveAs(Yii::getPathOfAlias('webroot') . "/media/$folder/" . $pic->name)) {
+                $fileName = uniqid('i_') . '.' . $pic->extensionName;
+
+                if ($pic->saveAs(Yii::getPathOfAlias('webroot') . "/media/$folder/" . $fileName)) {
                     $image = new Image();
-                    $image->file = "/media/$folder/" . $pic->name;
+                    $image->file = "/media/$folder/" . $fileName;
                     $image->entity_type = $entity_type;
                     $image->entity_id = $model->id;
                     $image->save();
                     $thumb = self::makeThumbnail($image);
-                    $image->thumbnail_file = str_replace(Yii::getPathOfAlias('webroot'), '', $thumb[0]);
-                    $image->save();
+                    if(count($thumb))
+                    {
+                        $image->thumbnail_file = str_replace(Yii::getPathOfAlias('webroot'), '', $thumb[0]);
+                        $image->save();
+                    }
+                    else
+                    {
+                        $image->delete();
+                    }
                     $returnImages[] = $image;
                 } else {
                     Yii::app()->user->setFlash('error', "image $image could not be saved!");
@@ -148,7 +157,7 @@ class Image extends CActiveRecord
 
     }
 
-    public static function makeThumbnail($image)
+    public static function makeThumbnail(self $image)
     {
         Yii::app()->ThumbsGen->thumbWidth = 100;
         Yii::app()->ThumbsGen->thumbHeight = 100;
@@ -167,6 +176,27 @@ class Image extends CActiveRecord
             mkdir($path);
             chmod($path, 0755);
         }
+    }
+
+    public static function deleteImage($entity_type, $product_id, $image_id)
+    {
+        $model = Image::model()->findByAttributes(
+            array(
+                'entity_type' => $entity_type,
+                'entity_id' => $product_id,
+                'id' => $image_id
+            )
+        );
+
+        if($model)
+        {
+            $folder = strtolower($entity_type);
+            $path = Yii::getPathOfAlias('webroot');
+            @unlink($path.$model->file);
+            @unlink($path.$model->thumbnail_file);
+            $model->delete();
+        }
+        return true;
     }
 
 }

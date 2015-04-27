@@ -10,10 +10,21 @@
 }
 
 .pics .pic {
+    position: relative;
     float: left;
     margin-right: 15px;
 }
 
 .pics .pic img {
     border: 1px solid #c3c3c3;
+}
+
+.pics .pic .remove-pic
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 1em;
+    background: black;
 }

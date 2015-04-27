@@ -31,4 +31,10 @@ class ProductController extends Controller
         }
         $this->render('edit', array('model' => $model));
     }
+
+    public function actionDeleteimage($product_id, $image_id)
+    {
+        Image::deleteImage('Product', $product_id, $image_id);
+        $this->forward($this->createUrl('/admin/product/edit/', array('id'=>$product_id)));
+    }
 }

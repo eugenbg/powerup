@@ -46,6 +46,10 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <div class="pics">
                 <?php foreach ($model->getImages() as $image):?>
                     <div class="pic">
+                        <a href="<?php echo Yii::app()->createUrl('/admin/product/deleteimage',
+                            array('product_id' => $model->id, 'image_id' => $image->id)); ?>"
+                            <span class="remove-pic glyphicon glyphicon-remove"></span>
+                        </a>
                         <img src="<?php echo $image->thumbnail_file; ?>"/>
                     </div>
                 <?php endforeach; ?>
