@@ -1,9 +1,9 @@
 <?php
 /* @var $this DefaultController */
 
-$this->breadcrumbs=array(
-	$this->module->id,
-);
+$this->breadcrumbs[] = 'Продукты';
+$this->pageTitle = 'Список продуктов';
+
 
 $this->pageTitle = 'Продукты';
 $dataProvider = new CActiveDataProvider('Product');

@@ -29,7 +29,6 @@ class Page extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('urlkey, title, content, meta_description', 'required'),
-			array('urlkey, meta_description', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, urlkey, title, content, meta_description', 'safe', 'on'=>'search'),
@@ -54,9 +53,9 @@ class Page extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'urlkey' => 'Urlkey',
-			'title' => 'Title',
-			'content' => 'Content',
+			'urlkey' => 'Адрес страницы (urlkey)',
+			'title' => 'Название',
+			'content' => 'Контент',
 			'meta_description' => 'Meta Description',
 		);
 	}

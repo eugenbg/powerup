@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs['Продукты'] = Yii::app()->createUrl('admin/product/index');
-$this->breadcrumbs['Редактирование продукта'] = '';
+$this->breadcrumbs[] = 'Редактирование продукта';
 $this->pageTitle = 'Редактирование продукта <b>'.$model->title.'</b>';
 
 ?>
