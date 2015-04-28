@@ -1,5 +1,4 @@
 <?php
-/* @var $this DefaultController */
 
 $this->breadcrumbs[] = 'Устройства';
 $this->pageTitle = 'Список устройств';
