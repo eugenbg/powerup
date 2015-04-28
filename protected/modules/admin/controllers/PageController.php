@@ -1,6 +1,6 @@
 <?php
 
-class PageController extends Controller
+class PageController extends AdminController
 {
 
     public $layout = 'main';
@@ -20,7 +20,7 @@ class PageController extends Controller
             if($model->save())
             {
                 Yii::app()->user->setFlash('success', 'Успешно сохранено');
-                $this->forward('page/index');
+                $this->redirect('/admin/page/index');
             }
             else
             {
@@ -34,7 +34,7 @@ class PageController extends Controller
     public function actionDeleteimage($product_id, $image_id)
     {
         Image::deleteImage('Product', $product_id, $image_id);
-        $this->forward($this->createUrl('/admin/product/edit/', array('id'=>$product_id)));
+        $this->redirect($this->createUrl('/admin/product/edit/', array('id'=>$product_id)));
     }
 
 }

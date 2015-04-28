@@ -1,7 +1,7 @@
 <?php
-$this->breadcrumbs['Продукты'] = Yii::app()->createUrl('admin/product/index');
-$this->breadcrumbs[] = 'Редактирование продукта';
-$this->pageTitle = 'Редактирование продукта <b>'.$model->title.'</b>';
+$this->breadcrumbs['Брэнды'] = Yii::app()->createUrl('admin/brand/index');
+$this->breadcrumbs[] = 'Редактирование брэнда';
+$this->pageTitle = 'Редактирование брэнда <b>'.$model->title.'</b>';
 
 ?>
 
@@ -20,19 +20,9 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <?php echo $form->error($model,'title'); ?>
         </div>
         <div class="form-group">
-            <?php echo $form->labelEx($model,'sku'); ?>
-            <?php echo $form->textField($model,'sku', array('class'=>'form-control')); ?>
-            <?php echo $form->error($model,'sku'); ?>
-        </div>
-        <div class="form-group">
-            <?php echo $form->labelEx($model,'price'); ?>
-            <?php echo $form->textField($model,'price', array('class'=>'form-control')); ?>
-            <?php echo $form->error($model,'price'); ?>
-        </div>
-        <div class="form-group">
-            <?php echo $form->labelEx($model,'market_price'); ?>
-            <?php echo $form->textField($model,'market_price', array('class'=>'form-control')); ?>
-            <?php echo $form->error($model,'market_price'); ?>
+            <?php echo $form->labelEx($model,'urlkey'); ?>
+            <?php echo $form->textField($model,'urlkey', array('class'=>'form-control')); ?>
+            <?php echo $form->error($model,'urlkey'); ?>
         </div>
         <div class="form-group">
             <label>Картинки</label>
@@ -46,7 +36,7 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <div class="pics">
                 <?php foreach ($model->getImages() as $image):?>
                     <div class="pic">
-                        <a href="<?php echo Yii::app()->createUrl('/admin/product/deleteimage',
+                        <a href="<?php echo Yii::app()->createUrl('/admin/brand/deleteimage',
                             array('entity_id' => $model->id, 'image_id' => $image->id)); ?>"
                             <span class="remove-pic glyphicon glyphicon-remove"></span>
                         </a>

@@ -1,6 +1,6 @@
 <?php
 
-class ConfigController extends Controller
+class ConfigController extends AdminController
 {
 
     public $layout = 'main';
@@ -21,6 +21,6 @@ class ConfigController extends Controller
             Yii::app()->settings->set($configCategory, $configItem, $value);
         }
 
-        $this->forward(Yii::app()->createUrl('admin/config/index'));
+        $this->redirect(Yii::app()->createUrl('admin/config/index'));
     }
 }

@@ -1,27 +1,25 @@
 <?php
 
-class ProductController extends AdminController
+class BrandController extends AdminController
 {
 
     public $layout = 'main';
 
     public function actionIndex()
 	{
-        $model = new Product();
-        $this->render('index', array('model' => $model));
+        $this->render('index');
 	}
 
     public function actionEdit($id)
     {
-        $model = Product::model()->findByPk($id);
-        if(isset($_POST['Product']))
+        $model = Brand::model()->findByPk($id);
+        if(isset($_POST['Brand']))
         {
-            $model->attributes = $_POST['Product'];
-
+            $model->attributes = $_POST['Brand'];
             if($model->save() && Image::saveImages($model))
             {
                 Yii::app()->user->setFlash('success', 'Успешно сохранено');
-                $this->redirect('/admin/product/index');
+                $this->redirect('/admin/brand/index');
             }
             else
             {

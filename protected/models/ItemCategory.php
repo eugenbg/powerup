@@ -10,7 +10,7 @@
  * The followings are the available model relations:
  * @property ItemItemCategory[] $itemItemCategories
  */
-class ItemCategory extends CActiveRecord
+class ItemCategory extends MyActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -87,7 +87,7 @@ class ItemCategory extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return ItemCategory the static model class
 	 */

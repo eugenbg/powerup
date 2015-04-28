@@ -10,7 +10,7 @@
  * @property integer $update_time
  * @property integer $author_id
  */
-class Post extends CActiveRecord
+class Post extends MyActiveRecord
 {
 	const STATUS_DRAFT=1;
 	const STATUS_PUBLISHED=2;

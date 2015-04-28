@@ -9,7 +9,7 @@
  * @property integer $sequence
  * @property integer $status
  */
-class Lookup extends CActiveRecord
+class Lookup extends MyActiveRecord
 {
 	private static $_items=array();
 

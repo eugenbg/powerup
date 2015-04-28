@@ -8,7 +8,7 @@
  * @property integer $series_id
  * @property integer $subseries_id
  */
-class SeriesSubseries extends CActiveRecord
+class SeriesSubseries extends MyActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -86,7 +86,7 @@ class SeriesSubseries extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return SeriesSubseries the static model class
 	 */

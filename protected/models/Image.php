@@ -10,7 +10,7 @@
  * @property string $file
  * @property string $thumbnail_file
  */
-class Image extends CActiveRecord
+class Image extends MyActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -95,7 +95,7 @@ class Image extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Image the static model class
 	 */
@@ -145,11 +145,11 @@ class Image extends CActiveRecord
                 }
             }
         }
-        return $returnImages;
+        return true;
     }
 
     /**
-     * @param $model CActiveRecord
+     * @param $model MyActiveRecord
      * @return array of image models for provided model
      */
     public static function getModelImages($model)

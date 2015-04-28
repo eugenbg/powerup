@@ -16,7 +16,7 @@
  * @property Series $subseries
  * @property ProductItem[] $productItems
  */
-class Item extends CActiveRecord
+class Item extends MyActiveRecord
 {
 
     const TYPE_MODEL = 3;
@@ -118,7 +118,7 @@ class Item extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Item the static model class
 	 */

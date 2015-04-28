@@ -214,7 +214,14 @@ desired effect
 -->            <!-- Optionally, you can add icons to the links -->
 <!--            <li class="active"><a href="#"><span>Link</span></a><</li>
 -->
-            <li><a href="<?php echo Yii::app()->createUrl('admin/product/index'); ?>"><span>Продукты</span></a></li>
+            <li class="<?php echo Yii::app()->getController()->getId() == 'product' ? 'active' : ''; ?>">
+                <a href="<?php echo Yii::app()->createUrl('admin/product/index'); ?>"><span>Продукты</span></a>
+            </li>
+            <li class="<?php echo Yii::app()->getController()->getId() == 'item' ? 'active' : ''; ?>">
+                <a href="<?php echo Yii::app()->createUrl('admin/item/index'); ?>"><span>Устройства</span></a>
+            </li>
+            <li><a href="<?php echo Yii::app()->createUrl('admin/brand/index'); ?>"><span>Брэнды</span></a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('admin/series/index'); ?>"><span>Серии</span></a></li>
             <li><a href="<?php echo Yii::app()->createUrl('admin/page/index'); ?>"><span>Страницы</span></a></li>
             <li><a href="<?php echo Yii::app()->createUrl('admin/config/index'); ?>"><span>Настройки</span></a></li>
 <!--            <li class="treeview">

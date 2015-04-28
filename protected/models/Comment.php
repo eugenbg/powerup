@@ -10,7 +10,7 @@
  * @property string $url
  * @property integer $post_id
  */
-class Comment extends CActiveRecord
+class Comment extends MyActiveRecord
 {
 	const STATUS_PENDING=1;
 	const STATUS_APPROVED=2;

@@ -11,7 +11,7 @@
  * @property Item[] $items
  * @property Series[] $series
  */
-class Brand extends CActiveRecord
+class Brand extends MyActiveRecord
 {
     public $itemsList = array();
     public $partList = array();
@@ -93,7 +93,7 @@ class Brand extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Brand the static model class
 	 */

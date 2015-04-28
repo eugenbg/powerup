@@ -1,27 +1,26 @@
 <?php
 
-class ProductController extends AdminController
+class SeriesController extends AdminController
 {
 
     public $layout = 'main';
 
     public function actionIndex()
 	{
-        $model = new Product();
-        $this->render('index', array('model' => $model));
+        $this->render('index');
 	}
 
     public function actionEdit($id)
     {
-        $model = Product::model()->findByPk($id);
-        if(isset($_POST['Product']))
+        $model = Series::model()->findByPk($id);
+        if(isset($_POST['Series']))
         {
-            $model->attributes = $_POST['Product'];
+            $model->attributes = $_POST['Series'];
 
-            if($model->save() && Image::saveImages($model))
+            if($model->save())
             {
                 Yii::app()->user->setFlash('success', 'Успешно сохранено');
-                $this->redirect('/admin/product/index');
+                $this->redirect('/admin/series/index');
             }
             else
             {

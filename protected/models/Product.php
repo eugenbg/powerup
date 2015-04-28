@@ -14,7 +14,7 @@
  * @property Category $category
  * @property ProductModel[] $productModels
  */
-class Product extends CActiveRecord implements IECartPosition
+class Product extends MyActiveRecord implements IECartPosition
 {
 
     public $qty;
@@ -110,7 +110,7 @@ class Product extends CActiveRecord implements IECartPosition
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Product the static model class
 	 */

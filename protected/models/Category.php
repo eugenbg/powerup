@@ -9,7 +9,7 @@
  * The followings are the available model relations:
  * @property Product[] $products
  */
-class Category extends CActiveRecord
+class Category extends MyActiveRecord
 {
 
     public $brands;
@@ -88,7 +88,7 @@ class Category extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Category the static model class
 	 */

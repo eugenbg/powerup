@@ -7,7 +7,7 @@
  * @property string $password
  * @property string $email
  */
-class User extends CActiveRecord
+class User extends MyActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

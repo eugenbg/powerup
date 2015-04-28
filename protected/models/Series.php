@@ -16,7 +16,7 @@
  * @property Series $parentSeries
  * @property Series[] $series
  */
-class Series extends CActiveRecord
+class Series extends MyActiveRecord
 {
 
     public $items;
@@ -41,12 +41,11 @@ class Series extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, brand_id', 'required'),
-			array('parent_series_id, brand_id', 'numerical', 'integerOnly'=>true),
+			array('title, urlkey', 'required'),
 			array('title', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, parent_series_id, brand_id', 'safe', 'on'=>'search'),
+			array('id, title, urlkey, searchdata ', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -108,7 +107,7 @@ class Series extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return Series the static model class
 	 */

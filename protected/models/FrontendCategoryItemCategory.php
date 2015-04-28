@@ -12,7 +12,7 @@
  * @property ItemCategory $itemCategory
  * @property FrontendCategory $frontendCategory
  */
-class FrontendCategoryItemCategory extends CActiveRecord
+class FrontendCategoryItemCategory extends MyActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -92,7 +92,7 @@ class FrontendCategoryItemCategory extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return FrontendCategoryItemCategory the static model class
 	 */

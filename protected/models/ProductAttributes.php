@@ -23,7 +23,7 @@
  * The followings are the available model relations:
  * @property Product $id0
  */
-class ProductAttributes extends CActiveRecord
+class ProductAttributes extends MyActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -128,7 +128,7 @@ class ProductAttributes extends CActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
 	 * @param string $className active record class name.
 	 * @return ProductAttributes the static model class
 	 */
