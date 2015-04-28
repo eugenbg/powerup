@@ -184,12 +184,23 @@ class Item extends CActiveRecord
     {
         $itemCategory = $this->itemItemCategories[0]->itemCategory;
         $itemCategoryTitle = json_decode($itemCategory->title_wordforms);
-        return "Аккумуляторы для ".
-        $itemCategoryTitle->single->r .
-        " " . $this->brand->title .
-        ($this->series ? " " . $this->series->title : '') .
-        ($this->subseries ? " " . $this->subseries->title : '') .
-        " " . $this->title;
+        if($this->type == self::TYPE_MODEL)
+        {
+            return "Аккумулятор для ".
+            $itemCategoryTitle->single->r .
+            " " . $this->brand->title .
+            ($this->series ? " " . $this->series->title : '') .
+            ($this->subseries ? " " . $this->subseries->title : '') .
+            " " . $this->title;
+        }
+        elseif($this->type == self::TYPE_PART)
+        {
+            return "Аккумулятор ".
+            " " . $this->brand->title .
+            ($this->series ? " " . $this->series->title : '') .
+            ($this->subseries ? " " . $this->subseries->title : '') .
+            " " . $this->title;
+        }
     }
 
     public function getItemCategoryTitle($case, $n = 'single') //падеж, число
@@ -201,6 +212,7 @@ class Item extends CActiveRecord
 
     public function getItemTitle()
     {
+
         $title = $this->brand->title;
         if($this->series)
         {
@@ -211,7 +223,14 @@ class Item extends CActiveRecord
             $title .= ' ' . $this->subseries->title;
         }
         $title .= ' ' . $this->title;
+        if($this->type == self::TYPE_PART)
+        {
+            return 'аналог ' . $title;
+        }
+        elseif($this->type == self::TYPE_MODEL)
+        {
+            return 'подходит для ' . $title;
+        }
 
-        return $title;
     }
 }

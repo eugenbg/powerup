@@ -6,7 +6,7 @@ $this->pageTitle = $model->getFullTitle();
 ?>
 
 <?php foreach($model->getLeadingProducts() as $product):?>
-    <h2 class="section-title no-margin-top"><?php echo $product->title; ?> - подходит для <?php echo $model->getItemTitle(); ?></h2>
+    <h2 class="section-title no-margin-top"><?php echo $product->title; ?> -  <?php echo $model->getItemTitle(); ?></h2>
     <div class="row" style="margin-bottom: 40px;">
         <div class="col-md-4">
             <?php if(!count($product->getImages())): ?>
