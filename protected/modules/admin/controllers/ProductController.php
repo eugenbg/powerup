@@ -7,7 +7,12 @@ class ProductController extends AdminController
 
     public function actionIndex()
 	{
-        $model = new Product();
+        $model = new Product('search');
+        if(isset($_GET['Product']))
+        {
+            $model->attributes=$_GET['Product'];
+        }
+
         $this->render('index', array('model' => $model));
 	}
 

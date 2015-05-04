@@ -7,9 +7,19 @@ $this->pageTitle = 'Список продуктов';
 
 $this->pageTitle = 'Продукты';
 $dataProvider = new CActiveDataProvider('Product');
+?>
 
+<?php
+/* @var $this ProductController */
+/* @var $model Product */
+/* @var $form CActiveForm */
+?>
+
+<?php
 $this->widget('zii.widgets.grid.CGridView', array(
-    'dataProvider'=> $dataProvider,
+    'id'=>'product-grid',
+    'dataProvider'=> $model->search(),
+    'filter'=>$model,
     'columns' => array(
         'id',
         'sku',
