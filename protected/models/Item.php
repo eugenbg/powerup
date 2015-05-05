@@ -210,7 +210,7 @@ class Item extends MyActiveRecord
         return $itemCategoryTitle->{$n}->{$case};
     }
 
-    public function getItemTitle()
+    public function getItemTitle($short = false)
     {
 
         $title = $this->brand->title;
@@ -223,6 +223,10 @@ class Item extends MyActiveRecord
             $title .= ' ' . $this->subseries->title;
         }
         $title .= ' ' . $this->title;
+        if($short)
+        {
+            return $title;
+        }
         if($this->type == self::TYPE_PART)
         {
             return 'аналог ' . $title;
@@ -233,4 +237,5 @@ class Item extends MyActiveRecord
         }
 
     }
+
 }

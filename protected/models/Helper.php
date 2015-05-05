@@ -8,7 +8,7 @@ Class Helper {
         return (int) ($amount*$conversionRate/1000);
     }
 
-    public static function getCurrencyPostfix ()
+    public static function getCurrencyPostfix()
     {
         return 'тыс.руб';
     }

@@ -20,7 +20,10 @@ class Product extends MyActiveRecord implements IECartPosition
     public $qty;
     public $item; //used when product is a cart item
 
-	/**
+    public $assignedItems = array();
+    public $assignedParts = array();
+
+    /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -156,4 +159,32 @@ class Product extends MyActiveRecord implements IECartPosition
     {
         return Image::model()->findAllByAttributes(array('entity_type' => get_class($this), 'entity_id' => $this->id));
     }
+
+    public function getAllItems($limit = 40)
+    {
+        $criteria = new CDbCriteria();
+        $criteria->join = 'JOIN product_item pi ON pi.product_id = :product_id AND pi.item_id = t.id ';
+        $criteria->params = array(':product_id' => $this->id);
+        //$criteria->limit = $limit;
+        //$criteria->compare('type', Item::TYPE_MODEL);
+        $items = Item::model()->findAll($criteria);
+
+        $itemQty = 0;
+        $partQty = 0;
+        foreach($items as $item)
+        {
+            if($item->type == Item::TYPE_MODEL && $itemQty < $limit)
+            {
+                $itemQty++;
+                $this->assignedItems[] = $item;
+            }
+            elseif($item->type == Item::TYPE_PART && $partQty < $limit)
+            {
+                $partQty++;
+                $this->assignedParts[] = $item;
+            }
+        }
+        return $this->assignedItems;
+    }
+
 }

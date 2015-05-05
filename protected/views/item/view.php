@@ -72,9 +72,35 @@ $this->pageTitle = $model->getFullTitle();
         Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(); ?> и предоставляем гарантию на аккумулятор длительностью 12 месяцев. Если возникнут неисправности - мы просто заменим аккумулятор на новый. Либо мы можем вернуть деньги в течение 30 дней после покупки.
     </p>
     <p>
-        Надеемся Вам понравиться покупать в нашем магазине :)
+        Надеемся Вам понравится покупать в нашем магазине :)
     </p>
-
+<div class="related-items">
+    <h2>Аккумулятор также подходит для следующих моделей:</h2>
+    <ul>
+        <?php foreach ($product->getAllItems() as $item):?>
+            <li style="float: left; margin-right: 30px; width: 230px">
+                <a href="<?php echo $this->createUrl('custom/item',
+                    array('item'=>$item->id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
+                )?>">
+                    <?php echo $item->getItemTitle(true); ?>
+                </a>
+            </li>
+        <?php endforeach;?>
+    </ul>
+    <div class="clearfix"></div>
+    <h2>Аккумулятор является аналогом следующих моделей аккумуляторов:</h2>
+    <ul>
+        <?php foreach ($product->assignedParts as $item):?>
+            <li style="float: left; margin-right: 30px; width: 230px">
+                <a href="<?php echo $this->createUrl('custom/item',
+                    array('item'=>$item->id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
+                )?>">
+                    <?php echo $item->getItemTitle(true); ?>
+                </a>
+            </li>
+        <?php endforeach;?>
+    </ul>
+</div>
 
 <!--<h2 class="right-line">Другие товары для <?php /*echo $model->title; */?></h2>
 <?php /*foreach($model->getRelatedProducts() as $product):*/?>
