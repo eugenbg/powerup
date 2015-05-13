@@ -60,3 +60,13 @@ ul.brand-list {
 .product-note {
     font-size: 0.85em;
 }
+
+.home div a {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.header-full-title {
+    cursor: pointer;
+}

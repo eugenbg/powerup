@@ -44,7 +44,7 @@
 
 <header id="header-full-top" class="hidden-xs header-full">
     <div class="container">
-        <div class="header-full-title">
+        <div class="header-full-title" onclick="window.location.href='/'">
             <h1 class="animated fadeInRight"><a href="/">Powerup.by <span> Зарядись!</span></a></h1>
 
             <p class="animated fadeInRight">Магазин аккумуляторов и зарядок</p>
