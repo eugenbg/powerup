@@ -4,7 +4,7 @@ Class Helper {
 
     public static function convertToBLR ($amount)
     {
-        $conversionRate = Yii::app()->params['usd-blr'];
+        $conversionRate = Yii::app()->settings->get('main', 'usd_blr_conversion');
         return (int) ($amount*$conversionRate/1000);
     }
 

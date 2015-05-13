@@ -129,6 +129,9 @@ class Series extends MyActiveRecord
         {
             $where = "WHERE fc.id = :frontend_category_id AND s.id = :this_id";
         }
+
+        $where .= ' AND p.status = 1';
+
         $sql =
 <<<EOF
 SELECT
@@ -207,7 +210,7 @@ JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
 JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
 JOIN series s ON i.series_id = s.id
 JOIN series ss ON i.subseries_id = ss.id
-WHERE fc.id = :frontend_category_id AND s.id = :series_id
+WHERE fc.id = :frontend_category_id AND s.id = :series_id AND p.status = 1
 GROUP BY ss.id
 EOF;
 

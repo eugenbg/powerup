@@ -35,6 +35,12 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <?php echo $form->error($model,'market_price'); ?>
         </div>
         <div class="form-group">
+            <?php echo $form->labelEx($model,'status'); ?>
+            <?php echo $form->dropDownList($model,'status', $model->statusLabels, array('class'=>'form-control')); ?>
+            <?php echo $form->error($model,'status'); ?>
+        </div>
+
+        <div class="form-group">
             <label>Картинки</label>
             <?php $this->widget('CMultiFileUpload', array(
                 'name' => 'images',

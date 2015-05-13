@@ -121,7 +121,7 @@ JOIN product_item pi ON pi.item_id = i.id
 JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
 JOIN product p ON pi.product_id = p.id
 JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
-WHERE fc.id = :frontend_category_id AND b.id = :brand_id
+WHERE fc.id = :frontend_category_id AND b.id = :brand_id AND p.status = 1
 GROUP BY s.id
 EOF;
 
@@ -157,7 +157,7 @@ JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
 JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
 LEFT JOIN series s ON i.series_id = s.id
 LEFT JOIN series ss ON i.subseries_id = ss.id
-WHERE fc.id = :frontend_category_id AND b.id = :brand_id
+WHERE fc.id = :frontend_category_id AND b.id = :brand_id AND p.status = 1
 GROUP BY i.id
 EOF;
 

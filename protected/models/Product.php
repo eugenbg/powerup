@@ -8,7 +8,7 @@
  * @property string $sku
  * @property string $title
  * @property string $price
- * @property integer $category_id
+ * property integer $status
  *
  * The followings are the available model relations:
  * @property Category $category
@@ -22,6 +22,14 @@ class Product extends MyActiveRecord implements IECartPosition
 
     public $assignedItems = array();
     public $assignedParts = array();
+
+    const STATUS_ENABLED = 1;
+    const STATUS_DISABLED = 0;
+
+    public $statusLabels = array(
+        self::STATUS_DISABLED => 'выключен',
+        self::STATUS_ENABLED => 'включен'
+    );
 
     /**
 	 * @return string the associated database table name
@@ -39,7 +47,7 @@ class Product extends MyActiveRecord implements IECartPosition
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('category_id, qty', 'numerical', 'integerOnly'=>true),
+			array('qty, status', 'numerical', 'integerOnly'=>true),
             array('qty','numerical',
                 'integerOnly'=>true,
                 'min'=>1,
@@ -48,7 +56,7 @@ class Product extends MyActiveRecord implements IECartPosition
 			array('price, market_price', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sku, title, price, category_id, urlkey, market_price', 'safe', 'on'=>'search'),
+			array('id, sku, title, price, category_id, urlkey, market_price, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,11 +110,11 @@ class Product extends MyActiveRecord implements IECartPosition
 		$criteria->compare('sku',$this->sku,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('price',$this->price,true);
-		$criteria->compare('category_id',$this->category_id);
         $criteria->compare('urlkey',$this->urlkey,true);
         $criteria->compare('market_price',$this->market_price,true);
+        $criteria->compare('status',$this->status,true);
 
-		return new CActiveDataProvider($this, array(
+        return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
@@ -162,11 +170,13 @@ class Product extends MyActiveRecord implements IECartPosition
 
     public function getAllItems($limit = 40)
     {
+        $frontendCategory = Yii::app()->params['category'];
         $criteria = new CDbCriteria();
-        $criteria->join = 'JOIN product_item pi ON pi.product_id = :product_id AND pi.item_id = t.id ';
+        $criteria->join  = 'JOIN product_item pi ON pi.product_id = :product_id AND pi.item_id = t.id ';
+        $criteria->join .= 'JOIN item_item_category iic ON iic.item_id = t.id ';
+        $criteria->join .= 'JOIN frontend_category_item_category fcic ON fcic.item_category_id = iic.item_category_id';
         $criteria->params = array(':product_id' => $this->id);
-        //$criteria->limit = $limit;
-        //$criteria->compare('type', Item::TYPE_MODEL);
+        $criteria->compare('fcic.frontend_category_id', $frontendCategory->id);
         $items = Item::model()->findAll($criteria);
 
         $itemQty = 0;

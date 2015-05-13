@@ -140,15 +140,15 @@
                 <h3 class="footer-widget-title">Телефоны</h3>
                 <ul class="list-unstyled">
                     <li>
-                        velcom: +375 296 111111
+                        velcom: +375 296098741
                     </li>
                     <li>
-                        mts: +375 297 111111
+                        mts: +375 297038045
                     </li>
-                    <li>
+<!--                    <li>
                         life: +375 44 111111
                     </li>
-
+-->
                 </ul>
             </div>
 

@@ -133,7 +133,7 @@ JOIN product_item pi ON pi.item_id = i.id
 JOIN product p ON pi.product_id = p.id
 JOIN frontend_category fc ON fcic.frontend_category_id = fc.id
 JOIN product_category pc ON p.category_id = pc.id AND fc.product_category_id = pc.id
-WHERE fc.id = :frontend_category_id
+WHERE fc.id = :frontend_category_id AND p.status = 1
 GROUP BY b.id
 EOF;
         $rows = Yii::app()->db->createCommand($sql)->queryAll(true, array(':frontend_category_id' => $this->id));

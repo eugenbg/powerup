@@ -51,11 +51,30 @@ class ItemController extends Controller
 	 */
 	public function actionView($id)
 	{
-        $model=Item::model()->with('brand', 'series', 'subseries')->findByPk($id);
+        $model=Item::model()->with('brand', 'series', 'subseries', 'itemItemCategories')->findByPk($id);
+        $frontendCategory = Yii::app()->params['category'];
+        $ItemFrontendCategoryMatch = false;
+        $allowedItemCategories = array();
+        foreach ($frontendCategory->frontendCategoryItemCategories as $allowedItemCategory)
+        {
+            $allowedItemCategories[] = $allowedItemCategory->item_category_id;
+        }
+        foreach ($model->itemItemCategories as $itemCategory)
+        {
+            if(in_array($itemCategory->item_category_id, $allowedItemCategories))
+                $ItemFrontendCategoryMatch = true;
+        }
 
-        $this->render('view',array(
-			'model'=>$model,
-		));
+        if($ItemFrontendCategoryMatch)
+        {
+            $this->render('view',array(
+                'model'=>$model,
+            ));
+        }
+        else
+        {
+            throw new CHttpException(404,'Неверный адрес странички');
+        }
 	}
 
 	/**
