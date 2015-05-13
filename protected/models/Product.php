@@ -168,7 +168,7 @@ class Product extends MyActiveRecord implements IECartPosition
         return Image::model()->findAllByAttributes(array('entity_type' => get_class($this), 'entity_id' => $this->id));
     }
 
-    public function getAllItems($limit = 40)
+    public function getAllItems($limit = 20)
     {
         $frontendCategory = Yii::app()->params['category'];
         $criteria = new CDbCriteria();

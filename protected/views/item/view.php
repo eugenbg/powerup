@@ -84,7 +84,7 @@ $this->pageTitle = $model->getFullTitle();
         Надеемся Вам понравится покупать в нашем магазине :)
     </p>
 <div class="related-items">
-    <h2>Аккумулятор также подходит для следующих моделей:</h2>
+    <h2>Аккумулятор также подходит для следующих моделей устройств:</h2>
     <ul>
         <?php foreach ($product->getAllItems() as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">
