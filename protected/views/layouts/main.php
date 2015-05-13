@@ -9,7 +9,7 @@
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-    <link rel="shortcut icon" href="<?php echo Yii::app()->getBaseUrl(true); ?>/img/favicon.png">
+    <link rel="shortcut icon" href="<?php echo Yii::app()->getBaseUrl(true); ?>/img/favicon.ico">
 
     <meta name="description" content="">
 
