@@ -1,7 +1,7 @@
 <?php $this->pageTitle = 'Добро пожаловать!'; ?>
 <div class="home">
     <div class="col-md-4">
-        <a href="<?php echo $this->createUrl('custom/category', array('category'=>2)); ?>">
+        <a href="<?php echo $this->createUrl('custom/category', array('category'=>1)); ?>">
             <img src="/img/home/camera.jpg"/>
         </a>
         <a href="<?php echo $this->createUrl('custom/category', array('category'=>1)); ?>">
@@ -9,7 +9,7 @@
         </a>
     </div>
     <div class="col-md-4">
-        <a href="<?php echo $this->createUrl('custom/category', array('category'=>2)); ?>">
+        <a href="<?php echo $this->createUrl('custom/category', array('category'=>3)); ?>">
             <img src="/img/home/camcoder.jpg"/>
         </a>
         <a href="<?php echo $this->createUrl('custom/category', array('category'=>3)); ?>">

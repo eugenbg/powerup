@@ -86,7 +86,7 @@ $this->pageTitle = $model->getFullTitle();
 <div class="related-items">
     <h2>Аккумулятор также подходит для следующих моделей устройств:</h2>
     <ul>
-        <?php foreach ($product->getAllItems() as $item):?>
+        <?php foreach ($product->getAllItems(20, $model) as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">
                 <a href="<?php echo $this->createUrl('custom/item',
                     array('item'=>$item->id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)

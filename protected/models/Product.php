@@ -20,6 +20,9 @@ class Product extends MyActiveRecord implements IECartPosition
     public $qty;
     public $item; //used when product is a cart item
 
+    /*
+     * used for interlinking in getAllItems()
+     */
     public $assignedItems = array();
     public $assignedParts = array();
 
@@ -168,7 +171,7 @@ class Product extends MyActiveRecord implements IECartPosition
         return Image::model()->findAllByAttributes(array('entity_type' => get_class($this), 'entity_id' => $this->id));
     }
 
-    public function getAllItems($limit = 20)
+    public function getAllItems($limit = 20, $model)
     {
         $frontendCategory = Yii::app()->params['category'];
         $criteria = new CDbCriteria();
@@ -177,24 +180,68 @@ class Product extends MyActiveRecord implements IECartPosition
         $criteria->join .= 'JOIN frontend_category_item_category fcic ON fcic.item_category_id = iic.item_category_id';
         $criteria->params = array(':product_id' => $this->id);
         $criteria->compare('fcic.frontend_category_id', $frontendCategory->id);
-        $items = Item::model()->findAll($criteria);
+        $criteria->order = 't.id ASC';
+        $result = Item::model()->findAll($criteria);
 
-        $itemQty = 0;
-        $partQty = 0;
-        foreach($items as $item)
+        $items = array();
+        $parts = array();
+        foreach($result as $item)
         {
-            if($item->type == Item::TYPE_MODEL && $itemQty < $limit)
+            if($item->type == Item::TYPE_MODEL)
             {
-                $itemQty++;
-                $this->assignedItems[] = $item;
+                $items[] = $item;
             }
-            elseif($item->type == Item::TYPE_PART && $partQty < $limit)
+            elseif($item->type == Item::TYPE_PART)
             {
-                $partQty++;
-                $this->assignedParts[] = $item;
+                $parts[] = $item;
             }
         }
+
+        if(count($items) < $limit)
+        {
+            $this->assignedItems = $items;
+        }
+        else
+        {
+            $this->assignedItems = $this->_extractClosest($items, $limit, $model);
+        }
+
+        if(count($parts) < $limit)
+        {
+            $this->assignedParts = $parts;
+        }
+        else
+        {
+            $this->assignedParts = $this->_extractClosest($items, $limit, $model);
+        }
+
         return $this->assignedItems;
+    }
+
+    /*
+     * take n(limit) of models with id higher than model->id.
+     * if result is less than limit, take the rest from beginning of array
+     */
+    private function _extractClosest($items, $limit, $model)
+    {
+        $itemsResult = array();
+        foreach ($items as $item)
+        {
+            if($item->id > $model->id)
+            {
+                $itemsResult[] = $item;
+            }
+            if(count($itemsResult) == $limit)
+            {
+                break;
+            }
+        }
+        if(count($itemsResult) < $limit)
+        {
+            $slice = array_slice($items, 0, ($limit - count($itemsResult)));
+            $itemsResult = array_merge($slice, $itemsResult);
+        }
+        return $itemsResult;
     }
 
 }
