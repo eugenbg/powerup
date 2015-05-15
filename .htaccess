@@ -26,10 +26,12 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 
 RewriteCond %{REQUEST_FILENAME} -d
 
-
-
 # otherwise forward it to index.php
 
 RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^.*$ index.php [NC,L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.powerup\.by
+RewriteRule ^(.*)$ http://powerup.by/$1 [R=permanent,L]

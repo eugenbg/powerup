@@ -72,26 +72,35 @@ $this->pageTitle = $model->getFullTitle();
         Выше перечислены все аккумуляторы, которые подойдут к вашей <?php echo $model->getItemCategoryTitle('d'); ?> <?php echo $model->getItemTitle(true); ?>.
     </p>
     <p>
-        Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(true); ?> и предоставляем гарантию на аккумулятор длительностью 12 месяцев. Если возникнут неисправности - мы просто заменим аккумулятор на новый. Либо мы можем вернуть деньги в течение 30 дней после покупки.
-    </p>
-    <?php else: ?>
-    <p>
-        Выше перечислены все аккумуляторы, которые являются аналогом <?php echo $model->getItemTitle(true); ?>.
+        Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(true); ?> (мы проверяли).
     </p>
     <p>
-        Мы гарантируем, что все перечисленные батареи заменят <?php echo $model->getItemTitle(true); ?> (мы проверяли) и предоставляем гарантию на аккумулятор длительностью 12 месяцев. Если возникнут неисправности - мы просто заменим аккумулятор на новый. Либо мы можем вернуть деньги в течение 30 дней после покупки.
+        <?php echo $model->rand1Texts[$model->rand1]; ?>
+    </p>
+    <p>
+        <?php echo $model->rand2Texts[$model->rand2]; ?>
+    </p>
+<?php else: ?>
+    <p>
+        Выше перечислены все аккумуляторы, которые являются аналогом <?php echo $model->getItemTitle(true); ?>
+    </p>
+    <p>
+        Мы гарантируем, что все перечисленные батареи заменят <?php echo $model->getItemTitle(true); ?> (мы проверяли).
+    </p>
+    <p>
+        <?php echo $model->rand1Texts[$model->rand1]; ?>
+    </p>
+    <p>
+        <?php echo $model->rand2Texts[$model->rand2]; ?>
     </p>
 <?php endif; ?>
-    <p>
-        Надеемся Вам понравится покупать в нашем магазине :)
-    </p>
 <div class="related-items">
     <h2>Аккумулятор также подходит для следующих моделей устройств:</h2>
     <ul>
         <?php foreach ($product->getAllItems(20, $model) as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">
                 <a href="<?php echo $this->createUrl('custom/item',
-                    array('item'=>$item->id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
+                    array('item'=>$item->id, 'brand'=>$item->brand_id,'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
                 )?>">
                     <?php echo $item->getItemTitle(true); ?>
                 </a>
