@@ -165,7 +165,8 @@ class Image extends MyActiveRecord
         Yii::app()->ThumbsGen->baseSourceDir = Yii::getPathOfAlias('webroot')."/media/$folder/";
         Yii::app()->ThumbsGen->baseDestDir = Yii::getPathOfAlias('webroot')."/media/$folder/thumbs/";
         self::makeDirIfNotExists(Yii::app()->ThumbsGen->baseDestDir);
-        $fileName = end(explode('/', $image->file));
+        $array = explode('/', $image->file);
+        $fileName = end($array);
         Yii::app()->ThumbsGen->nameImages = array($fileName);
         return Yii::app()->ThumbsGen->createThumbnails();
     }
