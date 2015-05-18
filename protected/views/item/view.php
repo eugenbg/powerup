@@ -113,7 +113,7 @@ $this->pageTitle = $model->getFullTitle();
         <?php foreach ($product->assignedParts as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">
                 <a href="<?php echo $this->createUrl('custom/item',
-                    array('item'=>$item->id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
+                    array('item'=>$item->id, 'brand'=>$item->brand_id, 'series'=>$item->series_id, 'subseries' => $item->subseries_id, 'item_urlkey' => $item->urlkey)
                 )?>">
                     <?php echo $item->getItemTitle(true); ?>
                 </a>
