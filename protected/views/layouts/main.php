@@ -64,7 +64,7 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
     </button>
-    <a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/">Powerup <span>by</span></a>
+    <a class="navbar-brand hidden-lg hidden-md hidden-sm" href="index.html">Artificial <span>Reason</span></a>
 </div>
 <!-- navbar-header -->
 
@@ -113,10 +113,6 @@
 </header>
 
 <div class="container">
-<!--    <form action="/search/index" method="POST">
-        <input name="search_query" type="text" placeholder="модель устройства">
-    </form>
--->
     <?php echo $content; ?>
 </div>
 
