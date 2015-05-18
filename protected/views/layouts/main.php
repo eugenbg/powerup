@@ -113,10 +113,10 @@
 </header>
 
 <div class="container">
-    <form action="/search/index" method="POST">
+<!--    <form action="/search/index" method="POST">
         <input name="search_query" type="text" placeholder="модель устройства">
     </form>
-
+-->
     <?php echo $content; ?>
 </div>
 
