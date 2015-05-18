@@ -64,7 +64,7 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
     </button>
-    <a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/">Powerup.by <span>Магазин аккумуляторов</span></a>
+    <a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/">Магазин<span>аккумуляторов</span></a>
 </div>
 <!-- navbar-header -->
 
