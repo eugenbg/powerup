@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 	'Поиск',
     $query
 );
-$this->pageTitle = 'Результаты поиска ' . $query;
+$this->pageTitle = sprintf('Результаты поиска "%s"', $query);
 ?>
 <?php foreach($result as $frontendCategoryTitle => $items): ?>
     <h3><?php echo $frontendCategoryTitle; ?></h3>
