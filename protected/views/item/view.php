@@ -36,12 +36,12 @@ $this->pageTitle = $model->getFullTitle();
             <?php endif; ?>
         </div>
         <div class="col-md-5">
-            <h3 class="no-margin-top">Заметка</h3>
-            <noindex>
+            <h3 class="no-margin-top">Характеристики</h3>
+<!--            <noindex>
                 <p class="product-note">
-                    Повсеместная практика у не брэндовых производителей аккумуляторов для <?php echo $model->getItemCategoryTitle('r', 'plural'); ?> - указывать бОльшую/рекламную мощность на упаковке батарей. Поэтому в некоторых магазинах вы можете увидеть гораздо бОльшую мощность. Мы указываем <b>реальную</b> мощность аккумулятора, не рекламную.
+                    Повсеместная практика у не брэндовых производителей аккумуляторов для <?php /*echo $model->getItemCategoryTitle('r', 'plural'); */?> - указывать бОльшую/рекламную мощность на упаковке батарей. Поэтому в некоторых магазинах вы можете увидеть гораздо бОльшую мощность. Мы указываем <b>реальную</b> мощность аккумулятора, не рекламную.
                 </p>
-            </noindex>
+            </noindex>-->
             <?php $this->widget('zii.widgets.CDetailView', array(
                 'data'=>$product->productAttributes,
                 'attributes'=>array(
