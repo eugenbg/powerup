@@ -54,6 +54,8 @@ class Item extends MyActiveRecord
         9 => 'На товар предоставляется гарантия 1 год с даты продажи.',
     );
 
+    public $frontendCategoryId, $frontendCategoryTitle;
+
     /**
 	 * @return string the associated database table name
 	 */

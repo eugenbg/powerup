@@ -32,7 +32,7 @@
                             <td>
                                 <div class="input-group">
                                     <input type="number" name="cart[<?php echo $key; ?>]" class="form-control" id="<?php echo $key; ?>" value="<?php echo (int)$cartItem->getQuantity(); ?>">
-                                    <div class="input-group-addon">шт.</div>
+                                    <div class="hidden-xs input-group-addon">шт.</div>
                                 </div>
                             </td>
                             <td>

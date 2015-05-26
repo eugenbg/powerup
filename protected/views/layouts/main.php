@@ -27,6 +27,7 @@
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/buttons.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/custom.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/cart.css" rel="stylesheet" media="screen">
+    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/header.css" rel="stylesheet" media="screen">
     <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/overlay.css" rel="stylesheet" media="screen">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,6 +49,26 @@
             <h1 class="animated fadeInRight"><a href="/">Powerup.by <span> Зарядись!</span></a></h1>
 
             <p class="animated fadeInRight">Магазин аккумуляторов и зарядок</p>
+        </div>
+        <div id="search-mini" class="hidden-xs col-md-3">
+            <form role="form" action="/search/index" method="POST">
+                <div class="input-group">
+                    <input type="text" name="search_query" class="form-control" placeholder="Поиск...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-ar btn-primary" type="button">Искать!</button>
+                            </span>
+                </div><!-- /input-group -->
+            </form>
+        </div>
+        <div id="phones-top" class="col-md-2">
+            <ul class="list-unstyled">
+                <li>
+                    velcom: +375 296098741
+                </li>
+                <li>
+                    mts: +375 297038045
+                </li>
+            </ul>
         </div>
         <nav class="top-nav">
                 <?php $this->widget('miniCartWidget', array() ) ?>
@@ -113,10 +134,6 @@
 </header>
 
 <div class="container">
-<!--    <form action="/search/index" method="POST">
-        <input name="search_query" type="text" placeholder="модель устройства">
-    </form>
--->
     <?php echo $content; ?>
 </div>
 

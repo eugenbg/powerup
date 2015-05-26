@@ -66,7 +66,6 @@
     margin: 0;
     display: inline-block;
     padding: 7px 10px;
-    border: solid 1px #e3e6e8;
     border-top: 0;
     cursor: pointer;
 }
@@ -195,4 +194,16 @@ fieldset[disabled] .btn-order.active {
 .btn-order .badge {
     color: #F7C913;
     background-color: #3D3434;
+}
+
+@media (max-width: 450px) {
+    .full-cart-holder .panel-body {
+        padding: 0;
+    }
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+        padding: 5px;
+    }
+    #refresh-cart {
+        margin: 10px 0 0 0;
+    }
 }

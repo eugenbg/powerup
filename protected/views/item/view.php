@@ -69,7 +69,7 @@ $this->pageTitle = $model->getFullTitle();
 
     <?php if($model->type == Item::TYPE_MODEL): ?>
     <p>
-        Выше перечислены все аккумуляторы, которые подойдут к вашей <?php echo $model->getItemCategoryTitle('d'); ?> <?php echo $model->getItemTitle(true); ?>.
+        Выше перечислены все аккумуляторы, которые подойдут к <?php echo $model->getItemCategoryTitle('d'); ?> <?php echo $model->getItemTitle(true); ?>.
     </p>
     <p>
         Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(true); ?> (мы проверяли).
