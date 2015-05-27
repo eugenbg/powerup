@@ -124,7 +124,11 @@ class CustomUrlRule extends CBaseUrlRule
                     if($seriesId)
                         $this->series = Series::model()->findByPk($seriesId);
                     if(!$this->series) {
-                        $this->item = Item::model()->findByAttributes(array('urlkey' => $params[2]));
+                        $this->item = Item::model()->findByAttributes(array(
+                            'urlkey' => $params[2],
+                            'brand_id' => $this->brand->id,
+                            )
+                        );
                         if($this->item && $this->item->series_id > 0 || !$this->item)
                         //if param does not result in item or series throw 404
                         {
@@ -146,7 +150,12 @@ class CustomUrlRule extends CBaseUrlRule
                                 $this->subseries =  Series::model()->findByPk($subSeriesId);
                             if(!$this->subseries)
                             {
-                                $this->item = Item::model()->findByAttributes(array('urlkey' => $params[3]));
+                                $this->item = Item::model()->findByAttributes(array(
+                                    'urlkey' => $params[3],
+                                    'brand_id' => $this->brand->id,
+                                    'series_id' => $this->series->id
+                                    )
+                                );
                                 if($this->item && $this->item->subseries_id > 0)
                                 {
                                     throw new CHttpException(404,'Неверный адрес странички');
