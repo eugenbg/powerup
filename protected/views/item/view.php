@@ -108,6 +108,7 @@ $this->pageTitle = $model->getFullTitle();
         <?php endforeach;?>
     </ul>
     <div class="clearfix"></div>
+    <?php if(count($product->assignedParts)): ?>
     <h2>Аккумулятор является аналогом следующих моделей аккумуляторов:</h2>
     <ul>
         <?php foreach ($product->assignedParts as $item):?>
@@ -120,6 +121,7 @@ $this->pageTitle = $model->getFullTitle();
             </li>
         <?php endforeach;?>
     </ul>
+    <?php endif; ?>
 </div>
 
 <!--<h2 class="right-line">Другие товары для <?php /*echo $model->title; */?></h2>

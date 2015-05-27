@@ -181,6 +181,7 @@ class Product extends MyActiveRecord implements IECartPosition
         $criteria->params = array(':product_id' => $this->id);
         $criteria->compare('fcic.frontend_category_id', $frontendCategory->id);
         $criteria->order = 't.id ASC';
+        $criteria->limit = 200;
         $result = Item::model()->findAll($criteria);
 
         $items = array();
@@ -212,7 +213,7 @@ class Product extends MyActiveRecord implements IECartPosition
         }
         else
         {
-            $this->assignedParts = $this->_extractClosest($items, $limit, $model);
+            $this->assignedParts = $this->_extractClosest($parts, $limit, $model);
         }
 
         return $this->assignedItems;
