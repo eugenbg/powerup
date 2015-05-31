@@ -51,11 +51,12 @@ class CartController extends Controller
         $response = array();
         $response['status'] = 'success';
 
-        if($delivery = Yii::app()->request->getParam('delivery'))
+        if($delivery = Yii::app()->request->getParam('delivery-method'))
         {
             if($delivery != Yii::app()->shoppingCart->getDeliveryMethodId())
             {
                 Yii::app()->shoppingCart->setDeliveryMethod($delivery);
+                $this->_saveDeliveryDataInSession();
                 $response['delivery'] = $this->renderPartial('_delivery', array(), true);
                 //if there's no alternative payment methods
                 $deliveryMethod = Yii::app()->shoppingCart->getDeliveryMethod();
@@ -105,6 +106,38 @@ class CartController extends Controller
             $this->cartItems = $cartItems;
         }
         return $this->cartItems;
+    }
+
+    private function _saveDeliveryDataInSession()
+    {
+        $deliveryFormData = Yii::app()->request->getParam('delivery');
+        $deliveryData = array();
+        foreach (Yii::app()->params['deliveryMethods'] as $deliveryMethod)
+        {
+            if( !$this->_isDeliveryMethodEmpty($deliveryFormData[$deliveryMethod['id']]) )
+            {
+                $chosenDeliveryId = $deliveryMethod['id'];
+                foreach ($deliveryMethod['fields'] as $key => $value)
+                {
+                    if(isset($deliveryFormData[$chosenDeliveryId][$key]))
+                    {
+                        $deliveryData[$key] = $deliveryFormData[$chosenDeliveryId][$key];
+                    }
+                }
+            }
+        }
+        Yii::app()->session['deliveryFormData'] = $deliveryData;
+        return true;
+    }
+
+    private function _isDeliveryMethodEmpty(array $deliveryMethod)
+    {
+        foreach ($deliveryMethod as $field)
+        {
+            if(strlen($field))
+                return false;//not empty
+        }
+        return true;
     }
 
 }

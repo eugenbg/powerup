@@ -190,7 +190,9 @@ class EShoppingCart extends CMap {
 
     public function getDeliveryMethod()
     {
-        if(isset(Yii::app()->session['deliveryMethod']) && strlen(Yii::app()->session['deliveryMethod']))
+        if(isset(Yii::app()->session['deliveryMethod'])
+            && is_string(Yii::app()->session['deliveryMethod'])
+            && strlen(Yii::app()->session['deliveryMethod']))
             return Yii::app()->params->deliveryMethods[Yii::app()->session['deliveryMethod']];
         else
             return false;

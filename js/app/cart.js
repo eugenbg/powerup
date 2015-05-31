@@ -34,7 +34,7 @@ cart.init = function()
             }
         })
 
-        $(document).on('change', 'input[name=delivery], input[name=payment]', function(){
+        $(document).on('change', 'input[name=delivery-method], input[name=payment]', function(){
             me.refreshCart(event);
         })
 

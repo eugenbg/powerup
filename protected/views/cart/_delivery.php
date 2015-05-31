@@ -1,3 +1,4 @@
+<?php $deliveryDataFromSession = Yii::app()->session['deliveryFormData']; ?>
 <div class="panel panel-default" id="delivery-method">
     <div class="panel-heading">Выберите доставку</div>
     <div class="panel-body">
@@ -6,7 +7,7 @@
             $checked = $chosenDelivery['id'] == $id ? 'checked' : ''; ?>
             <div class="radio">
                 <label>
-                    <input type="radio" name="delivery" value="<?php echo $id; ?>" <?php echo $checked; ?>>
+                    <input type="radio" name="delivery-method" value="<?php echo $id; ?>" <?php echo $checked; ?>>
                     <?php echo $delivery['title']; ?>
                 </label>
                         <span class="glyphicon glyphicon-info-sign"
@@ -19,7 +20,9 @@
                         <div class="input-group">
                             <div class="input-group-addon"><?php echo $field['label']; ?></div>
                             <input type="text" class="form-control"
-                                   name="Delivery-<?php echo $id; ?>[<?php echo $key; ?>]">
+                                   name="delivery[<?php echo $id; ?>][<?php echo $key; ?>]"
+                                   value="<?php echo isset($deliveryDataFromSession[$key]) ? $deliveryDataFromSession[$key] : ''; ?>"
+                                >
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
