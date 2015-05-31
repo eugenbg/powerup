@@ -148,8 +148,8 @@
                     <li><a href="<?php echo $this->createUrl('custom/category', array('category'=>2)); ?>">Аккумуляторы для мобильных телефонов</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h3 class="footer-widget-title">О нас</h3>
+            <div class="col-md-3">
+                <h3 class="footer-widget-title">Информация</h3>
                 <ul class="list-unstyled">
                     <li><a href="/oplata">Способы оплаты</a></li>
                     <li><a href="/garantii">Наша гарантия</a></li>
@@ -157,7 +157,13 @@
                     <li><a href="/dostavka">Доставка</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <h3 class="footer-widget-title">О магазине</h3>
+                <p>
+                    ИП Богданович Е.О, свидетельство о государственной регистрации #192570472, выдано 7.05.2015 Мингорисполкомом
+                </p>
+            </div>
+            <div class="col-md-2">
                 <h3 class="footer-widget-title">Телефоны</h3>
                 <ul class="list-unstyled">
                     <li>
