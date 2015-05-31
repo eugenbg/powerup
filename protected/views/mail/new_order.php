@@ -17,7 +17,7 @@
     Всего к оплате <?php echo $order->getFormattedTotalPrice(); ?>
 </p>
 <p>
-    Адрес доставки: <?php echo implode(',',json_decode($order->address, true)); ?>
+    Адрес доставки: <?php echo is_array($order->address) ? implode(',',json_decode($order->address, true)) : $order->address; ?>
 </p>
 <p>
     Мы скоро перезвоним, чтобы уточнить детали!

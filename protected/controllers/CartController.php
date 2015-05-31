@@ -19,6 +19,12 @@ class CartController extends Controller
             $model->cartKey = $cartKey;
             $cartItems[] = $model;
         }
+
+        //set payment method if no alternatives
+        $deliveryMethod = Yii::app()->shoppingCart->getDeliveryMethod();
+        if(count($deliveryMethod['allowed_payment_methods']) == 1)
+            Yii::app()->shoppingCart->setPaymentMethod($deliveryMethod['allowed_payment_methods'][0]);
+
         $this->render('index', array('cartItems'=>$cartItems, 'empty' => $empty));
     }
 

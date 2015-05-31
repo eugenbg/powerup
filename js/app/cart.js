@@ -89,21 +89,17 @@ cart.refreshCart = function()
 
 cart.submitOrder = function ()
 {
+    var validator = $('#cart-form').validate();
+    var $blockToValidate = $('input[name=delivery-method]:checked').parents('.grouped').find('.delivery-form');
+
+    $blockToValidate.find('input').each(function(){
+        if(!validator.element($(this))){
+            return;
+        }
+    })
+
     $('#cart-form').submit()
 
-/*
-    $.ajax(
-        '/checkout/validateOrder',
-        {
-            data: $('#cart-form').serialize(),
-            success: function(data){
-                if(data.status = 'success')
-                {
-                }
-            }.bind(this)
-        }
-    )
-*/
 }
 
 jQuery(document).ready(function () {

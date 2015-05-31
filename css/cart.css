@@ -142,7 +142,7 @@
 
 
 .delivery-form .input-group-addon {
-    width: 150px;
+    width: 15rem;
 }
 
 .delivery-form .input-group {
@@ -206,4 +206,18 @@ fieldset[disabled] .btn-order.active {
     #refresh-cart {
         margin: 10px 0 0 0;
     }
+}
+
+input.form-control.error {
+    border-color: red;
+}
+
+label.error {
+    position: absolute;
+    top: 34px;
+    left: 16rem;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    margin-top: 0.2rem;
+    color: red;
 }

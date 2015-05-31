@@ -206,6 +206,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/e-commerce_product.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/app/base.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/app/cart.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl(true); ?>/js/jquery.validate.min.js"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
