@@ -129,7 +129,7 @@
             'homeLink' => sprintf(<<<EOF
 <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 <a href="%s" itemprop="url">
-<span itemprop="title">Главная</span>
+<span itemprop="title">PowerUp.by</span>
 </a>
 </span>
 EOF
