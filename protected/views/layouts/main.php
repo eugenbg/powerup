@@ -125,8 +125,17 @@
     <div class="container">
         <h1 class="page-title"><?php echo CHtml::encode($this->pageTitle); ?></h1>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-            'tagName' => 'ol',
+            'tagName' => 'div',
             'homeLink' => '<a href="'.Yii::app()->getBaseUrl(true).'">Главная</a>',
+            'activeLinkTemplate'=>
+                <<<EOF
+<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="{url}" itemprop="url">
+<span itemprop="title">{label}</span>
+</a>
+</div>
+EOF
+,
             'htmlOptions' => array('class' => 'breadcrumb'),
             'links'=>$this->breadcrumbs,
         )); ?><!-- breadcrumbs -->
