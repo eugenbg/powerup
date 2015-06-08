@@ -141,7 +141,14 @@ EOF
 </a>
 </span>
 EOF
-            ,'htmlOptions' => array('class' => 'breadcrumb'),
+            ,'inactiveLinkTemplate'=> <<<EOF
+<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="#" itemprop="url">
+<span itemprop="title">{label}</span>
+</a>
+</span>
+EOF
+        ,'htmlOptions' => array('class' => 'breadcrumb'),
             'links'=>$this->breadcrumbs,
         )); ?><!-- breadcrumbs -->
     </div>
