@@ -1,8 +1,8 @@
 <p>
-    Спасибо за заказ! Номер заказа <?php echo $order->id; ?>
+    Привет админ! Скорее перезвони клиенту! Номер заказа <?php echo $order->id; ?>
 </p>
 <p>
-    Ваш заказ:
+    Заказ:
 </p>
 <ul>
     <?php foreach ($orderItems as $orderItem): ?>
@@ -17,7 +17,11 @@
     Всего к оплате <?php echo $order->getFormattedTotalPrice(); ?>
 </p>
 <p>
-    Адрес доставки: <?php echo is_array($order->address) ? implode(',',json_decode($order->address, true)) : $order->address; ?>
+    <?php $address = json_decode($order->address, true); ?>
+    Адрес доставки:<br/>
+    <?php foreach ($address as $addressField => $value): ?>
+        <?php echo sprintf('%s : %s', $addressField, $value); ?><br/>
+    <?php endforeach; ?>
 </p>
 <p>
     Мы скоро перезвоним, чтобы уточнить детали!

@@ -25,7 +25,8 @@ class CheckoutController extends Controller
 
         $customer = new Customer();
         $deliveryId = Yii::app()->shoppingCart->getDeliveryMethodId();
-        $deliveryData = Yii::app()->request->getParam('Delivery-'.$deliveryId);
+        $deliveryData = Yii::app()->request->getParam('delivery');
+        $deliveryData = $deliveryData[$deliveryId];
         $addressString = CJSON::encode($deliveryData);
         $customer->firstname = isset($deliveryData['firstName'])? $deliveryData['firstName'] : '';
         $customer->lastname = isset($deliveryData['lastName'])? $deliveryData['lastName'] : '';
@@ -53,6 +54,8 @@ class CheckoutController extends Controller
             $orderItem->save();
         }
 
+        $this->_saveAddress($deliveryData, $customer, $order);
+
         $this->_sendCustomerEmail($order, $orderItems, $customer);
         $this->_sendAdminEmail($order, $orderItems, $customer);
 
@@ -79,14 +82,46 @@ class CheckoutController extends Controller
 
     private function _sendAdminEmail($order, $orderItems, $customer)
     {
-        $mail = new YiiMailer('new_order_admin', array('order' => $order, 'orderItems' => $orderItems, 'customer' => $customer));
+        $emails = array();
 
-        //set properties
-        $mail->setFrom($customer->email);
-        $mail->setSubject('Заказ #'.$order->id);
-        $mail->setTo(Yii::app()->params['adminEmail']);
-        //send
-        $mail->send();
+        $emails[] = Yii::app()->settings->get('main', 'admin_email_1');
+        $emails[] = Yii::app()->settings->get('main', 'admin_email_2');
+        $emails[] = Yii::app()->settings->get('main', 'admin_email_3');
+        foreach ($emails as $email)
+        {
+            if(!strlen($email))
+                continue;
+            $mail = new YiiMailer('new_order_admin', array('order' => $order, 'orderItems' => $orderItems, 'customer' => $customer));
+
+            //set properties
+            $mail->setFrom($customer->email);
+            $mail->setSubject('Заказ #'.$order->id);
+            $mail->setTo($email);
+            //send
+            $mail->send();
+        }
+    }
+
+    private function _saveAddress($deliveryData, $customer, $order)
+    {
+        $address = new Address();
+        $address->telephone = isset($deliveryData['phone'])? $deliveryData['phone'] : 0;
+
+        if(isset($deliveryData['city']))
+            $address->city = $deliveryData['city'];
+        if(isset($deliveryData['region']))
+            $address->region = $deliveryData['region'];
+        if(isset($deliveryData['postcode']))
+            $address->postcode = $deliveryData['postcode'];
+        if(isset($deliveryData['address']))
+            $address->address = $deliveryData['address'];
+
+        $address->full_address_string = $order->address;
+        $address->customer_id = $customer->id;
+        $address->save();
+
+        $a = $address->getErrors();
+        return $address->save();
     }
 
     /**

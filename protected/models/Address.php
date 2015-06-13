@@ -1,29 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "order".
+ * This is the model class for table "address".
  *
- * The followings are the available columns in table 'order':
+ * The followings are the available columns in table 'address':
  * @property integer $id
  * @property integer $customer_id
- * @property string $total_price
- * @property integer $status
- * @property string $delivery
+ * @property integer $telephone
+ * @property string $full_address_string
+ * @property string $region
+ * @property string $city
+ * @property integer $postcode
  * @property string $address
- * @property string $payment
  *
  * The followings are the available model relations:
  * @property Customer $customer
- * @property OrderItem[] $orderItems
  */
-class Order extends MyActiveRecord
+class Address extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'order';
+		return 'address';
 	}
 
 	/**
@@ -34,12 +34,13 @@ class Order extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('customer_id', 'numerical', 'integerOnly'=>true),
-			array('total_price', 'length', 'max'=>4),
-			array('payment', 'length', 'max'=>10),
+			array('customer_id, telephone, full_address_string', 'required'),
+			array('customer_id, telephone, postcode', 'numerical', 'integerOnly'=>true),
+			array('region, city', 'length', 'max'=>30),
+			array('address', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, customer_id, total_price, status, delivery, address, payment, comment, date', 'safe', 'on'=>'search'),
+			array('id, customer_id, telephone, full_address_string, region, city, postcode, address', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +53,6 @@ class Order extends MyActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
-			'orderItems' => array(self::HAS_MANY, 'OrderItem', 'order_id'),
 		);
 	}
 
@@ -64,12 +64,12 @@ class Order extends MyActiveRecord
 		return array(
 			'id' => 'ID',
 			'customer_id' => 'Customer',
-			'total_price' => 'Total Price',
-			'status' => 'Status',
-			'delivery' => 'Delivery',
+			'telephone' => 'Telephone',
+			'full_address_string' => 'Full Address String',
+			'region' => 'Region',
+			'city' => 'City',
+			'postcode' => 'Postcode',
 			'address' => 'Address',
-			'payment' => 'Payment',
-            'comment' => 'Comment'
 		);
 	}
 
@@ -93,11 +93,12 @@ class Order extends MyActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('customer_id',$this->customer_id);
-		$criteria->compare('total_price',$this->total_price,true);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('delivery',$this->delivery,true);
+		$criteria->compare('telephone',$this->telephone);
+		$criteria->compare('full_address_string',$this->full_address_string,true);
+		$criteria->compare('region',$this->region,true);
+		$criteria->compare('city',$this->city,true);
+		$criteria->compare('postcode',$this->postcode);
 		$criteria->compare('address',$this->address,true);
-		$criteria->compare('payment',$this->payment,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -106,24 +107,13 @@ class Order extends MyActiveRecord
 
 	/**
 	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your MyActiveRecord descendants!
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Order the static model class
+	 * @return Address the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-    public function getFormattedTotalPrice()
-    {
-        return $this->total_price . ' ' . Helper::getCurrencyPostfix();
-    }
-
-    public function beforeSave() {
-        if ($this->isNewRecord)
-            $this->date = new CDbExpression('NOW()');
-
-        return parent::beforeSave();
-    }
 }

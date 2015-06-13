@@ -28,3 +28,8 @@
     font-size: 1em;
     background: black;
 }
+
+section.content label
+{
+    width: 20rem;
+}
