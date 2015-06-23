@@ -74,12 +74,11 @@ $this->pageTitle = $model->getFullTitle();
         <?php echo $model->rand2Texts[$model->rand2]; ?>
     </p>
 <?php else: ?>
-    <?php
-/*добавить если решим в названии парта писать настоящую модель аккумулятора    if($model->title != $product->code): */?><!--
+    <?php if(strpos($product->code, $model->title) === false): ?>
         <p>
-            Мы гарантируем, что представленная батарея подходит к <?php /*echo $model->getItemTitle(true); */?> (мы проверяли).
+            Мы гарантируем, что представленная батарея подходит к <?php echo $model->getItemTitle(true); ?> (мы проверяли).
         </p>
-    --><?php /*endif; */?>
+    <?php endif;?>
     <p>
         <?php echo $model->rand1Texts[$model->rand1]; ?>
     </p>
