@@ -25,6 +25,14 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $products = Product::model()->findAll();
+        foreach ($products as $product)
+        {
+            $sku2 = explode(' ', $product->title);
+            $sku2 = $sku2[0];
+            $product->code = $sku2;
+            $product->save();
+        }
         $this->render('home');
     }
 

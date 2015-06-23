@@ -212,12 +212,14 @@ class Item extends MyActiveRecord
         $itemCategoryTitle = json_decode($itemCategory->title_wordforms);
         if($this->type == self::TYPE_MODEL)
         {
+            $products = $this->getLeadingProducts();
+            $product = $products[0];
             return "Аккумулятор для ".
             $itemCategoryTitle->single->r .
             " " . $this->brand->title .
             ($this->series ? " " . $this->series->title : '') .
             ($this->subseries ? " " . $this->subseries->title : '') .
-            " " . $this->title;
+            " " . $this->title . " (" . $product->code . ")";
         }
         elseif($this->type == self::TYPE_PART)
         {

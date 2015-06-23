@@ -63,10 +63,13 @@
         <div id="phones-top" class="col-md-2">
             <ul class="list-unstyled">
                 <li>
-                    velcom: +375 296098741
+                    Телефоны:
                 </li>
                 <li>
-                    mts: +375 297038045
+                    +375 29 609-87-41
+                </li>
+                <li>
+                    +375 29 703-80-45
                 </li>
             </ul>
         </div>
@@ -188,10 +191,10 @@ EOF
                 <h3 class="footer-widget-title">Телефоны</h3>
                 <ul class="list-unstyled">
                     <li>
-                        velcom: +375 296098741
+                        +375 29 609-87-41
                     </li>
                     <li>
-                        mts: +375 297038045
+                        +375 29 703-80-45
                     </li>
 <!--                    <li>
                         life: +375 44 111111

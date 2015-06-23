@@ -6,7 +6,6 @@ $this->pageTitle = $model->getFullTitle();
 ?>
 
 <?php foreach($model->getLeadingProducts() as $product):?>
-    <h2 class="section-title no-margin-top"><?php echo $product->title; ?> -  <?php echo $model->getItemTitle(); ?></h2>
     <div class="row" style="margin-bottom: 40px;">
         <div class="col-md-4">
             <?php if(!count($product->getImages())): ?>
@@ -69,10 +68,7 @@ $this->pageTitle = $model->getFullTitle();
 
     <?php if($model->type == Item::TYPE_MODEL): ?>
     <p>
-        Выше перечислены все аккумуляторы, которые подойдут к <?php echo $model->getItemCategoryTitle('d'); ?> <?php echo $model->getItemTitle(true); ?>.
-    </p>
-    <p>
-        Мы гарантируем, что все перечисленные батареи подходят к <?php echo $model->getItemTitle(true); ?> (мы проверяли).
+        Мы гарантируем, что представленная батарея подходит к <?php echo $model->getItemTitle(true); ?> (мы проверяли).
     </p>
     <p>
         <?php echo $model->rand1Texts[$model->rand1]; ?>
@@ -82,10 +78,7 @@ $this->pageTitle = $model->getFullTitle();
     </p>
 <?php else: ?>
     <p>
-        Выше перечислены все аккумуляторы, которые являются аналогом <?php echo $model->getItemTitle(true); ?>
-    </p>
-    <p>
-        Мы гарантируем, что все перечисленные батареи заменят <?php echo $model->getItemTitle(true); ?> (мы проверяли).
+        Мы гарантируем, что представленная батарея заменит <?php echo $model->getItemTitle(true); ?> (мы проверяли).
     </p>
     <p>
         <?php echo $model->rand1Texts[$model->rand1]; ?>
@@ -95,7 +88,7 @@ $this->pageTitle = $model->getFullTitle();
     </p>
 <?php endif; ?>
 <div class="related-items">
-    <h2>Аккумулятор также подходит для следующих моделей устройств:</h2>
+    <h2>Эта батарея также подходит для следующих моделей устройств:</h2>
     <ul>
         <?php foreach ($product->getAllItems(20, $model) as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">
@@ -109,7 +102,7 @@ $this->pageTitle = $model->getFullTitle();
     </ul>
     <div class="clearfix"></div>
     <?php if(count($product->assignedParts)): ?>
-    <h2>Аккумулятор является аналогом следующих моделей аккумуляторов:</h2>
+    <h2>Является аналогом следующих моделей аккумуляторов:</h2>
     <ul>
         <?php foreach ($product->assignedParts as $item):?>
             <li style="float: left; margin-right: 30px; width: 230px">

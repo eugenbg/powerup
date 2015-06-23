@@ -59,7 +59,7 @@ class Product extends MyActiveRecord implements IECartPosition
 			array('price, market_price', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sku, title, price, category_id, urlkey, market_price, status', 'safe', 'on'=>'search'),
+			array('id, sku, title, price, category_id, urlkey, market_price, status, code', 'safe', 'on'=>'search'),
 		);
 	}
 
