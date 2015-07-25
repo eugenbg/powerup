@@ -7,8 +7,9 @@ $this->breadcrumbs=array(
 );
 $this->pageTitle = sprintf('Результаты поиска "%s"', $query);
 ?>
-<?php foreach($result as $frontendCategoryTitle => $items): ?>
-    <h3><?php echo $frontendCategoryTitle; ?></h3>
+<?php foreach($result->items as $frontendCategoryId => $items): ?>
+    <?php Yii::app()->params['category'] = $result->frontendCategories[$frontendCategoryId]; ?>
+    <h3><?php echo $result->frontendCategories[$frontendCategoryId]->title; ?></h3>
     <div class="row panel">
         <ul class="brand-list col-md-11 col-xs-10">
             <?php foreach($items as $item): ?>

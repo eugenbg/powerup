@@ -17,7 +17,6 @@ class Search {
         $criteria = $this->buildCriteria($criteria);
         $result = Item::model()->findAll($criteria);
         $result = $this->groupResult($result);
-        $frontendCategories = array_keys($result);
         return $result;
     }
 
@@ -44,11 +43,23 @@ EOF;
 
     public function groupResult(array $result)
     {
-        $return = array();
+        $return = new stdClass();
+        $return->items = array();
+        $return->frontendCategories = array();
+
         foreach ($result as $item)
         {
-            $return[$item->frontendCategoryTitle][] = $item;
+            $return->items[$item->frontendCategoryId][] = $item;
         }
+
+        $frontendCategorieIds = array_keys($return->items);
+        $frontendCategories = FrontendCategory::model()->findAllByPk($frontendCategorieIds);
+
+        foreach($frontendCategories as $frontendCategory)
+        {
+            $return->frontendCategories[$frontendCategory->id] = $frontendCategory;
+        }
+
         return $return;
     }
 }
