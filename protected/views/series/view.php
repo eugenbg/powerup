@@ -10,7 +10,15 @@ $subseriesTitle = !empty(Yii::app()->params['subseries']) ?
 $this->pageTitle = 'Аккумуляторы для ' .
     Yii::app()->params['category']->getItemCategoryTitle('r', 'plural') .
     ' ' . Yii::app()->params['brand']->title .
-    ' ' . $seriesTitle . $subseriesTitle; ?>
+    ' ' . $seriesTitle . $subseriesTitle;
+
+$description = sprintf('%s. Доставка по Беларуси, низкие цены, гарантия 1 год.',
+    $this->pageTitle
+);
+
+Yii::app()->params['metaDescription'] = $description;
+
+?>
 <div class="row search-holder" style="margin-bottom: 30px;">
     <div class="col-md-8">
         <div class="panel panel-default">

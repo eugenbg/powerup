@@ -5,6 +5,13 @@
 $this->pageTitle = 'Аккумуляторы для ' .
     Yii::app()->params['category']->getItemCategoryTitle('r', 'plural');
 
+$description = sprintf('%s. Низкие цены, доставка по Беларуси, гарантия 1 год.',
+    $this->pageTitle
+);
+
+Yii::app()->params['metaDescription'] = $description;
+
+
 ?>
 
 <div class="row search-holder" style="margin-bottom: 30px;">

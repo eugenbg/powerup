@@ -52,9 +52,19 @@ class BrandController extends Controller
 	public function actionView($id)
 	{
         $model=Brand::model()->findByPk($id);
-        $this->render('view',array(
+		$this->setMeta($model);
+		$this->render('view',array(
 			'model'=>$model,
 		));
+	}
+
+	/**
+	 * При попытке выставить дескрипшн здесь - были проблемы с кодировкой.. хз
+	 * в итоге выставил во вьюхе
+	 * @param $model
+	 */
+	public function setMeta($model)
+	{
 	}
 
 	/**

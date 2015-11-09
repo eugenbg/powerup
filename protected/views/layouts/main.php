@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="<?php echo Yii::app()->getBaseUrl(true); ?>/img/favicon.ico">
 
-    <meta name="description" content="">
+    <meta name="description" content="<?php echo Yii::app()->params['metaDescription']; ?>">
 
     <!-- CSS -->
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>    <link href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -55,7 +55,7 @@
                 <div class="input-group">
                     <input type="text" name="search_query" class="form-control" placeholder="Поиск...">
                             <span class="input-group-btn">
-                                <button class="btn btn-ar btn-primary" type="button">Искать!</button>
+                                <button class="btn btn-ar btn-primary" type="submit">Искать!</button>
                             </span>
                 </div><!-- /input-group -->
             </form>

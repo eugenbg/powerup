@@ -46,8 +46,8 @@ class ItemController extends Controller
 	}
 
 	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
+	 * @param $id
+	 * @throws CHttpException
 	 */
 	public function actionView($id)
 	{
@@ -65,6 +65,8 @@ class ItemController extends Controller
                 $ItemFrontendCategoryMatch = true;
         }
 
+		$this->setMeta($model);
+
         if($ItemFrontendCategoryMatch)
         {
             $this->render('view',array(
@@ -75,6 +77,26 @@ class ItemController extends Controller
         {
             throw new CHttpException(404,'Неверный адрес странички');
         }
+	}
+
+	public function setMeta($model)
+	{
+		$products = $model->getLeadingProducts();
+		if(count($products) == 1)
+		{
+			$product = $products[0];
+			$title = $model->getFullTitle();
+			$title = str_replace('Аккумулятор', 'Аккумулятор (АКБ, батарея)', $title);
+			$attributes = $product->productAttributes;
+			$price = $product->getPrice() . Helper::getCurrencyPostfix();
+			$description = sprintf('%s %s, цена %s. Доставка по Беларуси. Гарантия 12 месяцев',
+				$title,
+				$attributes->bb_battery_capacity_mah,
+				$price
+			);
+			$description = str_replace('  ', ' ', $description);
+			Yii::app()->params['metaDescription'] = $description;
+		}
 	}
 
 	/**
