@@ -26,7 +26,7 @@ class ProductController extends AdminController
             if($model->save() && Image::saveImages($model))
             {
                 Yii::app()->user->setFlash('success', 'Успешно сохранено');
-                $this->redirect('/admin/product/index');
+                $this->redirect(array('/admin/product/edit', 'id'=>$model->id));
             }
             else
             {

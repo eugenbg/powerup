@@ -50,7 +50,7 @@ class Product extends MyActiveRecord implements IECartPosition
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('qty, status', 'numerical', 'integerOnly'=>true),
+			array('qty, status, inventory', 'numerical', 'integerOnly'=>true),
             array('qty','numerical',
                 'integerOnly'=>true,
                 'min'=>1,
@@ -59,7 +59,7 @@ class Product extends MyActiveRecord implements IECartPosition
 			array('price, market_price', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sku, title, price, category_id, urlkey, market_price, status, code', 'safe', 'on'=>'search'),
+			array('id, sku, title, price, category_id, urlkey, market_price, status, code, inventory', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,13 +82,15 @@ class Product extends MyActiveRecord implements IECartPosition
 	 */
 	public function attributeLabels()
 	{
+        Yii:: app () ->cache->flush();
 		return array(
 			'id' => 'ID',
 			'sku' => 'Sku',
 			'title' => 'Title',
 			'price' => 'Price',
 			'category_id' => 'Category',
-		);
+            'inventory' => 'Запас',
+        );
 	}
 
 	/**
@@ -118,7 +120,10 @@ class Product extends MyActiveRecord implements IECartPosition
         $criteria->compare('status',$this->status,true);
 
         return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+            'pagination'=>array(
+                'pageSize'=>50,
+            ),
+            'criteria'=>$criteria,
 		));
 	}
 

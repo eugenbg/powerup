@@ -58,10 +58,16 @@ $this->pageTitle = $model->getFullTitle();
                     <?php echo Helper::getCurrencyPostfix(); ?>
                 </span>
             </div>
-            <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id, 'item_id' => $model->id)); ?>"
-               class="add-to-cart btn btn-ar btn-success btn-sm pull-right">
-                <i class="fa fa-shopping-cart"></i> Добавить в корзину
-            </a>
+            <?php if($product->inventory > 0): ?>
+                <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id, 'item_id' => $model->id)); ?>"
+                   class="add-to-cart btn btn-ar btn-success btn-sm pull-right">
+                    <i class="fa fa-shopping-cart"></i> Добавить в корзину
+                </a>
+            <?php else: ?>
+                <a class="btn btn-ar btn-danger btn-sm pull-right">
+                    <i class="fa fa-shopping-cart"></i> Нет в наличии
+                </a>
+            <?php endif;?>
         </div>
     </div>
 <?php endforeach; ?>

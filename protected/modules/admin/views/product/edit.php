@@ -39,6 +39,11 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <?php echo $form->dropDownList($model,'status', $model->statusLabels, array('class'=>'form-control')); ?>
             <?php echo $form->error($model,'status'); ?>
         </div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'inventory'); ?>
+            <?php echo $form->textField($model,'inventory', array('class'=>'form-control')); ?>
+            <?php echo $form->error($model,'inventory'); ?>
+        </div>
 
         <div class="form-group">
             <label>Картинки</label>
@@ -66,7 +71,7 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
     </div><!-- /.box-body -->
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
     </div>
     <?php $this->endWidget(); ?>
 

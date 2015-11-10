@@ -22,7 +22,9 @@ class AdminModule extends CWebModule
 	{
 		if(parent::beforeControllerAction($controller, $action))
 		{
-			if(!Yii::app()->user->isGuest && Yii::app()->user->getUser()->username == 'admin')
+			if(!Yii::app()->user->isGuest
+				&& (Yii::app()->user->getUser()->username == 'admin' || Yii::app()->user->getUser()->username == 'eugenbg')
+			)
             {
                 return true;
             }

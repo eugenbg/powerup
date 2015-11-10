@@ -25,7 +25,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'sku',
         'title',
         'price',
-        'market_price',
+        'inventory',
         'status',
         'edit' => array(
             'class' => 'CLinkColumn',
