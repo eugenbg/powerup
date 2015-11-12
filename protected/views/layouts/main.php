@@ -66,10 +66,10 @@
                     Телефоны:
                 </li>
                 <li>
-                    +375 29 609-87-41
+                    <?php echo Yii::app()->settings->get('main', 'phone1'); ?>
                 </li>
                 <li>
-                    +375 29 703-80-45
+                    <?php echo Yii::app()->settings->get('main', 'phone2'); ?>
                 </li>
             </ul>
         </div>
@@ -191,10 +191,10 @@ EOF
                 <h3 class="footer-widget-title">Телефоны</h3>
                 <ul class="list-unstyled">
                     <li>
-                        +375 29 609-87-41
+                        <?php echo Yii::app()->settings->get('main', 'phone1'); ?>
                     </li>
                     <li>
-                        +375 29 703-80-45
+                        <?php echo Yii::app()->settings->get('main', 'phone2'); ?>
                     </li>
 <!--                    <li>
                         life: +375 44 111111

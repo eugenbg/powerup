@@ -27,6 +27,17 @@ $this->pageTitle = 'Настройки';
             <?php echo CHtml::label('Контактный email 3', 'main/admin_email_3'); ?>
             <?php echo CHtml::textField('main/admin_email_3', Yii::app()->settings->get('main', 'admin_email_3')); ?>
         </div><!-- /.box-body -->
+
+        <div class="box-body" style="display: block;">
+            <?php echo CHtml::label('Телефон 1', 'main/phone1'); ?>
+            <?php echo CHtml::textField('main/phone1', Yii::app()->settings->get('main', 'phone1')); ?>
+        </div><!-- /.box-body -->
+
+        <div class="box-body" style="display: block;">
+            <?php echo CHtml::label('Телефон 2', 'main/phone2'); ?>
+            <?php echo CHtml::textField('main/phone2', Yii::app()->settings->get('main', 'phone2')); ?>
+        </div><!-- /.box-body -->
+
     </div>
 
     <div class="box box-default">

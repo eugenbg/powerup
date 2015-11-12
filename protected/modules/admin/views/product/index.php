@@ -21,12 +21,30 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=> $model->search(),
     'filter'=>$model,
     'columns' => array(
-        'id',
-        'sku',
-        'title',
-        'price',
+        //'id',
+        //'sku',
+        array(
+            'header' => 'Товар',
+            'name'=>'title',
+        ),
+        array(
+            'header' => 'Цена',
+            'name'=>'title',
+        ),
+        array(
+            'header' => 'Рыночная цена (бел.рубли)',
+            'name'=>'market_price',
+            'value'=>'$data->market_price > 0 ? Helper::convertToBLR($data->market_price). " " . Helper::getCurrencyPostfix() : ""',
+        ),
+        array(
+            'header' => 'Рыночная цена ($)',
+            'name'=>'market_price',
+        ),
         'inventory',
-        'status',
+        array(
+            'header' => 'Статус (вкл/выкл)',
+            'name'=>'status',
+        ),
         'edit' => array(
             'class' => 'CLinkColumn',
             'label' => 'редактировать',
