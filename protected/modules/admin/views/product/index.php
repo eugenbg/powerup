@@ -29,7 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
         array(
             'header' => 'Цена',
-            'name'=>'title',
+            'name'=>'price',
         ),
         array(
             'header' => 'Рыночная цена (бел.рубли)',
