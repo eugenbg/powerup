@@ -68,7 +68,28 @@ $this->pageTitle = 'Редактирование продукта <b>'.$model->t
             <div class="clearfix"></div>
         </div>
 
+        <h3>Аттрибуты</h3>
+
+        <div class="form-group">
+            <?php echo $form->labelEx($attributesModel,'bb_battery_capacity_mah'); ?>
+            <?php echo $form->textField($attributesModel,'bb_battery_capacity_mah', array('class'=>'form-control')); ?>
+            <?php echo $form->error($attributesModel,'bb_battery_capacity_mah'); ?>
+        </div>
+
+        <div class="form-group">
+            <?php echo $form->labelEx($attributesModel,'bb_battery_voltage'); ?>
+            <?php echo $form->textField($attributesModel,'bb_battery_voltage', array('class'=>'form-control')); ?>
+            <?php echo $form->error($attributesModel,'bb_battery_voltage'); ?>
+        </div>
+
+        <div class="form-group">
+            <?php echo $form->labelEx($attributesModel,'bb_dimensions'); ?>
+            <?php echo $form->textField($attributesModel,'bb_dimensions', array('class'=>'form-control')); ?>
+            <?php echo $form->error($attributesModel,'bb_dimensions'); ?>
+        </div>
+
     </div><!-- /.box-body -->
+
 
     <div class="box-footer">
         <button type="submit" class="btn btn-primary">Сохранить</button>

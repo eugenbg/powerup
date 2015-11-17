@@ -41,7 +41,7 @@ class ProductAttributes extends MyActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, bb_battery_decoded, bb_battery_type, color, bb_battery_chemistry, bb_battery_size, bb_battery_voltage, bb_dimensions, bb_battery_capacity_mah, weight, benmer_description, benmer_price, benmer_box_qty, benmer_capacity, benmer_voltage', 'required'),
+			//array('id, bb_battery_decoded, bb_battery_type, color, bb_battery_chemistry, bb_battery_size, bb_battery_voltage, bb_dimensions, bb_battery_capacity_mah, weight, benmer_description, benmer_price, benmer_box_qty, benmer_capacity, benmer_voltage', 'required'),
 			array('id, benmer_description, benmer_box_qty', 'numerical', 'integerOnly'=>true),
 			array('bb_battery_decoded, bb_battery_type, color, bb_battery_chemistry, bb_battery_size, bb_battery_voltage, bb_dimensions, bb_battery_capacity_mah, benmer_capacity, benmer_voltage', 'length', 'max'=>100),
 			array('weight, benmer_price', 'length', 'max'=>10),
