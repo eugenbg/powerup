@@ -42,28 +42,25 @@ $this->pageTitle = 'Настройки';
 
     <div class="box box-default">
         <div class="box-header with-border">
-            <h3 class="box-title">Meta Description</h3>
+            <h3 class="box-title">Настройки генерации фидов</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div><!-- /.box-tools -->
         </div><!-- /.box-header -->
         <div class="box-body" style="display: block;">
-            <?php echo CHtml::label('Meta description item', 'meta_description/item'); ?>
-            <?php echo CHtml::textField('meta_description/item', Yii::app()->settings->get('meta_description', 'item')); ?>
+            <?php echo CHtml::label('Текст объявления для устройства', 'meta_description/item'); ?>
+            <?php echo CHtml::textField('feed/item', Yii::app()->settings->get('item', 'feed')); ?>
         </div><!-- /.box-body -->
         <div class="box-body" style="display: block;">
-            <?php echo CHtml::label('Meta description series', 'meta_description/series'); ?>
-            <?php echo CHtml::textField('meta_description/series', Yii::app()->settings->get('meta_description', 'series')); ?>
+            <?php echo CHtml::label('Текст объявления для парта', 'feed/part'); ?>
+            <?php echo CHtml::textField('feed/part', Yii::app()->settings->get('part', 'feed')); ?>
         </div><!-- /.box-body -->
         <div class="box-body" style="display: block;">
-            <?php echo CHtml::label('Meta description brand', 'meta_description/brand'); ?>
-            <?php echo CHtml::textField('meta_description/brand', Yii::app()->settings->get('meta_description', 'brand')); ?>
-        </div><!-- /.box-body -->
-        <div class="box-body" style="display: block;">
-            <?php echo CHtml::label('Meta description category', 'meta_description/category'); ?>
-            <?php echo CHtml::textField('meta_description/category', Yii::app()->settings->get('meta_description', 'category')); ?>
+            <?php echo CHtml::label('Цена клика', 'feed/click_price'); ?>
+            <?php echo CHtml::textField('feed/click_price', Yii::app()->settings->get('click_price', 'feed')); ?>
         </div><!-- /.box-body -->
     </div>
+
 
     <div class="col-lg-3">
         <button type="submit" class="btn btn-block btn-info btn-lg">Сохранить</button>

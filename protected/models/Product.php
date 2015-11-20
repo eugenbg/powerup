@@ -118,6 +118,7 @@ class Product extends MyActiveRecord implements IECartPosition
         $criteria->compare('urlkey',$this->urlkey,true);
         $criteria->compare('market_price',$this->market_price,true);
         $criteria->compare('status',$this->status,true);
+        $criteria->compare('inventory',$this->inventory,true);
 
         return new CActiveDataProvider($this, array(
             'pagination'=>array(
