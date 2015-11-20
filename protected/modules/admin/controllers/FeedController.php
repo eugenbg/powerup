@@ -51,7 +51,8 @@ class FeedController extends AdminController
                             'key2'
                         )
                     );
-                    $keyList[] = 'аккумулятор ' . $brand['title'] . ' ' . $item['title'];
+                    $seriesTitle = $item['series_title'] ? ' ' . $item['series_title'] : '';
+                    $keyList[] = 'аккумулятор ' . $brand['title'] . $seriesTitle . ' ' . $item['title'];
                 }
             }
         }

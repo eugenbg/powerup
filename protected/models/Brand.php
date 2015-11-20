@@ -141,7 +141,7 @@ EOF;
         $sql =
 <<<EOF
 SELECT
-i.*, p.inventory, p.code as product_code,
+i.*, p.inventory, p.code as product_code, s.title as series_title,
     (CASE
         WHEN i.series_id > 0 AND i.subseries_id > 0 THEN CONCAT(s.title, ' ', ss.title, ' ', i.title)
         WHEN i.series_id > 0 THEN CONCAT(s.title, ' ', i.title)
