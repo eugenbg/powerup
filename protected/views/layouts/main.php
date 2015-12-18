@@ -181,12 +181,6 @@ EOF
                     <li><a href="/dostavka">Доставка</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h3 class="footer-widget-title">О магазине</h3>
-                <p>
-                    ИП Богданович Е.О, свидетельство о государственной регистрации #192570472, выдано 7.05.2015 Мингорисполкомом
-                </p>
-            </div>
             <div class="col-md-2">
                 <h3 class="footer-widget-title">Телефоны</h3>
                 <ul class="list-unstyled">
