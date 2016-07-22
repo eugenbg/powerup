@@ -224,7 +224,7 @@ desired effect
             <li><a href="<?php echo Yii::app()->createUrl('admin/series/index'); ?>"><span>Серии</span></a></li>
             <li><a href="<?php echo Yii::app()->createUrl('admin/page/index'); ?>"><span>Страницы</span></a></li>
             <li><a href="<?php echo Yii::app()->createUrl('admin/config/index'); ?>"><span>Настройки</span></a></li>
-            <li><a href="<?php echo Yii::app()->createUrl('admin/feed/index'); ?>"><span>Фиды</span></a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('admin/report/index'); ?>"><span>Отчеты</span></a></li>
             <!--            <li class="treeview">
                             <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                             <ul class="treeview-menu">

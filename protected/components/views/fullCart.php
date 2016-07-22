@@ -38,6 +38,10 @@
                             <td>
                                 <?php echo $cartItem->getSumPrice(); ?>
                                 <?php echo Helper::getCurrencyPostfix(); ?>
+                                <span class="new-price">
+                                    (<?php echo $cartItem->getSumPrice()/10; ?>
+                                    <?php echo Helper::getCurrencyPostfix(true); ?>)
+                                </span>
                             </td>
                             <td>
                         <span class="glyphicon glyphicon-remove delete-from-cart"
@@ -53,6 +57,10 @@
                             <td>
                                 <?php echo Yii::app()->shoppingCart->getDeliveryPrice(); ?>
                                 <?php echo Helper::getCurrencyPostfix(); ?>
+                                <span class="new-price">
+                                    (<?php echo Yii::app()->shoppingCart->getDeliveryPrice()/10; ?>
+                                    <?php echo Helper::getCurrencyPostfix(true); ?>)
+                                </span>
                             </td>
                             <td></td>
                         </tr>
@@ -61,7 +69,13 @@
                         <th></th>
                         <th></th>
                         <th>Всего</th>
-                        <th><?php echo Yii::app()->shoppingCart->getBlrTotalCost(); ?></th>
+                        <th><?php echo Yii::app()->shoppingCart->getBlrTotalCost(); ?>
+                            <span class="new-price">
+                                    (<?php echo Yii::app()->shoppingCart->getBlrTotalCost()/10; ?>
+                                <?php echo Helper::getCurrencyPostfix(true); ?>)
+                                </span>
+
+                        </th>
                         <th></th>
                     </tr>
                 </table>

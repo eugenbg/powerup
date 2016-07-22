@@ -156,8 +156,8 @@ class Product extends MyActiveRecord implements IECartPosition
     /*
      * for compatibility with shopping cart
      */
-    public function getPrice(){
-        return Helper::convertToBLR($this->price);
+    public function getPrice($denominated = false){
+        return Helper::convertToBLR($this->price, $denominated);
     }
 
     public function getDynamicTitle()

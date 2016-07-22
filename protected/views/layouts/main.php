@@ -158,7 +158,7 @@ EOF
 </header>
 
 <div class="container">
-    <p class="bg-danger" style="padding: 15px; text-align: center;">Магазин временно не работает, извините за неудобства! Мы снова откроемся примерно апреле 2016</p>
+    <p class="bg-danger" style="padding: 15px; text-align: center;">Извините за неудобства, магазин временно не работает! Мы снова откроемся примерно сентябре 2016</p>
     <?php echo $content; ?>
 </div>
 

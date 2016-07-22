@@ -57,6 +57,11 @@ $this->pageTitle = $model->getFullTitle();
                     <?php echo $product->getPrice(); ?>
                     <?php echo Helper::getCurrencyPostfix(); ?>
                 </span>
+                <span class="new-price">
+                    в новых рублях:
+                    <?php echo $product->getPrice(true); ?>
+                    <?php echo Helper::getCurrencyPostfix(true); ?>
+                </span>
             </div>
             <?php if($product->inventory > 0): ?>
                 <a href="<?php echo $this->createUrl('cart/add', array('product_id' => $product->id, 'item_id' => $model->id)); ?>"
